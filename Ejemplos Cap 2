@@ -70,5 +70,36 @@ return 0; /*Indica que el programa termino con exito*/
     retunr 0; /*indica que el programa termino con exito*/
   } /*fin de la funcion main*/
   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-/*Figura 2.13: fig02_13 .c*/
-    
+/*Figura 2.13: fig02_13 .c
+  Uso de instrucciones if, operadores de relacion, y operadores de igualdad*/
+  #include <stdio.h>
+/*La funcion main inicia la ejecucion del programa*/  
+main()
+{
+int num1; /*primer numero que lee el usuario*/
+int num2; /*segundo numero que lee el ususario*/
+
+  printf ("Introduzca dos enteros, y le dire\n");
+  printf("las relaciones que satisfacen:");
+
+scanf("%d%d", &num1, &num2); /*lectura de los enteros*/
+
+if (num1 == num2) {
+  printf("%d es igual que %d\n", num1, num2);
+} /*fin del if*/
+
+if(num1 != num2) {
+  printf("%d no es igual que %d\n", num1, num2 );
+}/*fin del if*/
+
+if(num1 < num2){
+  printf("%d es menor que %d\n", num1, num2);
+} /*fin de if*/
+
+if( num1 > num2){
+  printf("%d es mayor que %d\n", num1 , num2);
+} /*fin de if*/
+
+if() 
+ 
+}
