@@ -1,0 +1,74 @@
+# HackerPocus
++Erase Programs+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*Figura 2.1: fig02_01.c
+  Un primero programa en C*/
+  #include <stdio.h>
+
+/*la funcion main inicia la ejecucion del proframa */
+int main (void)
+
+{
+printf ("Bienvenido a C!\n");
+
+return 0; /*Indica que el programa termino con exito*/
+
+}/*fin de la funcion main*/
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*Figura 2.3: fig02_03.c
+  Impresion de una linea mediante dos instrucciones printf*/
+  #include <stdio.h>
+  
+  /*la funcion main inicia la ejecuciuon del programa*/
+  int main()
+  {
+  printf ("Bienvenido");
+  printf("a C!\n");
+  
+  return 0; /*indica que el programa termino con exito*/
+  }/*fin de la funcion main*/
+  
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  /*Figura 2.4: fig02_04.c
+    Impresion de multiples lineas mediante una sola instruccion printf*/
+    #include <stdio.h>
+    /*la funcion main inicia la ejecucion del programa*/
+    int main()
+    {
+    printf("Bienvenido\na\nC!\n");
+    
+    return 0; /*Indica que el programa termino con exito*/
+    
+    } /*fin de la funcion main*/
+    
+      +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    /*Figura 2.5: fig02_05.c
+      Programa de suma*/
+      #include <stdio.h>
+      
+      /*la funcion main inicia la ejecucion del programa */
+    int main()
+    {
+    int entero1; /*primer numero a introducir por el ususario*/
+    int entero2; /*segundo numero a introducir por el ususario*/
+    int suma; /*variabel en la que se alamacenara la suma*/
+    
+    printf("Introduzca el primer entero\n"); /*indicador*/
+    scanf("%d, &entero1");  /*lee un entero*/
+    
+    printf("Introduzca el segundo entero\n"); /*indicador*/
+    scanf("%d", &entero2);             /*lee un entero*/
+    
+    suma = entero1 + entero2;  /*asigna el resultado a suma*/
+    
+    printf("La suma es %d\n", suma); /*imprime la suma*/
+    
+    retunr 0; /*indica que el programa termino con exito*/
+  } /*fin de la funcion main*/
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*Figura 2.13: fig02_13 .c*/
+    
