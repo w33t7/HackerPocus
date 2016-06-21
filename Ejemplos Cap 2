@@ -100,6 +100,14 @@ if( num1 > num2){
   printf("%d es mayor que %d\n", num1 , num2);
 } /*fin de if*/
 
-if() 
+if( num1 <= num2 ){
+  printf("%d es mayor o igual que %d\n", num1, num2);
+} /*fin del if*/
+
+if( num1 >= num2 ){
+  printf("%d es mayor o igual que %d\n", num1, num2);
+}/*fin de if*/
+
+return 0; /*indica que el programa termino con exito*/
  
-}
+}/*fin de la funcion main*/
