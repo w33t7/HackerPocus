@@ -1,0 +1,15 @@
+- Los comentarios comienzan con /* y terminan con  */. Los programadores insertan comentarios para mejorar sus programas y para mejorar su legitibilidad. Los comentarios no ocasionan accion alguna cuando se ejecuta el programa.
+
+- La directiva del procesador #include<stdio.h> le indica al compilador que incluya en el programa el encabezado estandar de entrada/salida. Este archivo contiene informacion que el compilador utiliza para verificar la precision las llamadas a funciones de entrada y salida, como scanf y prinf .
+
+- Los programas en C consisten en funciones una de las cuales debe ser main. Todo programaen C comienza su ejecucion en la funcion m main.
+
+- La funcion printf puede utilizarse para imprimir una cadeana que se encuentra entre comillas, y para imprimir los valores de expresiones. Cuando se imprime un valor entero, el primer argumento de la funcion printf (la cadena de control de formato) contiene el especificador de conversion %d y cualquier otro caracter a imprimir: el segundo argumento es la expresion cuyo valor se imprmira. Si se va a imprmir mas de un entero , la cadena de control de formato contiene las expresiones cuyos valores se imprmiran.
+
+- La funcion scanf obtiene valores que el usuario normalmente introduce por medio del teclado. Su primer argumento es la cadena de control de formato que ;e indica a la computadora que tipo de dato debe introducir el usuario. El,  especificador de conversion. %d , indica que e; dato debe ser un entero. Cada uno de los argumentos restantes corrresponden a uno de los especsificadores de conversion de la cadena de control de formato. En general, todo nombre de variable es precedido por la amperson (&). llamado operador de direccion. El amperson, cuando se combina con el nombre de una vaariable, le indica a la computadora la possicon de memoria en donde se alamacenara el valor, DEspues la computadora almacena el valor en esa posicion.
+
+- Todas las varibales deben declararse antes de que puedan utilizarse en un programa
+
+- Un nombre de variable es cualquier identificador valido. Un identificador es una serie de caracteres compuestos por oetras, digitos y guiones bajos (_) Los  identificadores no deben comenzar con un digito . Los identificadores pueden tener cualquier longitud, sin embargo, solo los primeros 31 digitos son importantes.
+
+- C es sensible a mayusculas 
