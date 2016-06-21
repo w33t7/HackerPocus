@@ -1,1 +1,14 @@
-
+Ejercicios de AUTOEVALUACION 
+2.1 Complete los espacios en blanco.
+  a)Todo programa en C comienza su ejecucion en la funcion  __MAIN__
+  b)La __ { __ comienza el cuerpo de toda funcion, y la __ }__ finaliza el cuerpo de toda funcion.
+  c) Toda instruccion finaliza con un __ ; __
+  d) La funcion __ printf __ de la biblioteca estandar despliega informacion en la pantalla.
+  e) La secuencia de escapa \n representa una __   __, la cual ocasiona que le cursor se coloque al principio de la siguiente linea de la oanbtalla./
+  f) La funcion __ scanf __ de la biblioteca estandar se utiliza para obtener datos desde el teclado.
+  g) El especificador de conversion __ %d __ se utiliza en una cadena de control de formato de scanf para indicar que se introsucira un entero, y en una cadean de control de fromato de printf para indicar que el resultado sera un entero.
+  h) Siempre que un nuevo valor se coloca en una posicion de memoria, ese valor sobreescribe al anterior Dicho proceso se cnoce como lectrua __ destructiva__
+  i) Cuando un valor se lee desde una posicion de memorua, el valor que se encuentra en esa posicon se preserva; a esto se le llama lectura __ No destrucyiva __
+  j) La instruccion __ if __ se utiliza para tomar desiciones.
+  
+  2.2 
