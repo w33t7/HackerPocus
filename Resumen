@@ -12,4 +12,23 @@
 
 - Un nombre de variable es cualquier identificador valido. Un identificador es una serie de caracteres compuestos por oetras, digitos y guiones bajos (_) Los  identificadores no deben comenzar con un digito . Los identificadores pueden tener cualquier longitud, sin embargo, solo los primeros 31 digitos son importantes.
 
-- C es sensible a mayusculas 
+- C es sensible a mayusculas y minusculas
+
+- La mayoria de los calculos se realizan en instrucciones de asignacion
+
+- Toda variable almacenada en la memoria de la computadora tiene un nombre, un valor y un tipo.
+
+- Siempre que un nuevo valor se coloque en una posicion de memoria, este reeemplaza al valor anterior de esa posicion. Debido a que la informacion anterior se destruye, al proceso de leer informacion en una posicion de memoria se le conoce como lectura destructiva.
+
+- Al proceso de lectura desde una posicion de memoria se le conoce como lectrua no destructiva.
+
+- Las expresiones aritmeticas deben escribirse en forma de linea recta, para facilitar la introduccion de programas a la computadora.
+
+- El compilador evalua expresiones aritmeticas en una secuencia precisa, determinada por las reglas de precedencia y de asociatividad de operadores
+
+- La instruccion if permite al programador tomar decisiones cuando se cumplen cierta condicion.
+
+- Si la condicion es verdadera, entonces se ejecuta la instruccion en el cuerpo de if. Si la condicion es falsa, se salta la instruccion del cuerpo.
+
+- Por lo general, las condiciones en instrucciones if se forman utilizando operadores de igualdad o de relacion. El resultado de utilizar estos operadores siempre es la simple observacion de "verdadero" o "falso". Observe que las condiciones pueden ser expresiones que generen un valor cero (falso) , o uno diferente de cero (verdadero )
+
