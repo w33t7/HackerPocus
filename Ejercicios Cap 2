@@ -10,5 +10,59 @@ Ejercicios de AUTOEVALUACION
   h) Siempre que un nuevo valor se coloca en una posicion de memoria, ese valor sobreescribe al anterior Dicho proceso se cnoce como lectrua __ destructiva__
   i) Cuando un valor se lee desde una posicion de memorua, el valor que se encuentra en esa posicon se preserva; a esto se le llama lectura __ No destrucyiva __
   j) La instruccion __ if __ se utiliza para tomar desiciones.
+
+
+2.2 Diga si los siguientes enunciados son verdaderos o falsos. Si son falsos, explique por que.
+  a) Cuando se llama a la funcion printf, esta siempre comienza la impresion al principio de una nueva linea.
+  b) Cuando se ejecuta un programa, los comentarios ocasionan que la computadora imprima el texto encerrado entre /* y */ sobre la pantallas
+  c) Cuando la secuencia de escape \n se utiliza en una cadeana de control de formato printf, esta ocasiona que el cursor se coloque al principio de la siguiente linea de la pantalla.
+  d) Todas las variables deben declararse, antes de que se utilicen
+  e) A todas las variables se les debe asignar un tipo cuando se declaran.
+  f) C considera identicas a las varibales numero y NuMEro.
+  g) Las declaraciones pueden aparecer en cualquier parte del cuerpo de una funcion.
+  h) Todos los argumentos que se encuentran despues de la cadena de control de formato en una funcion printf deben ser precedidos por un amperson (&)
+  i) El operador modulo (%) puede utilizarse solo con operandos enteros.
+  j) Los operadores aritmeticos *, /, %, + y - tienen el mismo nivel de precedencia.
+  k) Los siguientes nombres de variables son identicos en todos los sistemas ANSI C.
+      esteesunnombresuperduperlargo1234567
+      esteesunnombresuperduperlargo1234568
+  l) Un programa que imprime tres lineas como resultado debe contener tres instrucciones printf.\
   
-  2.2 
+2.3 Escriba una sola instruccion de C para hacer lo que indican los siguientes ennunciados:
+
+  a) Declare las variables c, estaVariable, q76354 y numero como de tipo int
+  b) Indique al usuario que introduzca un entero. Finalice su mensaje de indicaciones con dos puntos (:), seguidos por un espacio, y deje el cursor posicionado despues del espacio.
+  c) Lea un entero introducido desde el teclado y alamacene su valor en la variable entera a.
+  d) Si numero no es igual que 7, imprima "La variable numero no es igual a 7"
+  e) En una linea, imprima el mensaje "Este es un programa en C"
+  f) En dos lineas, imprima el mensaje "Este es un programa en C", de tal forma que la primera linea termine en "programa"
+  g) Imprima el mensaje "Este es un programa en C", de tal forma que cada palabra aparezca separada por un salt de tabulador.
+  
+2.4 Escriba una instruccion (o comentario) para realizar lo siguiente :
+
+  a) Indique que el programa calculara el producto de tres entero.
+  b) Declare las variables x, y, z y resultado de tipo int
+  c) Indique al usuario que introduzca tres enteros.
+  d) Lea tres enteros instroducidos desde el teclado y alamacenalos en las variables x, y, z 
+  e) Calcule el producto de los tres entero contenidos en las variables x,y,z y asigne el resultado a la variable resultado
+  f) Imprima "El producto es", seguido del valor de la variable entera resultado.
+  
+2.5 Escriba un programa completo que calcule el producto de tres enteros, utilizando las instrucciones que escribio en el ejercicio 2.4
+
+2.6 Identifique y corrija los errores de cada una de las siguientes instrucciones:
+
+  a) printf ("El valor es %d\n, &numero);
+  b) scanf ("%d%d", &numero1, numero2);
+  c) if ( c < 7);
+        printf(" C es menor que 7\n");
+  d) if (c => 7);
+        printf("C es mayor o igual que 7\n");
+        
+  **************************************************** EJERCICIOS ************************************************************
+  
+2.7 Identifique y corrija los errores de cada uno de los siguientes ejercicios (Nota: Puede haber mas de un error en cada ejercicio)
+  a) scanf("d", valor);
+  b) printf("El producto de %d y %d es %d\n, x, y);
+  c) primerNumero + segundoNumero = sumaDeNumeros
+  d) if (numero => masGrande)
+        masGrande == numero;
