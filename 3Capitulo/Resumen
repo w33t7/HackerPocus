@@ -1,1 +1,21 @@
 
+************************* RESUMEN ***************************
+
+- La solucion de cualquier probelma de computacion involucra una serie de acciones en un orden especifico. Al procedimeitno para resolver un problema en terminos de las acciones que se van a ejecutar y el orden en el que dichas acciones se deben ejecutar se le llama algoritmo.
+- A la especificacion del orden en el cual se van a ejecutar las instrucciones dentro de un programa se le llama control del programa.
+- El pseudocodigo es un lenguaje artificil e informal que ayuda a los programadores a desarrollar algoritmos. Es similar al idioma ingles. En realidad, los programas en pseudocodigo no se ejecutan en las computadoras. Solamente ayuda al programador a "planear" un programa antes de intentar escribirlo en un lenguaje de programacion tal como C.
+- El Pseudocodigo solamente consiste en caracteres, de manera que los programadores pueden teclear programas en pseudocodigo dentro de la computadora, editarlos y guardarlos.
+- El pseudocodigo consiste solamente en instrucciones ejecutables. Las declaraciones son mensajes para el compilador, para indicarle las caracteristicas de las variables y reservar espacio para estas.
+- Una instruccion de seleccion se utiliza para elegir entre distintos cursos de accion.
+- La instruccion de seleccion if ejecuta la accion indicada solamente si la condicion es verdadera.
+- La instruccion de seleccion if...else especifica la ejecucion de acciones por separado : cuando la condicion es verdadera y cuando la condicion es falsa.
+- Una instruccion de seleccion if...else anidada puede evaluar muchos casos diferentes. Si mas de una condicion es verdadera, solamente se ejecutaran las instrucciones que se encuentran despues de la primera condicion verdadera.
+- Siempre que se vaya a ejecutar mas de una instruccion, en donde por lo general se coloca solo una, dichas instrucicones deben encerrase entre llaves para formar una instruccion compuesta, Una instyrucicon compuesta puede colocarse en cualquier parte donde se pueda colocar una instruccion simple.
+- Una instruccion de seleccion if..else anidada puede evaluar muchos casos diferentes.Si mas de una condicion es verdadera, solamente se ejecutaran las instrucciones que se encuentran despues de la primera condicion verdadera.
+- Siempre que se vaya a ejecutar mas  de una instruccion, en donde por lo general se coloca solo una, dichas instrucciones deben encerrarse entre llaves para formar una instruccion compuesta. Una instruccion compuesta puede colocarse3 en cualquier parte donde se pueda colocar una instruccion simple.
+- Una instruccion vacia, que indica que no se realizara accion alguna, se establece mediante un punto y como(;) een donde de normalmente iria una instruccion.
+- Una instruccion de repeticion especifica que una accion se repetira mientras cierta condicion sea verdadera.
+- La instruccion (o instruccion compuesta o bloque ) contenida en la instruccion de repeticion while constituye el cuerpo del ciclo.
+- Por lo general, alguna instruccion especificada dentro del cuerpo de una instruccion while, en algun momento modificara la condicion para que sea falsa. De lo contrario, el ciclo nunca terminara; un error conocido como ciclo infinito.
+- El ciclo controlado por contador utiliza una variable como un contador para determinar cuando debe terminar el ciclo.
+- Un total es una variable que acumula la suma de una serie de numeros. Por lo general, los totales  
