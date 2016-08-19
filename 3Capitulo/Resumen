@@ -18,4 +18,8 @@
 - La instruccion (o instruccion compuesta o bloque ) contenida en la instruccion de repeticion while constituye el cuerpo del ciclo.
 - Por lo general, alguna instruccion especificada dentro del cuerpo de una instruccion while, en algun momento modificara la condicion para que sea falsa. De lo contrario, el ciclo nunca terminara; un error conocido como ciclo infinito.
 - El ciclo controlado por contador utiliza una variable como un contador para determinar cuando debe terminar el ciclo.
-- Un total es una variable que acumula la suma de una serie de numeros. Por lo general, los totales  
+- Un total es una variable que acumula la suma de una serie de numeros. Por lo general, los totales se inicializan en cero  antes de la ejecucuion del programa.
+- Un diagrama de flujo es una representacion grafica de un algoritmo. Los diagramas de flujo se dibujan utilizando ciertos simbolos especiales como ovalos, rectangulos, rombos y pequenos circulos conectados mediante flechas llamadas lineas de flujo. Los simboos indican las acciones a realizar. Las lineas de flujo indican el orden en el que se realizan las acciones.
+- El simbolo ovalo, tambien llamado simbolo de terminacion, indica el inicio y el final de cada algoritmo.
+- El simbolo rectangulo, tambien llamado simbolo de accion, indica cualquier tipo de calculo u operacion de entrada/salida 
+- El simbolo 
