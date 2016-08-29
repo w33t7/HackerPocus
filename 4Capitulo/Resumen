@@ -1,1 +1,3 @@
-
+- Un ciclo es un conjunto de instrucciones que la computadora ejecuta repetidamente, hasta que una condicion de terminacion se satisface. Dos formas de repeticion son: la controlada por contador y la controlada por centinela.
+- Un contador de ciclo se utiliza para contar el numero de veces que debe repetirse un grupo de instrucciones. Este se incrementa (normalmente en 1) cada vez que el grupo de instrucciones se ejecuta.
+- Los valores centinelas se utilizan generalmente para controlar 
