@@ -1,3 +1,20 @@
 - Un ciclo es un conjunto de instrucciones que la computadora ejecuta repetidamente, hasta que una condicion de terminacion se satisface. Dos formas de repeticion son: la controlada por contador y la controlada por centinela.
 - Un contador de ciclo se utiliza para contar el numero de veces que debe repetirse un grupo de instrucciones. Este se incrementa (normalmente en 1) cada vez que el grupo de instrucciones se ejecuta.
-- Los valores centinelas se utilizan generalmente para controlar 
+- Los valores centinelas se utilizan generalmente para controlar una repeticion en la que no se conoce por adelantado el numero preciso de repeticiones, y el ciclo incluye instrucciones para obtener los datos cada vez que el ciclo se jecuta.
+- Un valor centinela se introduce despues de que todos los datos regulares se le han proporcionado al programa. Los centinelas deben elegirse cuidadosamente para que no exista posibilidad alguna de confundirlos con datos validos.
+- La instruccion de repeticion FOR maneja todos los detalles de la repeticion controlada por contador. La forma general de la instruccion for es 
+  for (expresion1; expresion2; expresion3)
+    instruccion
+donde expresion1 inicializa la variable de control del ciclo, expresion2 es la condicion de continuacion del ciclo, y expresion3 incrementa (o decrementa) LA VARIABLE DE CONTROL.
+
+- La instruccion de repeticion do...while es parecida a la instruccion de repeticion while, pero la primera evalua la condicion de repeticion de cilo al final del ciclo, de tal froma que el ciclo se ejecutara al menos una vez,. La forma de la instruccion do..while es 
+  do
+    instruccion
+  while(condicion);
+  
+- La instruccion break, cuando se ejecuta en una de las instrucciones de repeticion(for, while y do ..while), ocasiona la salida inmediata de la instruccion. La ejecucion continua con la primera instruccion despues del ciclo. La instruccion break ttambien puede utilizarse para salir de una instruccion switch.
+- La instruccion continue, cuando se ejecuta en na de las intrucciones de repeticion (for, while, do..while), salta cualquier instruccion restante del cuerpo de la instruccion de control, y continua con la siguiente iteracion del cli.
+- La instruccion switch maneja una serie de decisiones en las que una variable o expresion en particular se evalua con cada uno de los valores que puede asumir, y se toman diferentes acciones.Cada case de una instruccion switch puede ocasionar que se ejecuten muchas instrucciones. En la mayoria de los programas es necesario incluir un break despues de las instrucciones de cada case, de otro modo, el programa ejecutara las instrucciones de cada case hasta que encuentre un break, o hasta que alcance el final de la instruccion switch. Muchos cases pueden ejecutar las mismas instrucciones, listando las etiquetas case antes de las instrucciones. La instruccion switch solo puede evaluar expresiones integrales constantes.
+- La funcion get char devuelve un caracter proveniente del teclado (la entrada estandar) como un entero.
+- En sistemas UNIX y en muchos otros, el caracter EOF se introduce escribiendo
+      <Entrar>
