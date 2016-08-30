@@ -29,3 +29,11 @@ Si la funcion devuelve un valor, la instruccion:
 - Los prototipos de la funciones rand y srand se encuentran en <stdlib.h>
 - Los valores producidos por rand se pueden escalar y modificar para crear valores dentro de un rango especifico.
 - Para randomizar un programa, utilice la funcion srand de la biblioteca standar de C.
+- Por lo general, la llamada a la funcion srand se inserta en un programa, una vez que este se depuro totalmente. Durante la depuracion, es mejor omitir srand. Esto garantiza la repeticion de valores, lo cual es esencial para asegurarse de que las correcciones al programa de generacion de numeros aleatorios funcionan adecuadamente.
+- Para crear numeros alaeatorios sin tener que introducir una semmilla cada vez, utilizamos srand (time(NULL)). La funcion time devuelve el numero de segundos que han pasado desde que inicio el dia. El prototipo de la funcion se localiza en el encabezado <time.h>
+- La ecuacion general para escalr y modificar un numero aleatorio es:
+      n = a + rand() % b;
+donde a es el valor de cambio (es decir, el primer numero del rango deseado de enteros consecutivos), y b es el factor de escalamiento (es decir, la longitud del rango de los enteros consecutivos)
+
+- Una enumeracion, introducida mediante la palabra reservada enum es un conjunto de enteros constantes representado medinate identificadores,; Los valores en un enum comienzan con 0  y se incrementan en 1. Tambien es posible asignar un valor entero a cada identificador en un enum. Los identificadores de una enumeracion deben ser unicos, pero los valores pueden ser duplicados.
+- En un programa, cada identificador tiene atributos 
