@@ -1,0 +1,31 @@
+- La mejor manera de desarrollar y dar mantenimiento a un programa grande es dividiendolo en varios modulos de programa mas pequenos, cada uno de los cuales es mas manejable que el programa original. En C, los modulos se escriben como funciones.
+- Una funcion se invoca mediante una llamda a dicha funcion. La llamada a la funcion menciona a la funcion por su nombre y  proporciona infromacion (como argumentos)  que la funcion necesita para realizar su tarea.
+- El proposito del ocultamiento de infromacion es que las funciones tengan acceso solo a la infromacion que necesitan para completar sus tareas. Esta es una manera de implementar el pricncipio del menor privilegio; uno de los principios mas importantes de la buenaa ingenieria de software.
+- Por lo general, las funciones se invocan en un programa, escribiendo el nombre de la funcion seguido por un parentesis izquierdo, seguido por el  argumento de la funcion (o una lista de argumentos separada por comas) y por el parentesis derecho.
+- El tipo de dato double es un tipo de dato de punto flotante como float. Una variable de tipo double puede almacenar un valor mucho mas grande en magnitud y precision que un numero de tipo float.
+- Cada argumento de funcion puede saer una constante, una variable, o uina expresion.
+- A una variable local se le conoce slo en la definicion de las funcion. Las otras funciones no estan autorizadas oara conocer el nombre de las variables locales de dichas funciones, y tampoco estan autorizdas para conocer los detalles de implementacion de cualquier otra funcion.
+- El formato general para la definicion de una funcion es:
+      tipo-valor-retorno nombre-funcion (lista de parametros)
+      {
+      cuerpo-funcion
+      }
+- El tipo-valor-retorno especifica el tipo de valor devuelto por la funcion a la que se invoca. Si una funcion no devuelve valor, el tipo-valor-retorno se declara como void. El nombre-funcion es cualquier identifivcador valido. La lista-parametros es una lista separada por comas que contiene las definiciones de las variables que se pasaran a la funcion. Si una funcion no recibe valor alguno, lista-parametros se declara como void. El cuerpo-funcion es un conjunto de definiciones e instrucciones que constituyen las funcion.
+- Los argumentos que se pasan a una funcion deben coincidir en numero, tipo y orden con los parametros en la definicion de la funcion.
+- Cuando un programa encuentra una llamda a una funcion, el control se transfiere desde el punto de invocacion hasta la funcion que fue invocada, las instrucciones de la funcion invocada se ejecutan y el control regresa a la invocacion de la funcion.
+- Una funcion invocada puede devolver el control al punto de invocacion de tres maneras. Si la funcion no devuelve valor alguno, el control se devuelve cuando esta alcanza la llave derecha que indica el fin de la funcion, o por medio de la ejecucion de la instruccion:
+    return;
+Si la funcion devuelve un valor, la instruccion:
+    return expresion;
+    
+- El prototipo de una funcion declara el tipo de retorno de la funcion y declara el numero, los tipos y el orden de los parametros que la funcion espera recibir.
+- Los prototipos de las funciones permiten al compilador verificar que las funciones se invocan de manera correcta.
+- El compilador ignora los nombres de variables mencionadas en el prototipo de la funcion.
+- Cada biblioteca estandar tiene un encabezado correspondiente, el cual contiene los prototipos de todas las funciones de la biblioteca, asi como las definiciones de las distintas constantes simbolicas necesarias para dichas funciones.
+- Los programadores pueden crear e incluir sus propios encabezados.
+- Cuando un argumento se pasa por valor, se crea una copia del valor de la variable y dicha copia se pasa a la funcion invocada. Los cambios que se hagan a esta copia dentro de la funcion no afectan el valor de la variable original.
+- En C, todas las llamadas se hacen por valor.
+-  La funcion rand genera un entero entre 0 y RAND_MAX, el cual se define en C para ser el menos 32767.
+- Los prototipos de la funciones rand y srand se encuentran en <stdlib.h>
+- Los valores producidos por rand se pueden escalar y modificar para crear valores dentro de un rango especifico.
+- Para randomizar un programa, utilice la funcion srand de la biblioteca standar de C.
