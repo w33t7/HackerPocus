@@ -17,4 +17,9 @@ donde expresion1 inicializa la variable de control del ciclo, expresion2 es la c
 - La instruccion switch maneja una serie de decisiones en las que una variable o expresion en particular se evalua con cada uno de los valores que puede asumir, y se toman diferentes acciones.Cada case de una instruccion switch puede ocasionar que se ejecuten muchas instrucciones. En la mayoria de los programas es necesario incluir un break despues de las instrucciones de cada case, de otro modo, el programa ejecutara las instrucciones de cada case hasta que encuentre un break, o hasta que alcance el final de la instruccion switch. Muchos cases pueden ejecutar las mismas instrucciones, listando las etiquetas case antes de las instrucciones. La instruccion switch solo puede evaluar expresiones integrales constantes.
 - La funcion get char devuelve un caracter proveniente del teclado (la entrada estandar) como un entero.
 - En sistemas UNIX y en muchos otros, el caracter EOF se introduce escribiendo
-      <Entrar>
+      <Entrar><Control+d>
+    En sistemas Windows de Microsoft, el caracter EOF se introduce escribiendo
+      <Control+z>
+- Los operadores logicos pueden utilizarse para formar, condiciones complejas, mediante la combinacion de condiciones. Los operadores logicos sonn &&, \\ y !, que significan AND logico, OR logico y NOT logico (negacion), respectivamente.
+- Un valor verdadero es cualquier valor diferente de cero.
+- Un valor falso es 0 (cero)
