@@ -1,0 +1,479 @@
+EJERCICIOS
+6.6 Complete los espacios en blanco:
+a) C almacena listas de valores en .
+b) Los elementos de un arreglo están relacionados por el hecho de que .
+c) Cuando se hace referencia a un elemento de un arreglo, la posición numérica contenida entre corchetes se llama
+.
+d) Los nombres de los cinco elementos del arreglo p son , , ,
+y .
+e) El contenido de un elemento particular de un arreglo se conoce como el de ese elemento.
+f) Asignar un nombre a un arreglo, establecer su tipo y especificar el número de elementos en el arreglo se conoce
+como al arreglo.
+g) Al proceso de colocar los elementos de un arreglo en un orden ascendente o descendente se le conoce como
+.
+h) En un arreglo con dos subíndices, el primer subíndice (por convención) identifica la de un elemento,
+y el segundo subíndice (por convención) identifica la de un elemento.
+i) Un arreglo de m por n contiene filas, columnas y elementos.
+j) El nombre del elemento que se encuentra en la fila 3 y columna 5 del arreglo d es .
+6.7 Diga cuáles de los siguientes enunciados son verdaderos y cuáles son falsos. Si la respuesta es falso, explique por
+qué.
+a) Para hacer referencia a una ubicación en particular de memoria dentro de un arreglo, especificamos el nombre
+del arreglo y el valor de un elemento en particular.
+b) Una declaración de arreglo reserva espacio para el arreglo.
+c) Para indicar que se deben reservar 100 ubicaciones para un arreglo entero p, el programador escribe la declaración
+p[ 100 ];
+d) Un programa en C que inicializa en cero a los elementos de un arreglo de 15 elementos debe contener una instrucción
+for.
+e) Un programa en C que suma el número de elementos de un arreglo con dos subíndices, debe contener instrucciones
+for anidadas.
+f) La media, mediana y moda del siguiente conjunto de valores son 5, 6 y 7, respectivamente: 1, 2, 5, 6, 7, 7, 7.
+6.8 Escriba las instrucciones para llevar a cabo cada una de las siguientes tareas:
+a) Despliegue el valor del séptimo elemento del arreglo de caracteres f.
+b) Introduzca un valor en el elemento 4 del arreglo de punto flotante con un solo subíndice, b.
+c) Inicialice en 8 cada uno de los 5 elementos del arreglo entero g.
+d) Sume los elementos del arreglo de punto flotante c, el cual contiene 100 elementos.
+e) Copie el arreglo a en la primera porción del arreglo b. Suponga que double a[ 11 ], b[ 34 ];
+f) Determine y despliegue los valores más pequeño y más grande contenidos en el arreglo de punto flotante w, de
+99 elementos.
+6.9 Considere el arreglo entero t de 2 por 5.
+a) Escriba la declaración para t.
+b) ¿Cuántas filas tiene t?
+c) ¿Cuántas columnas tiene t?
+d) ¿Cuántos elementos tiene t?
+e) Escriba los nombres de todos los elementos que se encuentran en la segunda fila de t.
+f) Escriba los nombres de todos los elementos que se encuentran en la tercera columna de t.
+g) Escriba una instrucción que establezca en cero el elemento de la fila 1 y la columna 2 de t.
+h) Escriba una serie de instrucciones que inicialice en cero cada elemento de t. No utilice una estructura de repetición.
+i) Escriba una instrucción for anidada que inicialice en cero cada elemento de t.
+j) Escriba una instrucción que introduzca los valores para los elementos de t desde la terminal.
+k) Escriba una serie de instrucciones que determine y despliegue el valor más pequeño del arreglo t.
+l) Escriba una instrucción que despliegue los elementos de la primera fila de t.
+m) Escriba una instrucción que sume los elementos de la cuarta columna de t.
+n) Escriba una serie de instrucciones que despliegue el arreglo t en un formato tabular. Liste los subíndices de columna
+como encabezados horizontales y los subíndices de fila a la derecha de cada fila.
+6.10 Utilice un arreglo con un solo subíndice para resolver el siguiente problema. Una empresa paga a su personal de
+ventas con base en una comisión. El personal de ventas recibe $200 por semana, más 9 por ciento de sus ventas totales
+semanales. Por ejemplo, un vendedor que suma $3000 en ventas semanales recibe $200 más el 9 por ciento
+de $3000, o un total de $470. Escriba un programa en C (que utilice un arreglo de contadores) que determine cuántos
+de los vendedores reciben salarios en cada uno de los siguientes rangos (suponga que el salario de cada vendedor
+se trunca para obtener un monto entero):
+a) de $200 a $299
+b) de $300 a $399
+c) de $400 a $499
+d) de $500 a $599
+e) de $600 a $699
+f) de $700 a $799
+g) de $800 a $899
+h) de $900 a $999
+i) de $1000 o más
+6.11 El ordenamiento de burbuja que presentamos en la figura 6.15 es ineficiente para arreglos grandes. Haga las siguientes
+modificaciones sencillas, para mejorar el rendimiento del ordenamiento de burbuja:
+a) Después de la primera pasada, seguramente el número más alto es el elemento más grande del arreglo; después
+de la segunda pasada, los dos números más altos se encuentran “en su lugar”, y así sucesivamente. En lugar de
+hacer nueve comparaciones en cada pasada, modifique el programa de ordenamiento de burbuja para hacer
+ocho comparaciones en la segunda pasada, siete en la tercera pasada, y así sucesivamente.
+b) Los datos en el arreglo pudieran estar ya en el orden apropiado o cerca del orden apropiado, ¿entonces, por qué
+hacer nueve pasadas si con menos podría ser suficiente? Modifique el ordenamiento para verificar, al final de
+cada pasada, si se han hecho intercambios. Si no se han hecho intercambios, entonces los datos deben estar ya
+en el orden apropiado, de manera que el programa debe terminar. Si se hicieron intercambios, entonces se requiere
+al menos una pasada.
+6.12 Escriba instrucciones individuales que realicen cada una de las siguientes operaciones correspondientes a arreglos
+con un solo subíndice:
+a) Inicialice en cero los 10 elementos del arreglo entero cuentas.
+b) Sume 1 a cada uno de los 15 elementos del arreglo entero bonos.
+c) Lea los 12 valores introducidos desde el teclado del arreglo de punto flotante temeperaturasCadaMes.
+d) Despliegue en formato de columnas los 5 valores del arreglo entero mejoresMarcas.
+6.13 Encuentre el(los) error(es) en cada una de las siguientes instrucciones:
+a) Suponga que: char str[ 5 ];
+scanf( “%s”, str ); /* El usuario escribe hola */
+b) Suponga que: int a[ 3 ];
+printf( “$d %d %d\n”, a[ 1 ], a[ 2 ], a[ 3 ] );
+c) double f[ 3]={ 1.1, 10.01, 100.001, 1000.0001 };
+d) Suponga que: double d[ 2 ][ 10 ];
+d[ 1, 9 ] = 2.345;
+6.14 Modifique el programa de la figura 6.16 para que la función moda sea capaz de manipular un empate para el valor
+de la moda. Además, modifique la función mediana de manera que los dos elementos centrales sean promediados
+en un arreglo con un número par de elementos.
+6.15 Utilice un arreglo con un solo subíndice para resolver el siguiente problema. Lea 20 números, en donde cada uno
+se encuentre entre 10 y 100, inclusive. Mientras se lee cada número, despliéguelo solamente si no es un duplicado
+de un número ya leído. Prevenga el “peor de los casos”, en el cual los veinte números sean diferentes. Utilice el
+menor tamaño posible del arreglo para resolver este problema.
+6.16 Etiquete los elementos del arreglo ventas (el cual es un arreglo con dos subíndices de 3 por 5) para indicar el orden
+en el cual se establecen en cero, con el siguiente segmento de programa:
+for ( fila = 0; fila < 2; fila++ )
+for ( columna = 0; columna < 4; columna++ )
+ventas[ fila ][ columna ] = 0;
+6.17 ¿Qué hace el siguiente programa?
+01 /* ej06_17.c */
+02 /* ¿Qué hace este programa? */
+03 #include <stdio.h>
+04 #define TAMANIO 10
+05
+06 int queEsEsto( const int b[], int p ); /* prototipo de la función */
+07
+08 /* la función main comienza la ejecución del programa */
+09 int main()
+10 {
+11 int x; /* almacena el valor de retorno de la función queEsEsto */
+12
+13 /* inicializa el arreglo a */
+14 int a[ TAMANIO ] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+15
+16 x = queEsEsto( a, TAMANIO );
+17
+18 printf( “El resultado es %d\n”, x );
+19
+(Parte 1 de 2.)
+
+20 return 0; /* indica terminación exitosa */
+21
+22 } /* fin de main */
+23
+24 /* ¿Qué hace esta función? */
+25 int queEsEsto( const int b[], int p )
+26 {
+27 /* caso base */
+28 if ( p == 1 ) {
+29 return b[ 0 ];
+30 } /* fin de if */
+31 else { /* paso recursivo */
+32
+33 return b[ p - 1 ] + queEsEsto( b, p - 1 );
+34 } /* fin de else */
+35
+36 } /* fin de la función queEsEsto */
+(Parte 2 de 2.)
+6.18 ¿Qué hace el siguiente programa?
+01 /* ej06_18.c */
+02 /* ¿Qué hace este programa? */
+03 #include <stdio.h>
+04 #define TAMANIO 10
+05
+06 /* prototipo de la función */
+07 void algunaFuncion( const int b[], int comienzaIndice, int tamanio );
+08
+09 /* la función main comienza la ejecución del problema */
+10 int main()
+11 {
+12 int a[ TAMANIO ] = { 8, 3, 1, 2, 6, 0, 9, 7, 4, 5 }; /* inicializa a */
+13
+14 printf( “La respuesta es:\n” );
+15 algunaFuncion( a, 0, TAMANIO );
+16 printf( “\n” );
+17
+18 return 0; /* indica terminación exitosa */
+19
+20 } /* fin de main */
+21
+22 /* ¿Qué hace esta función? */
+23 void algunaFuncion( const int b[], int iniciaIndice, int tamanio )
+24 {
+25 if ( iniciaIndice < tamanio ) {
+26 algunaFuncion( b, iniciaIndice + 1, tamanio );
+27 printf( “%d “, b[ iniciaIndice ] );
+28 } /* fin de if */
+29
+30 } /* fin de la función algunaFuncion */
+6.19 Escriba un programa que simule el tiro de dos dados. El programa debe utilizar rand para tirar el primer dado,
+y debe utilizar rand de nuevo para tirar el segundo dado. Después, se debe calcular la suma de los dos valores
+
+[Nota: Cada dado puede mostrar un valor entero de 1 a 6, de manera que la suma de los dos valores puede variar de
+2 a 12, donde 7 es la suma más frecuente y 2 y 12 son las sumas menos frecuentes]. La figura 6.23 muestra las 36
+combinaciones posibles de los dos dados. Su programa debe lanzar los dos dados 36,000 veces. Utilice un arreglo con
+un solo subíndice para registrar el número de veces que aparece cada suma posible. Despliegue los resultados en formato
+tabular. Además, determine si los totales son razonables (es decir, existen seis maneras de tirar un 7, de manera
+que aproximadamente un sexto de todos los tiros debe ser 7).
+6.20 Escriba un programa que ejecute 1000 juegos de craps (sin intervención humana) y responda las siguientes preguntas
+a) ¿Cuántos juegos se ganan en el primer tiro, en el segundo tiro, …, en el tiro número 20, y después del tiro
+número 20?
+b) ¿Cuántos juegos se pierden en el primer tiro, en el segundo tiro, …, en el tiro número 20, y después del tiro nú-
+mero 20?
+c) ¿Cuál es la oportunidad de ganar en craps? (Nota: Usted debe saber que craps es uno de los juegos de casino
+más imparciales. ¿Qué cree usted que significa esto?
+d) ¿Cuál es la duración promedio de un juego de craps?
+e) ¿Mejoran las oportunidades de ganar con la duración del juego?
+6.21 (Sistema de reservaciones para una aerolínea.) Una pequeña aerolínea acaba de comprar una computadora para su
+nuevo sistema automático de reservaciones. A usted se le ha pedido que programe el nuevo sistema. Usted debe escribir
+un programa que asigne los asientos, en cada vuelo, del único avión de la aerolínea (capacidad: 10 asientos).
+Su programa debe desplegar el siguiente menú de alternativas:
+Por favor, digite 1 para “primera clase”
+Por favor, digite 2 para “económico”
+Si la persona digita 1, su programa debe asignar un asiento en la sección de primera clase (asientos 1 a 5). Si la
+persona digita 2, su programa debe asignar un asiento en la sección económica (asientos 6 a 10). Su programa debe
+imprimir un pase de abordar que indique el número de asiento de la persona y si está en la sección de primera
+clase o en la sección económica del avión.
+Utilice un arreglo con un solo subíndice para representar la tabla de asientos del avión. Inicialice en 0 todos los elementos
+del arreglo para indicar que todos los asientos están vacíos. Mientras se asigna cada asiento, el valor de los
+elementos correspondientes del arreglo se establece en 1, para indicar que el asiento ya no está disponible.
+Por supuesto, su programa nunca debe asignar un asiento que ya está asignado. Cuando la sección de primera clase
+está llena, su programa debe preguntar a la persona si acepta que se le coloque en la sección económica (y viceversa).
+Si acepta, entonces haga la asignación apropiada del asiento. Si no acepta, entonces despliegue el mensaje “El
+siguiente vuelo parte en tres horas”.
+6.22 Utilice un arreglo con doble subíndice para resolver el siguiente problema. Una empresa tiene cuatro vendedores
+(1 a 4) los cuales venden cinco productos diferentes (1 a 5). Una vez al día, cada vendedor introduce un registro
+para cada tipo de producto vendido. Cada registro contiene lo siguiente:
+a) El número de vendedor.
+b) El número de producto.
+c) El monto total del producto vendido del día.
+Por lo tanto, cada vendedor pasa entre 0 y 5 registros al día. Suponga que están disponibles los registros con la
+información del último mes. Escriba un programa que lea toda esta información de las ventas del último mes y sume
+el total de ventas por vendedor y por producto. Todos los totales se deben almacenar en el arreglo con dos subíndices,
+ventas. Una vez procesada toda la información del último mes, despliegue los resultados en formato tabular
+
+en donde cada una de las columnas representa a un vendedor y cada una de las filas representa un producto en particular.
+Obtenga la suma de cada fila para el total de ventas de cada producto del último mes; obtenga la suma de
+cada columna para el total de ventas por vendedor del último mes. Su salida tabular debe incluir estos totales a la
+derecha para las filas y en el fondo para las columnas.
+6.23 (Gráficos de tortuga.) El lenguaje Logo, que es especialmente popular entre los usuarios de computadoras personales,
+hizo famoso el concepto de los gráficos de tortuga. Imagine una tortuga mecánica que camina alrededor de
+una habitación bajo el control de un programa en C. La tortuga mantiene una pluma en una de dos posiciones: arriba
+o abajo. Mientras la pluma está abajo, la tortuga traza las formas mientras se mueve; mientras la pluma está arriba,
+la tortuga se mueve libremente sin dibujar. En este problema, usted simulará la operación de la tortuga, así cómo
+el tablero computarizado.
+Utilice un arreglo de 50 por 50 llamado piso, inicializado en ceros. Lea los comandos desde un arreglo que los
+contenga. Mantenga la pista de la posición actual de la tortuga en todo momento, y si la pluma está arriba o abajo.
+Suponga que la tortuga comienza siempre en la posición 0,0 del piso con la pluma arriba. El conjunto de los comandos
+de la tortuga que usted debe procesar aparece en la figura 6.24. Suponga que la tortuga se encuentra en algún
+lugar cerca del centro del piso. El siguiente “programa” debe dibujar y desplegar un cuadrado de 12 por 12:
+2
+5, 12
+3
+5, 12
+3
+5, 12
+3
+5, 12
+1
+6
+9
+Mientras la tortuga se mueva con la pluma abajo, establezca en 1s los elementos apropiados del arreglo piso.
+Cuando se introduzca el comando 6 (imprimir), donde quiera que se encuentre un 1 dentro del arreglo, despliegue
+un asterisco o algún otro carácter que elija. Donde quiera que haya un cero, despliegue un blanco. Escriba un programa
+para implementar las capacidades de los gráficos de tortuga que explicamos aquí. Escriba varios programas
+de gráficos de tortuga para dibujar formas interesantes. Agregue otros comandos para incrementar el poder de su
+lenguaje de gráficos de tortuga.
+6.24 (El recorrido del caballo.) Uno de los juegos de intriga más interesantes para los entusiastas del ajedrez es el problema
+del Recorrido del caballo. La pregunta es: ¿puede una pieza de ajedrez llamada caballo moverse alrededor
+de un tablero y tocar cada una de las 64 posiciones, una y sólo una vez? Aquí estudiaremos este intrigante problema
+a fondo.
+El caballo tiene un movimiento en forma de L (dos posiciones en una dirección y una posición en dirección perpendicular).
+Por lo tanto, a partir de un cuadrado en el centro de un tablero, el caballo puede hacer ocho movimientos
+diferentes (numerados de 0 a 7) como muestra la figura 6.25.
+a) Dibuje un tablero de ajedrez de 8 por 8 en una hoja de papel e intente el recorrido del caballo a mano. Coloque
+un 1 en la primera posición a la que se mueva, un 2 en la segunda posición, un 3 en la tercera, etcétera. Antes
+de comenzar el recorrido, estime qué tan lejos cree usted que llegará, recuerde que el recorrido completo consiste
+en 64 movimientos. ¿Qué tan lejos llegó? ¿Fue lo que usted estimó?
+Comando Significado
+1 Pluma arriba
+2 Pluma abajo
+3 Vuelta a la derecha
+4 Vuelta a la izquierda
+5, 10 Movimiento hacia adelante 10 posiciones (u otro número diferente de 10)
+6 Despliega el arreglo de 50 por 50
+9 Fin de datos (centinela)
+Figura 6.24 Comandos de tortuga.
+Figura 6.25 Los ocho posibles movimientos del caballo
+b) Ahora, desarrollemos un programa que mueva el caballo alrededor del tablero. El tablero se representa mediante
+un arreglo con dos subíndices de 8 por 8, llamado tablero. Cada una de las posiciones se inicializa en cero. Describimos
+cada uno de los ocho posibles movimientos en términos tanto de su componente horizontal como de
+la vertical. Por ejemplo, un movimiento de tipo 0, como lo muestra la figura 6.25, consiste en moverse una posición
+a la izquierda y dos posiciones verticales hacia arriba. Los movimientos horizontales a la izquierda y los
+movimientos verticales hacia arriba se indican con números negativos. Los ochos movimientos se deben describir
+mediante dos arreglos con dos subíndices, horizontal y vertical, como sigue:
+horizontal[ 0 ] = 2
+horizontal[ 1 ] = 1
+horizontal[ 2 ] = -1
+horizontal[ 3 ] = -2
+horizontal[ 4 ] = -2
+horizontal[ 5 ] = -1
+horizontal[ 6 ] = 1
+horizontal[ 7 ] = 2
+vertical[ 0 ] = -1
+vertical[ 1 ] = -2
+vertical[ 2 ] = -2
+vertical[ 3 ] = -1
+vertical[ 4 ] = 1
+vertical[ 5 ] = 2
+vertical[ 6 ] = 2
+vertical[ 7 ] = 1
+Haga que las variables filaActual y columnaActual indiquen la fila y la columna de la posición actual del
+caballo. Para hacer un movimiento de tipo numeroMovimiento, en donde numeroMovimiento se encuentra
+entre 0 y 7, su programa utiliza las instrucciones
+filaActual += vertical[ numeroMovimiento ];
+columnaActual += horizontal[ numeroMovimiento ];
+Mantenga un contador que varíe de 1 a 64. Registre la última cuenta en cada posición a la que el caballo se mueve.
+Recuerde probar cada movimiento posible para ver si el caballo ya ha visitado dicha posición, y, por supuesto,
+pruebe en el probable movimiento que el caballo no ha pisado fuera del tablero. Escriba ahora un programa para
+mover el caballo alrededor del tablero. Ejecute el programa. ¿Cuántos movimientos hizo el caballo?
+
+c) Después de escribir y ejecutar el programa del recorrido del caballo, probablemente haya desarrollado sus propias
+ideas valiosas. Utilizaremos estas ideas para desarrollar una heurística (estrategia) para mover el caballo.
+La heurística no garantiza el éxito, pero una heurística cuidadosamente desarrollada mejora en gran medida la
+oportunidad de éxito. Probablemente usted ya observó que las posiciones externas son más difíciles que las posiciones
+cercanas al centro del tablero. De hecho, las posiciones más difíciles, o inaccesibles son las cuatro
+esquinas.
+La intuición sugiere que usted debe intentar mover primero el caballo a las posiciones más problemáticas y dejar
+pendientes aquellas a las que es más fácil acceder, de manera que cuando el tablero se congestione cerca del
+final del recorrido, habrá una mayor oportunidad de éxito.
+Debemos desarrollar una “heurística de accesibilidad”, clasificando cada una de las posiciones de acuerdo a qué
+tan accesibles son y luego mover siempre el caballo a la posición (con los movimientos en L del caballo, por
+supuesto) que son más accesibles. Etiquetamos el arreglo con dos subíndices, accesibilidad, con los
+números que indican desde cuántas posiciones es accesible una posición determinada. Sobre un tablero en blanco,
+cada posición central tiene un grado de 8, cada esquina tiene un grado 2 y las otras posiciones tienen números de
+accesibilidad 3, 4 o 6 de la siguiente manera:
+23444432
+34666643
+46888864
+46888864
+46888864
+46888864
+34666643
+23444432
+Ahora, escriba una versión del programa del recorrido del caballo, utilizando la heurística de accesibilidad. El caballo
+se puede mover en cualquier momento a la posición con el número menor de accesibilidad. En caso de un empate,
+el caballo se puede mover a cualquiera de las posiciones con empate. Por lo tanto, el recorrido puede comenzar
+en cualquiera de las cuatro esquinas. (Nota: Mientras el caballo se mueve alrededor del tablero, su programa debe
+reducir los números de accesibilidad al ocuparse más y más posiciones. De esta manera, en cualquier momento
+durante el recorrido, cada número de posición disponible permanecerá igual al número preciso de posiciones a
+partir de la cual se puede acceder a dicha posición). Ejecute esta versión de su programa. ¿Obtuvo el recorrido completo?
+Modifique ahora el programa para ejecutar 64 recorridos, Y que cada uno comience en una posición del
+tablero. ¿Cuántas rutas completas obtuvo?
+d) Escriba una versión del programa del recorrido del caballo, la cual, cuando encuentre un empate entre dos o
+más posiciones, decida cuál posición elegir, buscando aquellas posiciones que se puedan alcanzar desde las posiciones
+“empatadas”. Su programa se debe mover a la posición en la que el siguiente movimiento alcance a la
+posición con el número menor de accesibilidad.
+6.25 (Recorrido del caballo: métodos de fuerza bruta.) En el ejercicio 6.24, desarrollamos una solución para el problema
+del recorrido del caballo. El método utilizado, llamado “heurística de accesibilidad ”, genera muchas soluciones y
+se ejecuta de manera eficiente.
+Mientras se incremente de manera continua la potencia de las computadoras, seremos capaces de resolver más problemas
+con menos potencia y con algoritmos relativamente menos sofisticados. Llamemos a éste el método de la
+“fuerza bruta” para resolver un problema.
+a) Utilice la generación de números aleatorios para permitir que el caballo se desplace a lo largo del tablero (por
+supuesto, mediante sus movimientos en L) de manera aleatoria. Su programa debe ejecutar un recorrido e imprimir
+el tablero final. ¿Qué tan lejos llegó el caballo?
+b) La mayoría de las veces, el método anterior produce recorridos relativamente cortos. Ahora modifique su programa
+para intentar 1000 recorridos. Utilice un arreglo con un solo subíndice para dar seguimiento al número
+de recorridos de cada longitud. Cuando su programa termine los 1000 recorridos, deberá desplegar esta información
+en un ordenado formato tabular. ¿Cuál fue el mejor resultado?
+c) Es muy probable que la mayoría de las veces, el programa anterior le haya brindado algunos recorridos “respetables”,
+pero no recorridos completos. Ahora “suéltele la rienda” y simplemente deje que su programa se ejecute
+hasta que produzca un paso completo. (Precaución: Esta versión del programa podría ejecutarse durante
+horas en una computadora poderosa). Una vez más, mantenga una tabla con el número de recorridos para cada
+longitud, y despliegue esta tabla cuando se genere el primer recorrido completo. ¿Cuántos recorridos intentó su
+programa antes de generar un recorrido completo? ¿Cuánto tiempo se tomó?
+d) Compare la versión de la fuerza bruta del recorrido del caballo con la versión heurística de accesibilidad. ¿Cuál
+requirió un estudio más detallado del problema? ¿Cuál algoritmo fue más difícil de desarrollar? ¿Cuál requirió
+
+* * * * * * * *
+* *
+* * *
+* * **
+* * * *
+* *** *
+* *****
+* **** *
+Figura 6.26 Los 22 cuadros eliminados al colocar una reina en la esquina superior izquierda
+
+más potencia de la computadora? ¿Podríamos tener la certeza (por adelantado) de obtener un recorrido completo
+mediante el método de la fuerza bruta? Argumente las ventajas y las desventajas de solucionar el problema
+mediante la fuerza bruta en general.
+6.26 (Ocho reinas.) Otro enigma para los amantes del ajedrez es el problema de las ocho reinas, el cual dice: ¿es posible
+colocar ocho reinas en un tablero de ajedrez vacío, de tal manera que ninguna reina ataque a otra, es decir, que
+dos reinas no estén en la misma fila, en la misma columna, o a lo largo de la misma diagonal? Utilice la idea desarrollada
+en el ejercicio 6.24 para formular la heurística para resolver el problema de las ocho reinas. Ejecute su
+programa. [Pista: Es posible asignar un valor a cada cuadro del tablero, que indique cuántos cuadros de un tablero
+vacío son “eliminados” si se coloca una reina en ese cuadro. Por ejemplo, a cada una de las esquinas se le asignaría
+el valor 22, como en la figura 6.26.]
+Una vez que estos “números de eliminación” se colocan en los 64 cuadros, una heurística adecuada podría ser: coloque
+la siguiente reina en el cuadro que tenga el número de eliminación más pequeño. ¿Por qué esta estrategia es
+intuitivamente atractiva?
+6.27 (Ocho reinas: métodos de fuerza bruta.) En este ejercicio, usted desarrollará diversos métodos para resolver el problema
+de las ocho reinas que presentamos en el ejercicio 6.26.
+a) Resuelva el ejercicio de las ocho reinas, utilizando la técnica de la fuerza bruta aleatoria desarrollada en el ejercicio
+6.25.
+b) Utilice una técnica exhaustiva, es decir, intente todas las posibles combinaciones de las ocho reinas en el tablero.
+c) ¿Por qué supone que el método exhaustivo de la fuerza bruta puede no resultar apropiado para resolver el problema
+del recorrido del caballo?
+d) Compare y contraste el método de la fuerza bruta aleatoria con el de la fuerza bruta exhaustiva en general.
+6.28 (Eliminación de duplicados.) En el capítulo 12, se explora la estructura de datos árbol de búsqueda binaria de alta
+velocidad. Una característica del árbol de búsqueda binaria es que los valores duplicados se descartan cuando se
+hacen inserciones en el árbol. A esto se le conoce como eliminación de duplicados. Escriba un programa que produzca
+20 números aleatorios entre 1 y 20. El programa debe almacenar en un arreglo todos los valores no duplicados.
+Utilice el arreglo más pequeño posible para llevar a cabo esta tarea.
+6.29 (Recorrido del caballo: prueba del paseo cerrado.) En el recorrido del caballo, ocurre un recorrido completo
+cuando el caballo hace 64 movimientos, en los que toca cada esquina del tablero una sola vez. Un recorrido cerrado
+ocurre cuando el movimiento 64 se encuentra a un movimiento de distancia de donde el caballo inició su paseo.
+Modifique el programa del recorrido del caballo que escribió en el ejercicio 6.24, para probar si el recorrido ha sido
+completo, y si se trató de un paseo cerrado.
+6.30 (El cedazo de Eratóstenes.) Un entero primo es cualquier entero divisible sólo por sí mismo y por el número 1. El
+método del cedazo de Eratóstenes se utiliza para localizar números primos. Éste funciona de la siguiente manera:
+1) Crea un arreglo con todos los elementos inicializados en 1 (verdadero). Los elementos del arreglo con subíndices
+primos permanecerán como 1. Los demás elementos, en algún momento se establecerán en cero.
+2) Comienza con un subíndice 2, cada vez que se encuentra un elemento del arreglo cuyo valor es 1, repite a lo
+largo del resto del arreglo y establece en cero cada elemento cuyo subíndice sea múltiplo del subíndice para el
+elemento con valor de 1. Para un subíndice 2 del arreglo, todos los elementos que pasen de 2 y que sean múltiplos
+de 2, se establecerán en cero (subíndices 4, 6, 8, 10, etcétera); para un subíndice de 3, todos los elementos
+que pasen de 3 y que sean múltiplos de 3, se establecerán en cero (subíndices 6, 9, 12, 15, etcétera).
+Cuando este proceso termina, los elemento del arreglo que aún permanecen en 1, indican que el subíndice es un
+número primo. Estos subíndices pueden entonces desplegarse. Escriba un programa que utilice un arreglo de 1000
+elementos para determinar y desplegar los números primos entre el 2 y el 999. Ignore el elemento 0 del arreglo.
+
+6.31 (Ordenamiento por cubetas.) Un ordenamiento por cubetas comienza con un arreglo de enteros positivos con un
+solo subíndice para ser ordenados, y un arreglo de enteros con dos subíndices, con filas cuyos subíndices se encuentran
+entre el 0 y el 9, y columnas cuyos subíndices van del 0 a n1, en donde n es el número de valores del
+arreglo a ordenarse. A cada fila del arreglo con dos subíndices se le conoce como cubeta. Escriba una función
+ordenamientoCubeta que tome como argumentos un arreglo entero y el tamaño del arreglo.
+El algoritmo es el siguiente:
+1) Hace un ciclo a través del arreglo con un solo subíndice y coloca cada uno de sus valores en una fila del arreglo
+en cubetas, basándose en los valores de uno de sus dígitos. Por ejemplo, el 97 se coloca en la fila 7, el 3 se
+coloca en la fila 3 y el 100 se coloca en la fila 0.
+2) Hace un ciclo a lo largo del arreglo en cubetas, fila por fila, y copia los valores nuevamente en el arreglo original.
+El nuevo orden de los valores anteriores, en el arreglo con un solo subíndice, es 100, 3 y 97.
+3) Repite este proceso para cada posición subsiguiente de los dígitos (décimas, centésimas, milésimas, etcétera) y
+se detiene cuando el dígito que se encuentra más a la izquierda del número más grande se ha procesado.
+En la segunda pasada, el 100 se coloca en la fila 0, el 3 en la fila 0 (ya que 3 no tiene décimas) y 97 se coloca en
+la fila 9. El orden de los valores del arreglo con un solo subíndice es 100, 3, 97. En la tercera pasada, 100 se coloca
+en la fila 1, el 3 en la fila cero y el 97 en la fila cero (después del 3). Se garantiza que el ordenamiento por cubetas
+tenga ordenados adecuadamente a todos los valores, después de procesar al dígito más a la izquierda del número
+más grande. El ordenamiento por cubetas sabe que esto está hecho, cuando todos los valores se copian en la fila
+cero del arreglo con dos subíndices.
+Observe que el arreglo cubetas con dos subíndices tiene 10 veces el tamaño del arreglo entero que se está ordenando.
+Esta técnica de ordenamiento proporciona un mejor rendimiento que un ordenamiento de burbuja, pero requiere
+mucha más memoria. El ordenamiento de burbuja sólo requiere espacio para un elemento de datos adicional. El
+ordenamiento por cubetas es un ejemplo de la desventaja espacio-tiempo éste utiliza más memoria, pero se desempeña
+mejor. Esta versión del ordenamiento por cubetas requiere que se copien todos los datos nuevamente en el
+arreglo original en cada paso. Otra posibilidad es crear un segundo arreglo con dos subíndices, y repetidamente mover
+los datos entre los dos arreglos cubetas, hasta que los datos se copien en la fila cero de uno de los arreglos. La
+fila cero entonces contiene el arreglo ordenado.
+EJERCICIOS DE RECURSIVIDAD
+6.32 (Ordenamiento por selección.) Un ordenamiento por selección busca un arreglo que busca al elemento más peque-
+ño del arreglo. Después, el elemento más pequeño se intercambia por el primer elemento del arreglo. El proceso se
+repite para el subarreglo, comenzando con el segundo elemento del arreglo. Cada pasada en el arreglo da como resultado
+a un elemento que se coloca en su propia ubicación. Este ordenamiento se desempeña de manera similar al
+ordenamiento de burbuja; para un arreglo de n elementos, es necesario realizar n1 pasos, y para cada subarreglo
+deben hacerse n 1 comparaciones para encontrar el valor más pequeño. Cuando el subarreglo que se está procesando
+contiene un elemento, el arreglo esta ordenado. Escriba la función recursiva ordenamientoSeleccion,
+para desarrollar este algoritmo.
+6.33 (Palíndromos.) Un palíndromo es una cadena que dice lo mismo si se lee hacia delante que si se lee hacia atrás. Algunos
+ejemplos de palíndromos son “radar”, “ojo”, “oso”. Escriba una función recursiva pruebaPalindromo
+que devuelva 1 si la cadena almacenada en el arreglo es un palíndromo, y 0 si no lo es. La función debe ignorar los
+espacios y la puntuación en la cadena.
+6.34 (Búsqueda lineal.) Modifique el programa de la figura 6.18 para utilizar la función recursiva busquedaLineal
+para realizar una búsqueda lineal en el arreglo. La función debe recibir un arreglo entero y el tamaño del arreglo como
+sus argumentos. Si la clave de búsqueda se localiza, devuelva el subíndice del arreglo; de otro modo devuelva 1.
+6.35 (Búsqueda binaria.) Modifique el programa de la figura 6.19 para utilizar una función recursiva busquedaBinaria,
+para realizar la búsqueda binaria en el arreglo. La función debe recibir un arreglo entero y el subíndice
+inicial y el final como sus argumentos. Si la clave de búsqueda es localizada, devuelva el subíndice del arreglo; de
+otro modo devuelva 1.
+6.36 (Ocho reinas.) Modifique el programa de las ocho reinas que creó en el ejercicio 6.26, para resolver el problema
+de manera recursiva.
+6.37 (Impresión de un arreglo.) Escriba una función recursiva desplegarArreglo que tome un arreglo y el tamaño
+del arreglo como sus argumentos y que no devuelva valor alguno. La función debe detener el procesamiento y
+regresar, cuando reciba un arreglo de tamaño cero.
+
+6.38 (Impresión de una cadena al revés.) Escriba una función recursiva cadenaAlReves, que tome un arreglo de caracteres
+que contenga una cadena como un argumento, que despliegue la cadena al revés y que no devuelva valor
+alguno. La función debe detener el procesamiento y regresar, cuando encuentre el carácter de terminación nulo.
+6.39 (Cómo encontrar el valor mínimo de un arreglo.) Escriba una función recursiva minimoRecursivo, que tome
+un arreglo entero y el tamaño del arreglo como argumentos y que devuelva el elemento más pequeño del arreglo.
+La función debe detener el procesamiento y regresar, cuando reciba un arreglo de un elemento.
