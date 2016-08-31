@@ -1,0 +1,70 @@
+RESUMEN
+• Toda entrada y salida de datos se lleva a cabo por medio de flujos, es decir, secuencias de caracteres organizados en líneas.
+Cada línea consiste en cero o más caracteres y termina con el carácter de nueva línea.
+• Por lo general, el flujo estándar de entrada se conecta al teclado, y el flujo estándar de salida se conecta a la pantalla de
+la computadora.
+• A menudo, los sistemas operativos permiten a los flujos estándares de entrada y salida redireccionarse hacia otros dispositivos.
+• La cadena de control de formato de printf describe el formato en el cual aparecerán los valores de salida. La cadena
+de control de formato consta de especificadores de conversión, banderas, anchos de campos, precisiones y literales de
+carácter.
+• Los enteros se imprimen con los siguientes especificadores de conversión: d o i para enteros con signo (opcional), o para
+enteros sin signo en forma octal, u para enteros sin signo en forma decimal, y x o X para enteros sin signo en forma
+hexadecimal. Los modificadores h o l son prefijos de los especificadores anteriores para indicar un entero corto o largo,
+respectivamente.
+• Los valores de punto flotante se imprimen con los siguientes especificadores de conversión: e o E para la notación exponencial,
+f para la notación de punto flotante normal, g o G para la notación e (o E) o para la notación f. Cuando se indica
+el especificador de conversión g (o G), se utiliza el especificador de conversión e (o E) si el valor del exponente es menor
+que -4, o mayor o igual que la precisión con la que se imprime el valor.
+• La precisión para los especificadores de conversión g y G indica el máximo número de dígitos significativos a imprimir.
+• El especificador de conversión c imprime un carácter.
+• El especificador de conversión s imprime una cadena de caracteres que termina con el carácter nulo.
+• El especificador de conversión p despliega una dirección de una forma definida en la implementación (en muchos sistemas,
+utiliza la notación hexadecimal).
+• El especificador de conversión n almacena el número de caracteres ya desplegados en la instrucción printf. El argumento
+correspondiente es un apuntador a un entero.
+• El especificador de conversión %% provoca que se despliegue una literal %
+• Si el ancho del campo es mayor que la del objeto que se imprime, el objeto se justifica a la derecha de manera predeterminada.
+• Los anchos de campo pueden utilizarse con todos los especificadores de conversión.
+• La precisión que se utiliza con los especificadores de conversión indican el número mínimo de dígitos impresos. Si el valor
+contiene menos dígitos que la precisión especificada, en el valor a imprimir se colocan ceros como prefijos, hasta que el
+número de dígitos es equivalente a la precisión.
+• La precisión utilizada con los especificadores de conversión de punto flotante e, E y f indican el número de dígitos que
+aparecen después del punto decimal. La precisión utilizada con los especificadores de conversión g y G indican el número
+de dígitos significativos que aparecerán.
+• La precisión utilizada con el especificador de conversión s indica el número de caracteres a imprimir.
+• La longitud y la precisión del campo se pueden combinar, colocando el ancho del campo seguido por un punto decimal,
+seguido por la precisión, entre el porcentaje y el especificador de conversión.
+• Es posible especificar el ancho del campo y la precisión a través de expresiones enteras en la lista de argumentos que
+siguen a la cadena de control de formato. Para utilizar esta característica inserte un asterisco (*), en lugar del ancho del
+campo o de la precisión. El argumento que coincide en la lista de argumentos se evalúa y se utiliza en lugar del asterisco.
+El valor del argumento puede ser negativo para el ancho del campo, pero debe ser positivo para la precisión.
+• La bandera – justifica a la izquierda el argumento de un campo.
+• La bandera + imprime un signo más para los valores positivos, y un signo menos para los valores negativos. La bandera
+espacio imprime un espacio que precede a un valor positivo, que no se despliega con la bandera +.
+• La bandera # es prefijo de 0 para valores octales y 0x o 0X para valores hexadecimales, y fuerza la impresión del punto
+decimal para los valores de punto flotante impresos con e, E, f, g o G (por lo general, el punto decimal se despliega solamente
+si el valor contiene una parte fraccionaria).
+• La bandera 0 imprime ceros al principio del campo para un valor que no ocupa completamente el ancho del campo.
+• El formato preciso de entrada se lleva a cabo con la función scanf de la biblioteca.
+• Los enteros se introducen con scanf mediante el especificador de conversión d e i para enteros con signo (opcional),
+y o, u, x o X para enteros sin signo. Los modificadores h y l se colocan antes del especificador de conversión para introducir
+un entero short o long, respectivamente.
+• Los valores de punto flotante se introducen con scanf mediante el especificador de conversión e, E, f, g o G. Los modificadores
+l y L se colocan antes de cualquier especificador de conversión de punto flotante para indicar que el valor de
+entrada es un double o un long double, respectivamente.
+• Los caracteres se introducen con scanf con el especificador de conversión c.
+• Las cadenas se introducen con scanf con el especificador de conversión s.
+• Un conjunto de exploración colocado en una scanf explora los caracteres de entrada, y busca solamente aquellos caracteres
+que coincidan con los caracteres contenidos en el conjunto de exploración. Cuando un carácter coincide, éste se
+almacena en el arreglo de caracteres. El conjunto de exploración detiene la entrada de caracteres cuando encuentra un
+carácter no contenido en el conjunto de exploración.
+• Para crear un conjunto de exploración invertido, coloque un carácter tilde (^) dentro de los corchetes, antes de los caracteres
+de exploración. Esto provoca que los caracteres introducidos con scanf y que no aparecen en el conjunto de exploración
+se almacenen hasta que se encuentre un carácter contenido en el conjunto de exploración invertido.
+• Los valores de direcciones se introducen con scanf mediante el especificador de conversión p.
+• El especificador de conversión n almacena el número de caracteres previamente introducido por medio del scanf actual.
+El argumento correspondiente es un apuntador a int.
+• El especificador de conversión %% con scanf hace coincidir un carácter % sencillo en la entrada.
+• El carácter de supresión de asignación lee datos desde el flujo de entrada y descarta los datos.
+• En scanf, un ancho de campo se utiliza para leer un número específico de caracteres desde el flujo de entrada
+
