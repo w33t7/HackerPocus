@@ -1,0 +1,609 @@
+EJERCICIOS
+07.7 Responda a cada una de las siguientes preguntas:
+a) El operador ___________ devuelve la ubicación en memoria donde se almacena su operando.
+b) El operador ___________ devuelve el valor del objeto al cual apunta su operando.
+c) Para simular una llamada por referencia cuando pasamos a la función una variable que no es un arreglo, es necesario
+pasar a la función la ________ de la variable.
+07.8 Diga si los enunciados siguientes son verdaderos o falsos. Si son falsos, explique por qué.
+a) Dos apuntadores que apuntan hacia arreglos diferentes no pueden compararse de manera significativa.
+b) Debido a que el nombre de un arreglo es un apuntador al primer elemento del mismo arreglo, los nombres de
+arreglos deben manipularse precisamente de la misma manera que los apuntadores.
+07.9 Responda cada una de las siguientes preguntas. Suponga que los enteros unsigned se almacenan en 2 bytes y que
+la dirección inicial del arreglo en memoria es la 1002500.
+a) Defina un arreglo de tipo unsigned int, con cinco elementos, llamado valores, e inicialice los elementos
+en los cinco enteros pares de 2 a 10. Suponga que la constante simbólica TAMANIO se definió como 5.
+b) Defina el apuntador ptrY para que apunte a objetos de tipo unsigned int.
+c) Imprima los elementos del arreglo valores mediante la notación de subíndices para arreglos. Use una instrucción
+for y suponga que ya se definió la variable de control entera i.
+d) Escriba dos instrucciones separadas para asignar la dirección inicial del arreglo valores a la variable de apuntador
+ptrV.
+e) Imprima lo elementos del arreglo valores mediante la notación apuntador/desplazamiento.
+f) Imprima los elementos del arreglo valores mediante el uso de la notación apuntador/desplazamiento con el
+nombre del arreglo como apuntador.
+g) Imprima los elementos del arreglo valores mediante subíndices en el apuntador al arreglo.
+h) Haga referencia al elemento 5 del arreglo valores mediante el uso de la notación de subíndices, apuntador/
+desplazamiento con el nombre del arreglo como apuntador, notación de subíndices de apuntadores, y notación
+apuntador/desplazamiento.
+i) ¿A qué dirección hace referencia ptrV + 3? ¿Qué valor se almacena en dicha ubicación?
+j) Suponga que ptrV apunta a valores[ 4 ], ¿a qué dirección hace referencia ptrV -= 4? ¿Cuál es el valor
+que se almacena en dicha ubicación?
+7.10 Para cada una de las siguientes, escriba una sola instrucción que realice la tarea indicada. Suponga que se definieron
+las variables long integer valor1 y valor2, y que valor1 se inicializó en 200000.
+a) Defina la variable ptrL para que apunte a un objeto de tipo long.
+b) Asigne la dirección de la variable valor1 para que apunte a la variable ptrL.
+c) Imprima el valor del objeto al que apunta ptrL.
+d) Asigne a la variable valor2 el valor del objeto al que apunta ptrL.
+e) Imprima el valor de valor2.
+f) Imprima la dirección de valor1.
+g) Imprima la dirección almacenada en ptrL. ¿El valor que se imprimió es el mismo que la dirección de valor1?
+
+7.11 Realice cada una de las siguientes acciones.
+a) Escriba el encabezado de la función cero, la cual toma como parámetro el arreglo de enteros largos enterosGrandes
+y no devuelve valor alguno.
+b) Escriba el prototipo para la función del inciso a.
+c) Escriba el encabezado de la función para agrega1ySuma, la cual toma como parámetro el arreglo de enteros
+unoApequeno y devuelve un entero.
+d) Escriba el prototipo para la función del inciso c.
+Nota: los ejercicios 7.12 a 7.15 son relativamente complejos. Una vez que haya hecho estos problemas, será capaz de
+implementar los juegos de cartas más populares de manera sencilla.
+7.12 Modifique el programa de la figura 7.24 de manera que la función para repartir las cartas reparta una mano de pó-
+quer de cinco cartas. Después, escriba las siguientes funciones adicionales:
+a) Determine si la mano contiene un par.
+b) Determine si la mano contiene dos pares.
+c) Determine si la mano contiene tres de un solo tipo (por ejemplo, tres jotos).
+d) Determine si la mano contiene cuatro del mismo tipo (por ejemplo, cuatro ases).
+e) Determine si la mano contiene las cinco cartas del mismo palo.
+f) Determine si la mano contiene una directa (es decir, cinco cartas del mismo palo y con caras consecutivas).
+7.13 Utilice las funciones desarrolladas en el ejercicio 7.12 para escribir un programa que reparta dos manos de póquer
+de cinco cartas, evalúe cada mano, y determine cuál es la mejor mano.
+7.14 Modifique el programa desarrollado en el ejercicio 7.13 de manera que pueda simular al repartidor. La mano de
+cinco cartas del repartidor se da con la “cara abajo”, de manera que el jugador no las puede ver. Entonces, el programa
+debe evaluar la mano del repartidor, y basado en la calidad de la mano, el repartidor debe tirar una, dos o
+más cartas y remplazar el número de cartas tiradas en la mano original. Después, el programa debe reevaluar la mano
+del repartidor. [Precaución: ¡Éste es un problema difícil!]
+7.15 Modifique el programa desarrollado en el ejercicio 7.14 de manera que pueda manipular la mano del repartidor de
+manera automática, pero al jugador se le debe permitir decidir cuáles cartas desea remplazar. Entonces, el programa
+debe evaluar ambas manos y determinar quién gana. Utilice el nuevo programa para jugar 20 juegos contra la
+computadora. ¿Quién gana más juegos? Basado en los resultados de estos juegos, haga las modificaciones apropiadas
+para redefinir el programa de póquer (esto también es un problema difícil), Juegue 20 juegos más. ¿Sus modificaciones
+hicieron que su programa funcionara mejor?
+7.16 En el programa para barajar y repartir cartas de la figura 7.24, utilizamos de manera intencional un algoritmo ineficiente
+que tiene la posibilidad latente de un aplazamiento indefinido. En este problema, usted creará un algoritmo
+de alto rendimiento para barajar cartas que evite el aplazamiento indefinido.
+Modifique el programa de la figura 7.24 de la siguiente manera. Comience mediante la inicialización del mazo
+de cartas como lo mostramos en la figura 7.29. Modifique la función barajar para hacer un ciclo que explore
+línea por línea y columna por columna para tocar todos loes elementos del arreglo. Cada elemento debe intercambiarse
+con el elemento del arreglo seleccionado al azar. 
+
+Imprima el arreglo resultante para determinar si el mazo se barajó de manera satisfactoria (por ejemplo, como
+en la figura 7.30). Usted puede llamar a la función barajar varias veces para asegurarse que el mazo se barajó
+de manera satisfactoria.
+Observe que aunque el método en este problema mejora el algoritmo para barajar las cartas, el algoritmo para
+repartir requiere la búsqueda del arreglo mazo para la carta1, carta2, carata3, carta4, y así sucesivamente. Peor aún,
+incluso cuando el algoritmo para repartir localiza y maneja las cartas, el algoritmo continúa la búsqueda a través
+del resto del mazo. Modifique el programa de la figura 7.24 de manera que una vez que la carta se reparte, no se
+hagan más intentos para hacer coincidir el número de la carta, y que el programa proceda de inmediato a repartir
+la siguiente carta. En el capítulo 10, desarrollaremos un algoritmo para repartir que requiere solamente una operación
+por carta.
+7.17 (Simulación: la tortuga y la liebre.) En este problema, usted recreará uno de los grandes momentos de la historia,
+a saber, la clásica carrera entre la tortuga y la liebre. Usted utilizará la generación de números aleatorios para desarrollar
+una simulación de este memorable suceso.
+Nuestros competidores, comienzan la carrera en la “posición 1” de 70. La línea final se encuentra en la posición
+70. Al primer competidor en alcanzar o pasar el cuadrante 70 se le recompensará con un montón de zanahorias
+frescas y lechuga. La ruta va a lo largo de una sinuosa montaña, de manera que ocasionalmente los competidores
+se caerán.
+Existe un reloj que hace un tic por segundo. Con cada tic del reloj, su programa debe ajustar la posición de los
+animales de acuerdo con las reglas de la figura 7.31.
+Utilice variables para dar seguimiento a las posiciones de los animales (es decir, los números de las posiciones
+entre 1 y 70). Comience cada animal en la posición 1 (es decir, la “puerta inicial”). Si un animal se desliza a la
+izquierda antes de la posición 1, mueva al animal de nuevo a la posición 1.
+Genere los porcentajes en la tabla anterior mediante la producción de un entero aleatorio, i, en el rango de 1 ≤
+i ≤ 10 . Para la tortuga, realice un “paso rápido” cuando 1 ≤ i ≤ 5, un “deslizamiento” cuando 6 ≤ i ≤ 7, o un “paso
+lento cuando 8 ≤ i ≤ 10. Utilice una técnica similar para mover a la liebre.
+Para comenzar la carrera imprima
+BANG !!!!!
+Y ARRANCAN !!!!!
+
+Animal Tipo de movimiento Porcentaje del tiempo Movimiento real
+Tortuga Paso rápido 50% 3 posiciones a la derecha
+Deslizamiento 20% 6 posiciones a la izquierda
+Paso lento 30% 1 posición a la derecha
+Liebre Dormir 20% Sin movimiento
+Salto grande 20% 9 posiciones a la derecha
+Deslizamiento grande 10% 12 posiciones a la izquierda
+Salto pequeño 30% 1 posición a la derecha
+Deslizamiento pequeño 20% 2 posiciones a la izquierda
+
+Posteriormente, por cada tic del reloj (es decir, cada repetición del ciclo), imprima una línea de 70 posiciones
+que muestre la letra T en la posición de la tortuga y una letra L en la posición de la liebre. Ocasionalmente, los competidores
+caerán en la misma posición. En este caso, la tortuga muerde a la liebre y su programa debe imprimir un
+OUCH!!!!!, comenzando en dicha posición. Todas las posiciones además de la T, y de la L, o de OUCH!!!!!
+(en caso de un empate) deben estar en blanco.
+Después de que se imprima una línea, verifique si el animal ya alcanzó o pasó la posición 70. Si es así, entonces
+imprima el nombre del ganador y termine la simulación. Si la tortuga gana, imprima GANO LA TORUTUGA!!!!!
+VIVA !!!!!. Si gana la liebre, imprima Gano la Liebre. Yupi. Si ambos animales ganan en el
+mismo tic del reloj, usted puede favorecer a la tortuga (por “debajo del agua”), o puede imprimir Es un empate.
+Si ningún animal gana la carrera, ejecute de nuevo el ciclo para simular el siguiente tic del reloj. Cuando esté preparado
+para ejecutar su programa, reúna a un grupo de amigos para que vea la carrera. ¡Usted se sorprenderá por
+la manera en que su público se involucra!
+SECCIÓN ESPECIAL: CONSTRUYA SU PROPIA COMPUTADORA
+En los próximos problemas, nos alejaremos un poco de los lenguajes de programación de alto nivel. “Abriremos”
+una computadora y examinaremos su estructura interna. Nos introduciremos al lenguaje máquina y escribiremos
+varios programas en dicho lenguaje. Para hacer de esto una experiencia significativa, construiremos (a través de la
+técnica de la simulación basada en software) una computadora en la cual usted podrá ejecutar sus programas en
+lenguaje máquina.
+7.18 (Programación en lenguaje máquina.) Vamos a crear una computadora a la cual llamaremos Simpletron. Como su
+nombre lo indica, es una máquina simple, pero como veremos pronto, también es poderosa. El Simpletron ejecuta
+programas escritos en el único lenguaje que comprende de manera directa, esto es el Lenguaje Máquina de Simpletron,
+LMS.
+El Simpletron contiene un acumulador, un “registro especial” en el cual, la información se coloca antes de que
+el Simpletron utilice dicha información en los cálculos o que la examine de distintas manera. Toda la información
+en el Simpletron se maneja mediante palabras. Una palabra es un número decimal de cuatro dígitos con signo, tal
+como +3364, -1293, +0007, -0001, etcétera. El Simpletron está equipado con 100 palabras de memoria, y
+se hace referencia a estas palabras mediante su número de ubicación 00, 01, …, 99.
+Antes de ejecutar un programa LMS, debemos cargarlo o colocarlo dentro de la memoria. La primera instrucción
+de cada programa LMS siempre se coloca en la ubicación 00.
+Cada instrucción escrita en LMS ocupa una palabra en la memoria del Simpletron (y por lo tanto, las instrucciones
+son números decimales de cuatro dígitos). Asumimos que el signo de una instrucción LMS siempre es positivo,
+pero el signo de una palabra de datos puede ser positivo o negativo. Cada dirección en la memoria del Simpletron
+puede contener una instrucción, un valor de dato que el programa utiliza o un área de memoria sin utilizar (por lo
+tanto, indefinida). Los primeros dos dígitos de cada instrucción LMS representan el código de operación, el cual
+especifica la operación a realizar. Resumimos los códigos de operación de LMS en la figura 7.32.
+Código de operación Significado
+Operaciones de entrada/salida:
+#define LEE 10 Lee una palabra desde la terminal y la almacena en la ubicación de
+memoria.
+#define ESCRIBE 11 Escribe una palabra desde una ubicación específica de memoria
+hacia la terminal.
+Operaciones de carga/almacenamiento
+#define CARGA 20 Carga una palabra desde la ubicación específica de memoria hacia el
+acumulador.
+#define ALMACENA 21 Almacena una palabra desde el acumulador hacia una ubicación
+específica de memoria.
+Operaciones aritméticas:
+#define SUMA 30 Suma una palabra desde una ubicación específica de memoria a la
+palabra almacenada en el acumulador (deja el resultado en el
+acumulador).
+Figura 7.32 Códigos de operación del Lenguaje máquina Simpletron (LMS). (Parte 1 de 2.)
+
+Código de operación Significado
+#define RESTA 31 Resta una palabra desde una ubicación específica de memoria del
+acumulador (deja el resultado en el acumulador).
+#define DIVIDE 32 Divide una palabra desde una ubicación específica de memoria entre
+la palabra dentro del acumulador (deja el resultado en el acumulador).
+#define MULTIPLICA 33 Multiplica una palabra desde una ubicación específica de memoria por
+la palabra almacenada dentro del acumulador (deja el resultado en el
+acumulador).
+Operaciones de transferencia de control:
+#define SALTA 40 Salta a una ubicación específica de memoria.
+#define SALTANEG 41 Salta hacia una ubicación específica de memoria si el acumulador es
+negativo.
+#define SALTACERO 42 Salta a una ubicación específica de memoria si el acumulador es igual
+a cero.
+#define ALTO 43 Para, es decir, el programa finalizó su tarea.
+Figura 7.32 Códigos de operación del Lenguaje máquina Simpletron (LMS). (Parte 2 de 2.)
+
+Los dos últimos dígitos de una instrucción LMS son el operando, el cual es la dirección de la ubicación de memoria
+que contiene la palabra a la cual se aplica la operación. Ahora, consideremos varios ejemplos de programas en
+LMS:
+Ejemplo 1
+Ubicación Número Instrucción
+00 +1007 (Lee A)
+01 +1008 (Lee B)
+02 +2007 (Carga A)
+03 +3008 (Suma B)
+04 +2109 (Almacena C)
+05 +1109 (Escriba C)
+06 +4300 (Alto)
+07 +0000 (Variable A)
+08 +0000 (Variable B)
+09 +0000 (Resultado C)
+El programa LMS anterior lee dos números desde el teclado, y calcula e imprime la suma. La instrucción +1007
+lee el primer número desde el teclado y lo coloca dentro de la ubicación 07 (la cual se inicializa en cero). Posteriormente,
++1008 lee el siguiente número en la ubicación 08. La instrucción Carga, +2007, coloca el primer nú-
+mero dentro del acumulador, y la instrucción suma, +3008, suma el segundo número al número que se encuentra
+en el acumulador. Todas las instrucciones LMS dejan los resultados dentro del acumulador. La instrucción almacena,
++2109, coloca el resultado en la ubicación de memoria 09 desde la cual, la instrucción escribe, +1109,
+toma el número y lo imprime (como un número de cuatro dígitos decimales con signo). La instrucción alto, +4300
+termina la ejecución.
+Ejemplo 2
+Ubicación Número Instrucción
+00 +1009 (Lee A)
+01 +1010 (Lee B)
+02 +2009 (Carga A)
+03 +3110 (Resta B)
+04 +4107 (Salta a 07 si acumulador es negativo)
+
+Ejemplo 2
+Ubicación Número Instrucción
+05 +1109 (Escribe A)
+06 +4300 (Alto)
+07 +1110 (Escribe B)
+08 +4300 (Alto)
+09 +0000 (Variable A)
+10 +0000 (Variable B)
+El programa LMS anterior lee dos números desde el teclado, y determina e imprime el valor más grande. Observe el
+uso de la instrucción +4107 como la transferencia condicional de control, muy parecida a la instrucción if de C.
+Ahora escriba programas LMS para llevar a cabo cada una de las siguientes tareas.
+a) Utilice un ciclo controlado por centinela para leer 10 enteros positivos y calcular e imprimir la suma.
+b) Utilice un ciclo controlado por contador para leer siete números, algunos positivos y otros negativos, y calcule
+e imprima su promedio.
+c) Lea una serie de números y determine e imprima el número más grande. El primer número leído indica cuántos
+números se deben procesar.
+7.19 (Un simulador de computadora.) Podría parecer descabellado, pero en este problema usted va a construir su propia
+computadora. No, no va a soldar los componentes. En vez de ello, utilizará la poderosa técnica de la simulación
+basada en software para crear un modelo de software del Simpletron. No se decepcionará. Su simulador del Simpletron
+convertirá a la computadora que usted utiliza en un Simpletron, y en realidad será capaz de ejecutar, probar
+y corregir los programas LMS que escribió en el ejercicio 7.18.
+Cuando ejecute su propio simulador de Simpletron, éste debe comenzar con la impresión de:
+*** Bienvenido a Simpletron! ***
+*** Por favor, introduzca a su programa una instruccion ***
+*** a la vez (o palabra de datos). ***
+*** Yo escribire el numero de ubicacion y un ***
+*** signo de interrogacion (?). Usted escriba ***
+*** la palabra para dicha ubicacion. Escriba el ***
+*** centinela -99999 para terminar la ***
+*** introduccion de datos a su programa. ***
+Simule la memoria del Simpletron mediante un arreglo con un solo subíndice llamado memoria, con 100 elementos.
+Ahora suponga la ejecución del simulador, y permita que examinemos el diálogo mientras introducimos el programa
+del ejemplo 2 del ejercicio 7.18.
+00 ? +1009
+01 ? +1010
+02 ? +2009
+03 ? +3110
+04 ? +4107
+05 ? +1109
+06 ? +4300
+07 ? +1110
+08 ? +4300
+09 ? +0000
+10 ? +0000
+11 ? -99999
+*** Carga del programa completa ***
+*** Comienza la ejecucion del programa ***
+El programa LMS se encuentra ahora dentro del arreglo de memoria. Ahora, Simpletron ejecutará su programa. La
+ejecución comienza con la instrucción en la ubicación 00 y, como en C, continúa de manera secuencial, a menos
+que la dirijamos a otra parte del programa mediante una transferencia de control.
+Utilice la variable acumulador para representar el registro del acumulador. Utilice la variable contadorInstrucciones
+para llevar el registro de la ubicación en memoria que contiene a la instrucción que se ejecuta.
+Utilice la variable coigoOperacion para indicar la operación que se va a realizar, es decir, los dos dígitos a la
+izquierda de la palabra de instrucción. Utilice la variable operando para indicar la ubicación de memoria en
+la cual opera la instrucción actual. Además, operando son los dos dígitos a la derecha de la instrucción que se
+
+encuentra en ejecución. No ejecute instrucciones de manera directa desde la memoria. En vez de esto, transfiera la
+siguiente instrucción a ejecutarse desde la memoria hacia la variable llamada registroInstruccion. Después
+“tome” los dos dígitos a la izquierda y colóquelos dentro de la variable codigoOperacion, y “tome” los
+dos dígitos de la derecha y colóquelos dentro de operando.
+Cuando comienza la ejecución de Simpletron, se inicializan los registros especiales de la siguiente manera:
+acumulador +0000
+contadorInstrucciones +0000
+registroInstruccion +0000
+codigoOperacion +0000
+operando +0000
+Ahora, recorramos la ejecución de la primera instrucción de LMS, +1009 en la ubicación de memoria 00. A esto
+le llamamos ciclo de ejecución de la instrucción.
+El contadorInstrucciones nos indica la ubicación la siguiente instrucción a ejecutarse. Extraemos el
+contenido de dicha ubicación de memoria mediante la instrucción de C
+registroIntruccion = memoria[ contadorInstrucciones ];
+El código de operación y el operando se extraen desde el registro de instrucciones mediante las instrucciones
+codigoOperacion = registroInstruccion / 100;
+operando = registroInstruccion % 100;
+Ahora, el Simpletron debe determinar si el código de operación es en realidad un lee (versus un escribe, un carga,
+etcétera). Un switch diferencia entre las veinte operaciones de LMS.
+En la instrucción switch, el comportamiento de las distintas instrucciones LMS se simulan de la siguiente
+manera (dejamos las demás al lector):
+lee: scanf( “%d”, &memoria[ operando ] );
+carga: acumulador = memoria [ operando ];
+suma: acumulador += memoria [ operando ];
+Las distintas instrucciones para saltos: las explicaremos más adelante.
+alto: Esta instrucción imprime el mensaje
+*** Finaliza ejecución de Simpletron ***
+entonces imprime el nombre y el contenido de cada registro así como el contenido completo de la memoria. A menudo,
+a tal impresión se le llama vaciado de la computadora. Para ayudarle a programar su función de vaciado,
+REGISTROS:
+acumulador +0000
+contadorInstrucciones 00
+registroInstruccion +0000
+codigoOperacion 00
+operando 00
+MEMORIA
+0 1 2 3 45 6 789
+0 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+10 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+20 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+30 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+40 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+50 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+60 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+70 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+80 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+90 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+
+mostramos un formato de ejemplo en la figura 7.33. Observe que la ejecución del programa Simpletron mostrará los
+valores actuales de las instrucciones y los valores de los datos al momento de la terminación de la ejecución.
+Procedamos con la ejecución de la primera instrucción del programa, a saber, +1009 en la ubicación 00. Como
+lo indicamos, la instrucción switch simula esto mediante la instrucción
+scanf( “%d”, &memoria[ operando ] );
+Se debe desplegar un signo de interrogación (?) en la pantalla para indicar al usuario la entrada, antes de que
+se ejecute la instrucción scanf. Simpletron espera que el usuario escriba el valor y presione la tecla de Retorno.
+Entonces, se lee el valor en la ubicación 09.
+En este punto, termina la simulación de la primera instrucción. Todo lo que resta es preparar a Simpletron para
+que ejecute la siguiente instrucción. Ya que la instrucción que se ejecutó no era una transferencia de control, sólo
+necesitamos incrementar el contador de instrucciones de la siguiente manera:
+++contadorInstrucciones;
+Esto competa la simulación de la ejecución de la primera instrucción. El proceso completo (es decir, el ciclo de
+ejecución de la instrucción) comienza con la extracción de la siguiente instrucción que se va a ejecutar.
+Ahora examinemos cómo se simulan las instrucciones de salto (transferencia de control). Todo lo que tenemos
+que hacer es ajustar el valor del contador de instrucciones de manera apropiada. Por lo tanto, la instrucción de salto
+no condicional (40) se simula dentro de switch como
+contadorInstrucciones = operando;
+La instrucción condicional “salta si acumulador es cero” se simula como
+if ( acumulador == 0 )
+contadorInstrucciones = operando;
+En este punto, usted debe implementar su simulador Simpletron y ejecutar los programas que escribió en el ejercicio
+7.18. Puede embellecer el LMS con características adicionales y proporcionarlas a su simulador.
+Su simulador debe evaluar distintos tipos de errores. Por ejemplo, durante la carga del programa, cada número
+que escribe el usuario dentro de la memoria de Simpletron debe estar en el rango de -9999 a +9999. Su simulador
+debe utilizar un ciclo while para evaluar que cada número introducido se encuentre en este rango, y si no,
+indique al usuario que rescriba el número hasta que el usuario introduzca el número correcto.
+Durante la fase de ejecución, su simulador debe verificar distintos errores fatales, tales como intentos de dividir
+entre cero, intentos de ejecutar códigos inválidos de operación y desbordamientos del acumulador (es decir, operaciones
+aritméticas que resulten en valores mayores a +9999 o menores a -9999). Tales errores se llaman errores
+fatales. Cuando se detecta un error fatal, su simulador debe imprimir un mensaje de error como el siguiente:
+*** Intento de division entre cero ***
+*** Terminacion anormal del programa ***
+y debe imprimir un vaciado completo de memoria mediante el formato que explicamos anteriormente. Esto ayudará
+al usuario a localizar el error en el programa.
+7.20 Modifique el programa para barajar y repartir cartas de la figura 7.24, de manera que las operaciones de barajar y
+repartir se realicen dentro de la misma función (barajarYrepartir). La función debe contener una estructura
+de ciclo anidada, similar a la función barajar de la figura 7.24.
+7.21 ¿Qué hace el siguiente programa?
+1 /* ej07_21.c */
+2 /* ¿Qué hace este programa? */
+3 #include <stdio.h>
+4
+5 void misterio1( char *s1, const char *s2 ); /* prototipo */
+6
+7 int main()
+8 {
+(Parte 1 de 2.)
+
+9 char cadena1[ 80 ]; /* crea un arreglo de caracteres */
+10 char cadena2[ 80 ]; /* crea un arreglo de caracteres */
+11
+12 printf( “Introduce dos cadenas: “ );
+13 scanf( “%s%s” , cadena1, cadena2 );
+14
+15 misterio1( cadena1, cadena2 );
+16
+17 printf(“%s”, cadena1 );
+18
+19 return 0; /* indica terminación exitosa */
+20
+21 } /* fin de main */
+22
+23 /* ¿Qué hace esta función ? */
+24 void misterio1( char *s1, const char *s2 )
+25 {
+26 while ( *s1 != ‘\0’ ) {
+27 s1++;
+28 } /* fin de while */
+29
+30 for ( ; *s1 = *s2; s1++, s2++ ) {
+31 ; /* instrucción vacía */
+32 } /* fin de for */
+33
+34 } /* fin de la función misterio1 */
+(Parte 2 de 2.)
+7.22 ¿Qué hace el siguiente programa?
+1 /* ej07_22.c */
+2 /* ¿Qué hace este programa? */
+3 #include <stdio.h>
+4
+5 int misterio2( const char *s ); /* prototipo */
+6
+7 int main()
+8 {
+9 char cadena[ 80 ]; /* crea un arreglo de carateres */
+10
+11 printf( “Introduzca una cadena: “);
+12 scanf( “%s”, cadena );
+13
+14 printf( “%d\n”, misterio2( cadena ) );
+15
+16 return 0; /* indica terminación exitosa */
+17 } /* fin de main */
+18
+19 /* ¿Qué hace esta función? */
+20 int misterio2( const char *s )
+21 {
+22 int x; /* contador */
+23
+24 /* ciclo a través de la cadena */
+(Parte 1 de 2.)
+
+25 for ( x = 0; *s != ‘\0’; s++ ) {
+26 x++;
+27 } /* fin de for */
+28
+29 return x;
+30
+31 } /* fin de la función misterio2 */
+(Parte 2 de 2.)
+
+7.23 Encuentre el error en cada una de las siguientes porciones de programa. Si se puede corregir el error, explique cómo:
+a) int *numero;
+printf( “%d\n”, *numero );
+b) float *ptrReal;
+long *ptrEntero;
+ptrEntero = ptrReal;
+c) int * x, y;
+x = y;
+d) char s[] = “este es un arreglo de caracteres”;
+int cuenta;
+for ( ; *s != ‘\0’; s++)
+printf( “%c”, *s );
+e) short *ptrNum, resultado;
+void *ptrGenerico = ptrNum;
+resultado = *ptrGenerico + 7;
+f) float x = 19.34;
+float ptrX = &x;
+printf( “%f\n”, ptrX );
+g) char *s;
+printf( “%s\n”, s );
+7.24 (Quicksort.) En los ejemplos y los ejercicios del capítulo 6, explicamos las técnicas de ordenamiento por los mé-
+todos de burbuja, cubetas y selección. Ahora explicaremos la técnica recursiva de ordenamiento llamada Quicksort.
+El algoritmo básico para los valores de un arreglo con un solo subíndice es el siguiente:
+a) Paso para particionar. Tome el primer elemento del arreglo desordenado y determine su ubicación final en el
+arreglo clasificado (es decir, todos los valores a la izquierda del elemento en el arreglo son menores que el elemento,
+y todos los valores a la derecha del elemento en el arreglo son mayores que el elemento). Ahora, tenemos
+el elemento en su ubicación principal y dos subarreglos desordenados.
+b) Paso recursivo. Realiza el paso 1 en cada subarreglo desordenado.
+Cada vez que se realiza el paso 1 en un subarreglo, se coloca otro elemento en su ubicación final dentro del
+arreglo ordenado, y se crean dos arreglos desordenados. Cuando un subarreglo consiste de un solo elemento,
+éste debe clasificarse; por lo tanto, dicho elemento se encuentra en su ubicación final.
+El algoritmo básico parece bastante sencillo, ¿pero cómo determinamos la posición final del primer elemento de
+cada subarreglo? Como ejemplo, considere el siguiente conjunto de valores (el elemento en negritas es el elemento
+para la partición, éste se colocará en su ubicación final en el arreglo ordenado):
+37 2 6 4 89 8 10 12 68 45
+a) El proceso comienza por el elemento que se encuentra a la extrema derecha de arreglo, y compara cada elemento
+con 37 hasta que encuentra un elemento menor. Entonces intercambia 37 con ese elemento. El primer elemento
+menor a 37 es 12, de manera que 37 y 12 se intercambian. El nuevo arreglo es
+12 2 6 4 89 8 10 37 68 45
+El elemento 12 está en cursivas para indicar que acaba de intercambiarse con 37.
+b) Comenzando desde la izquierda del arreglo, pero después del elemento 12, compara cada elemento con 37 hasta
+encontrar un elemento mayor. Entonces, intercambia 37 y el elemento. El primer elemento mayor que 37 es
+89, de manera que 37 y 89 se intercambian. El nuevo arreglo es
+12 2 6 4 37 8 10 89 68 45
+
+c) Comenzando desde la derecha, pero antes del elemento 89, compara cada elemento con 37 hasta encontrar un
+elemento menor. Entonces, intercambia 37 y el elemento. El primer elemento menor que 37 es 10, de manera
+que 37 y 10 se intercambian. El nuevo arreglo es
+12 2 6 4 10 8 37 89 68 45
+d) Comenzando desde la izquierda, pero después del elemento 10, compara cada elemento con 37 hasta encontrar
+un elemento mayor. Entonces, intercambia 37 y el elemento. Ya no existen elementos mayores que 37, entonces
+al compararse con sí mismo, sabemos que 37 se encuentra en su posición final en el arreglo ordenado.
+Una vez que se aplica la partición al arreglo, existen dos arreglos desordenados. El subarreglo con valores menores que
+37 contiene 12, 2, 6, 4, 10 y 8. El subarreglo con los valores mayores que 37 contienen 89, 68 y 45. El ordenamiento
+continúa con la partición de ambos arreglos de la misma manera que en el arreglo original.
+Escriba la función recursiva quicksort para ordenar un arreglo con un solo subíndice. La función debe recibir
+como argumentos un arreglo de enteros, un subíndice de inicio y un subíndice final. La función partición debe
+invocarse mediante quicksort para realizar el paso para la partición.
+7.25 (Recorrido de laberintos.) La siguiente rejilla es arreglo con dos subíndices que representa un laberinto.
+# # # # # # # # # # # #
+# . . . # . . . . . . #
+. . # . # . # # # # . #
+# # # . # . . . . # . .
+# . . . . # # # . # . #
+# # # # . # . # . # . #
+# . . # . # . # . # . #
+# # . # . # . # . # . #
+# . . . . . . . . # . #
+# # # # # # . # # # . #
+# . . . . . . # . . . #
+# # # # # # # # # # # #
+Los símbolos # representan las paredes del laberinto, y los puntos (.) representan posiciones de la posible ruta a
+través del laberinto.
+Existe un algoritmo sencillo para recorrer los laberintos, que garantiza el poder encontrar la salida (asumiendo
+que existe una salida). Si no existe salida, usted llegará de nuevo a la ubicación inicial. Coloque su mano derecha
+en la pared y comience a caminar hacia delante. Nunca despegue su mano de la pared, seguirá la pared hacia la derecha.
+Mientras usted no mueva su mano de la pared, tarde o temprano llegará a la salida del laberinto. Podría existir
+una ruta más corta que la que usted tomó, pero esto le garantiza la salida del laberinto.
+Escriba una función recursiva recorreLaberinto para recorrer el laberinto. La función debe recibir como
+argumentos un arreglo de caracteres de 12 por 12, que represente al laberinto y a la ubicación inicial del laberinto.
+Mientras recorreLaberinto intenta localizar la salida del laberinto, debe colocar el carácter X en cada posición
+del arreglo en la ruta. La función debe desplegar el laberinto después de cada movimiento, de manera que el
+usuario pueda observar cómo se resuelve el laberinto.
+7.26 (Generación de laberintos al azar.) Escriba una función generadorLaberintos que tome como argumento un
+arreglo de caracteres de 12 por 12 elementos y que produzca laberintos de manera aleatoria. Además, la función
+debe proporcionar las posiciones inicial y final del laberinto. Pruebe su función recorreLaberinto del ejercicio
+7.25, utilizando laberintos generados al azar.
+7.27 (Laberintos de cualquier tamaño.) Generalice las funciones recorreLaberinto y generadorLaberintos
+de los ejercicios 7.25 y 7.26 para procesar laberintos de cualquier ancho y alto.
+7.28 (Arreglos de apuntadores a funciones.) Rescriba el programa de la figura 6.22 para utilizar una interfaz basada en
+menús. El programa debe ofrecer las cuatro opciones que aparecen a continuación:
+Elija una opcion:
+0 Imprime el arreglo de calificaciones
+1 Encuentra la calificacion minima
+2 Encuentra la calificacion maxima
+3 Imprime el promedio de todos los examenes de cada estudiante.
+4 Fin del programa
+
+Una restricción en el uso de arreglos de apuntadores a funciones es que todos los apuntadores deben tener el mismo
+tipo. Los apuntadores deben ser hacia funciones con el mismo tipo de retorno y que reciban argumentos del mismo
+tipo. Por esta razón, deben modificarse las funciones de la figura 6.22 de manera que cada una devuelva el mismo
+tipo y tome los mismos parámetros. Modifique las funciones minimo y maximo para imprimir el mínimo o máximo
+valor, y que no devuelva valor alguno. Para la opción 3, modifique la función promedio de la figura 6.22 para
+desplegar el promedio de cada estudiante (no un estudiante en especial). La función promedio no debe devolver
+valor alguno y debe tomar los mismos parámetros que imprimeArreglo, minimo y maximo. Almacene todos
+los apuntadores en las cuatro funciones dentro del arreglo procesaCalificaciones y utilice la opción elegida
+por el usuario como el subíndice dentro del arreglo para llamar a cada función.
+7.29 (Modificaciones al simulador de Simpletron.) En el ejercicio 7.19, usted escribió una simulación basada en el software
+de una computadora que ejecuta programas escritos en Lenguaje Máquina de Simpletron (LMS). En este ejercicio,
+proponemos varias modificaciones y mejoras al simulador Simpletron. En los ejercicios 12.26 y 12.27, proponemos
+la construcción de un compilador que convierta programas escritos en un lenguaje de programación de
+alto nivel (una variación de BASIC) a Lenguaje Máquina de Simpletron. Éstas son algunas de las modificaciones
+y mejoras que se podrían requerir para ejecutar programas producidos por el compilador.
+a) Extienda la memoria del simulador Simpletron para que contenga 1000 direcciones de memoria y así permitir
+al Simpletron manejar programas más grandes.
+b) Permita al simulador realizar cálculos de residuos. Esto requiere una instrucción adicional en el lenguaje Má-
+quina de Simpletron.
+c) Permita al simulador realizar cálculos de exponenciación. Esto requiere una instrucción adicional en el Lenguaje
+Máquina de Simpletron.
+d) Modifique el simulador para utilizar valores hexadecimales, en lugar de valores enteros para representar instrucciones
+en Lenguaje Máquina de Simpletron.
+e) Modifique el simulador para permitir la salida de una línea nueva. Esto requiere una instrucción adicional del
+Lenguaje Máquina de Simpletron.
+f) Modifique el simulador para poder procesar valores de punto flotante, además de los valores enteros.
+g) Modifique el simulador para manejar entrada y salida de cadenas. [Pista: Cada palabra en Simpletron puede dividirse
+en dos grupos, cada uno almacena un entero de dos dígitos. Cada entero de dos dígitos representa el
+equivalente en ASCII decimal de un carácter. Agregue una instrucción en lenguaje máquina que introduzca un
+carácter y la almacene el principio de la cadena en una ubicación específica de la memoria de Simpletron. La
+primera mitad de la palabra en dicha ubicación será una cuenta del número de caracteres en la cadena (es decir,
+la longitud de la cadena). Cada media palabra subsiguiente contiene un carácter ASCII expresado como dos
+dígitos decimales. La instrucción en lenguaje máquina convierte cada carácter en su equivalente ASCII y la
+asigna a la mitad de la palabra.]
+h) Modifique el simulador para manipular la salida de cadenas almacenadas en el formato del inciso (g). [Pista:
+Agregue una instrucción en lenguaje máquina que imprima el principio de una cadena en una ubicación específica
+de la memoria de Simpletron. La primera mitad de la palabra en dicha ubicación es la longitud de la cadena
+en caracteres. Cada mitad de palabra subsiguiente contiene un carácter ASCII representado como dos dígitos decimales.
+La instrucción en lenguaje máquina verifica la longitud e imprime la cadena mediante la traducción de
+cada número de dos dígitos en su carácter equivalente.]
+7.30 ¿Qué hace este programa?
+01 /* ej07_30.c */
+02 /* ¿Qué hace este programa? */
+03 #include <stdio.h>
+04
+05 int misterio3( const char *s1, const char *s2 ); /* prototipo */
+06
+07 int main()
+08 {
+09 char cadena1[ 80 ]; /* crea un arreglo de caracteres */
+10 char cadena2[ 80 ]; /* crea un arreglo de caracteres */
+11
+12 printf( “Introduzca dos cadenas: “ );
+13 scanf( “%s%s”, cadena1 , cadena2 );
+(Parte 1 de 2.)
+
+14
+15 printf( “El resultado es %d\n”, misterio3( cadena1, cadena2 ) );
+16
+17 return 0; /* indica terminación exitosa */
+18
+19 } /* fin de main */
+20
+21 int misterio3( const char *s1, const char *s2 )
+22 {
+23 for ( ; *s1 != ‘\0’ && *s2 != ‘\0’; s1++, s2++ ) {
+24
+25 if ( *s1 != *s2 ) {
+26 return 0;
+27 } /* fin de if */
+28
+29 } /* fin de for */
+30
+31 return 1;
+32
+33 } /* fin de la función misterio3 */
+(Parte 2 de 2.)
+
