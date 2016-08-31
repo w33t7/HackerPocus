@@ -1,0 +1,86 @@
+RESUMEN
+• En muchos sistemas de cómputo es posible direccionar la entrada y la salida de un programa.
+• La entrada se redirecciona desde la línea de comandos, usando el símbolo de redirección de entrada (<), o usando un símbolo
+de canalización (|).
+• La salida desde la línea de comandos se redirecciona por medio del símbolo de redirección de salida (>), o del símbolo
+para agregar (>>). El símbolo de redirección de salida simplemente almacena la salida del programa en un archivo, y el
+símbolo para agregar adiciona la salida al final del archivo.
+• Las macros y las definiciones del encabezado de argumentos variables stdarg.h proporcionan las capacidades necesarias
+para construir funciones con listas variables de argumentos.
+• Los puntos suspensivos en el prototipo de una función indican un número variable de argumentos.
+• El tipo va_list puede personalizarse para almacenar la información necesaria para las macros va_start, va_arg
+y va_end. Para acceder a los argumentos de una lista variable de argumentos, debe declararse un objeto de tipo va-
+_list.
+• La macro va_start se invoca antes de poder acceder a los argumentos de la lista variable de argumentos. La macro
+inicializa el objeto declarado con va_list para utilizarlo con las macros va_arg y va_end.
+• La macro va_arg se desarrolla para formar una expresión con el valor y el tipo del siguiente argumento en la lista variable
+de argumentos. Cada invocación a va_arg modifica el objeto declarado con va_list, de modo que el objeto
+apunta al siguiente argumento de la lista.
+• La macro va_end facilita un retorno normal desde una función a cuya lista variable de argumentos se hizo referencia
+mediante la macro va_start.
+• En muchos sistemas es posible pasar argumentos a main desde la línea de comandos, al incluir los parámetros int argc
+y char *argv[] dentro de la lista de parámetros de main. El parámetro argc recibe el número de argumentos de la
+línea de comandos. El parámetro argv es un arreglo de cadenas en el que se almacena la lista de argumentos real de la lí-
+nea de comandos.
+• La definición de una función debe estar contenida en un solo archivo; no puede dividirse en dos o más archivos.
+• Las variables globales deben declararse en cada archivo en donde se utilicen.
+• Los prototipos de funciones pueden extender el alcance de una función más allá del archivo en el que se definen. Esto se
+lleva a cabo al incluir el prototipo de la función en cada archivo en donde se invoque a la función, y compilando juntos
+a los archivos.
+• El especificador de clase de almacenamiento static, cuando se aplica a una variable global o a una función, evita que
+las utilice cualquier función que no esté definida dentro del mismo archivo. A esto se le llama vinculación interna. Las
+variables y las funciones globales que no son precedidas por static en sus definiciones tiene vinculación externa; se
+puede acceder a ellas desde otros archivos, si estos contienen las declaraciones apropiadas o los prototipos de las funciones.
+• Por lo general, el especificador static se utiliza con las funciones de utilidad que son llamadas sólo por funciones dentro
+de un archivo en particular. Si no se requiere una función dentro de un archivo en particular, debe reforzarse el principio
+del menor privilegio mediante el uso de static.
+• Cuando se construyen programas grandes en múltiples archivos fuente, la compilación del programa se hace tediosa, si
+al hacer los cambios pequeños se tiene que compilar todo el programa. Muchos sistemas proporcionan utilidades especiales
+que recompilan solamente el programa modificado. En los sistemas UNIX dicha utilidad se llama make. La utilidad
+make necesita un archivo llamado makefile que contiene instrucciones para compilar y enlazar el programa.
+• La función exit fuerza al programa a terminar, como si se hubiera ejecutado normalmente.
+• La función atexit registra a una función que debe invocarse cuando el programa termina de forma normal, es decir,
+cuando el programa termina al llegar al final de main, o cuando se invoca a exit.
+• La función atexit toma como argumento un apuntador a una función. Las funciones que se invocan en la terminación
+del programa no pueden tener argumentos y no pueden devolver valor alguno. Se pueden registrar hasta 32 funciones para
+su ejecución durante la terminación del programa.
+• La función exit toma un argumento. Por lo general, el argumento es la constante simbólica EXIT_SUCCESS, o la constante
+simbólica EXIT_FAILURE. Si se llama a exit con EXIT_SUCCESS, ésta devuelve el valor para la terminación
+exitosa, definido por la implementación, al ambiente de la función que hace la llamada. Si se llama a exit con EXIT_
+FAILURE, devuelve el valor de una terminación no exitosa, definido por la implementación.
+• Cuando se invoca a la función exit, se invocan todas las funciones registradas en atexit en el orden inverso en el
+que se registraron, todos los flujos asociados con el programa se vacían y se cierran, y el control regresa al ambiente del
+anfitrión. 
+• El C estándar indica que cuando se utiliza volatile para calificar a un tipo, la naturaleza de acceso a un objeto de ese
+tipo depende de la implementación.
+• C proporciona sufijos enteros y de punto flotante para especificar los tipos de constantes enteras y de punto flotante. Los
+sufijos enteros son: u o U para entero sin signo, l o L para entero largo, y ul o UL para un entero largo sin signo. Si no
+se coloca sufijo a una constante entera, el tipo se determina con el primer tipo capaz de almacenar un valor de dicho tama-
+ño (primero int, después long int, después unsigned long int). Los sufijos de punto flotante son: f o F para
+float, y l o L para long double. Una constante de punto flotante que no tiene sufijo es de tipo double.
+• C proporciona capacidades para procesar archivos binarios, pero algunos sistemas de cómputo no soportan archivos binarios.
+Si los archivos binarios no son soportados y se abre un archivo como binario, el archivo será procesado como un
+archivo de texto.
+• La función tmpfile abre temporalmente un archivo en modo “wb+”. Aunque éste es un modo para archivo binario,
+algunos sistemas procesan archivos temporales como archivos de texto. Un archivo temporal existe hasta que se cierra
+con fclose o hasta que termina el programa.
+• La biblioteca de manipulación de señales permite atrapar eventos inesperados con la función signal. Esta función recibe
+dos argumentos: un número entero de señal y un apuntador a la función de manipulación de señal.
+• Las señales también pueden generarse con la función raise y un argumento entero.
+• La biblioteca general de utilidades (stdlib.h) proporciona dos funciones para la asignación dinámica de memoria,
+calloc y realloc. Estas funciones pueden utilizarse para crear arreglos dinámicos.
+• La función calloc recibe dos argumentos, el número de elementos (nmemb) y el tamaño de cada elemento (size), e
+inicializa en cero a los elementos del arreglo. La función devuelve un apuntador a la memoria asignada, o un apuntador
+NULL si la memoria no está asignada.
+• La función realloc modifica el tamaño de un objeto asignado por una llamada previa a malloc, calloc o realloc.
+El contenido original del objeto no se modifica, debido a que la cantidad de memoria asignada es mayor que la
+cantidad asignada previamente.
+• La función realloc toma dos argumentos, un apuntador al objeto original (ptr) y el nuevo tamaño del objeto (size).
+Si ptr es NULL, realloc funciona de modo idéntico a malloc. Si tamanio es 0 y el apuntador que recibe no es
+NULL, se libera la memoria para los objetos. De lo contrario, si ptr no es NULL y tamanio es mayor que cero, realloc
+intenta asignar un nuevo bloque de memoria para el objeto. Si no puede asignarse el nuevo espacio, el objeto al que apunta
+ptr permanece sin cambio. La función realloc devuelve un apuntador a la memoria reasignada, o un apuntador NULL.
+• El resultado de la instrucción goto es un cambio en el flujo de control del programa. La ejecución del programa continúa
+en la primera instrucción después de la etiqueta especificada en la instrucción goto.
+• Una etiqueta es un apuntador seguida por dos puntos. Una etiqueta debe aparecer en la misma función que la instrucción
+goto a la que hace referencia
