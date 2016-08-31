@@ -1,0 +1,19 @@
+EJERCICIOS
+13.4 Escriba un programa que defina una macro con un argumento para calcular el volumen de una esfera. El programa
+debe calcular el volumen para esferas con radios de 1 a 10 e imprimir los resultados en formato tabular. La fórmula
+para el volumen de la esfera es:
+( 4.0 / 3 ) * π * r3
+donde π es 3.14159.
+13.5 Escriba un programa que produzca la siguiente salida:
+La suma de x y y es 13
+El programa debe definir la macro SUMA con dos argumentos, x y y, y utilizar SUMA para producir la salida.
+13.6 Escriba un programa que defina y utilice la macro MINIMO2 para determinar el más pequeño de dos valores numéricos.
+Introduzca los valores desde el teclado.
+13.7 Escriba un programa que defina y utilice la macro MINIMO3 para determinar el más pequeño de tres valores numéricos.
+La macro MINIMO3 debe utilizar la macro MINIMO2 definida en el ejercicio 13.6 para determinar el valor
+más pequeño. Introduzca los valores desde el teclado.
+13.8 Escriba un programa que defina y utilice la macro IMPRIME para imprimir un valor de cadena.
+13.9 Escriba un programa que defina y utilice la macro IMPRIMEARREGLO para imprimir un arreglo de enteros. La
+macro debe recibir como argumentos, el arreglo y el número de elementos en el arreglo.
+13.10 Escriba un programa que defina y utilice la macro SUMAARREGLO para sumar los valores de un arreglo numérico.
+La macro debe recibir como argumentos, el arreglo y el número de elementos en el arreglo.
