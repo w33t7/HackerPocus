@@ -1,0 +1,42 @@
+RESUMEN
+• Todas las directivas de preprocesador comienzan con #.
+• En una línea, solamente los caracteres blancos pueden aparecer antes de la directiva de preprocesador.
+• La directiva #include incluye una copia del archivo especificado. Si el nombre del archivo se encierra entre comillas,
+el preprocesador comienza la búsqueda del archivo en el mismo directorio en donde se encuentra el archivo a compilar.
+Si el nombre del archivo se encierra entre llaves angulares (< y >), la búsqueda se realiza de la manera definida por la
+implementación.
+• La directiva de preprocesador #define se utiliza para crear constantes simbólicas y macros.
+• Una constante simbólica es el nombre de una constante.
+• Una macro es una operación definida dentro de una directiva de preprocesador #define. Las macros pueden definirse
+con o sin argumentos.
+• El texto de reemplazo para una macro o una constante simbólica es cualquier texto restante en la línea después del identificador
+de la directiva #define. Si el texto de reemplazo de una macro o una constante simbólica es mayor que el resto
+de la línea, se coloca una diagonal invertida (\) al final de la línea, indicando que el texto de reemplazo continúa en la
+siguiente línea.
+• Las constantes simbólicas y las macros pueden descartarse por medio de la directiva de preprocesador #undef. La directiva
+de preprocesador #undef “indefine” el nombre de una constante simbólica o de una macro.
+• El alcance de una constante simbólica o de una macro comienza en su definición y termina hasta su indefinición con
+#undef, o hasta el final del archivo.
+• La compilación condicional permite al programador controlar la ejecución de las directivas de preprocesador y la compilación
+del código del programa.
+• Las directivas de preprocesador condicionales evalúan expresiones constantes enteras. Las expresiones de conversión de
+tipo, las expresiones sizeof y las constantes de enumeración no pueden evaluarse dentro de las directivas de preprocesador.
+• Cada construcción #if termina con #endif.
+• Las directivas #ifdef e #ifndef son abreviaturas de #if defined( nombre ) e #if !defined( nombre ).
+• Las construcciones condicionales de varias partes del preprocesador pueden probarse por medio de las directivas #elif
+y #else.
+• La directiva #error imprime un mensaje que depende de la implementación, el cual incluye los tokens especificados
+en la directiva.
+• La directiva #pragma provoca una acción definida en la implementación. Si la implementación no reconoce el pragma,
+lo ignora.
+• El operador # provoca que un token de texto de reemplazo se convierta en una cadena encerrada entre comillas. El operador
+# debe utilizarse en una macro con argumentos, debido a que el operando de # debe ser un argumento de la macro.
+• El operador ## concatena dos tokens. El operador ## debe tener dos operandos.
+• La directiva de preprocesador #line provoca que las líneas subsiguientes del código fuente se renumeren a partir del
+valor entero constante especificado.
+• La constante __LINE__ es el número de línea del código fuente actual (un entero). La constante __FILE__ es el nombre
+del archivo (una cadena). La constante __DATE__ es la fecha de compilación del código fuente (una cadena). La
+constante __TIME__ es la hora de compilación del código fuente (una cadena). Observe que cada una de las constantes
+simbólicas predefinidas comienza y termina con dos guiones bajos.
+• La macro assert, definida en el encabezado assert.h, evalúa el valor de una expresión. Si el valor de la expresión
+es 0 (falso), assert imprime un mensaje de error y llama a la función abort para terminar la ejecución del programa.
