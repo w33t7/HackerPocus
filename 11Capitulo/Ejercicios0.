@@ -1,0 +1,189 @@
+EJERCICIOS
+11.5 Complete los espacios en blanco:
+a) Las computadoras almacenan grandes cantidades de datos en dispositivos de almacenamiento secundario como
+.
+b) Un está compuesto por varios campos.
+c) A un campo que puede contener dígitos, letras, y espacios en blanco se le llama campo .
+d) Para facilitar la recuperación de registros específicos de un archivo, se elige un campo en cada registro como
+.
+e) La gran mayoría de la información que se almacena en la computadora se almacena en archivos .
+f) A un grupo de caracteres relacionados y que tienen un significado común se le llama .
+g) A los apuntadores de archivos para los tres archivos que se abren de manera automática cuando comienza la
+ejecución de un programa se les llama , , .
+h) La función escribe un carácter en el archivo especificado.
+i) La función escribe una línea en el archivo especificado.
+j) Por lo general, la función se utiliza para escribir datos en un archivo de acceso aleatorio.
+k) La función reubica al apuntador de posición de archivo al principio del archivo.
+11.6 Establezca si las siguientes frases son verdaderas o falsas. Si es falsa, explique por qué.
+a) Las impresionantes funciones que realizan las computadoras involucran esencialmente la manipulación de ceros
+y unos.
+b) La gente prefiere manipular bits en lugar de caracteres y campos, debido a que los bits son más compactos.
+c) La gente especifica programas y elementos de datos como caracteres; después, las computadoras manipulan y
+procesan estos caracteres como grupos de ceros y unos.
+d) El código postal de una persona es un ejemplo de un campo numérico.
+e) Por lo general, la dirección de la calle de una persona se considera un campo alfabético en las aplicaciones de
+las computadoras.
+f) Los elementos de datos procesados por la computadora forman una jerarquía de datos en la que los elementos
+se vuelven más complejos, conforme progresan de campos a caracteres, de caracteres a bits, etcétera.
+g) Una clave de registro identifica un registro que pertenece a un campo en particular.
+h) La mayoría de las empresas almacenan toda su información en un solo archivo, para facilitar su procesamiento
+en la computadora.
+i) En los programas en C, siempre se hace referencia a los archivos por medio de su nombre.
+j) Cuando un programa crea un archivo, la computadora lo retiene automáticamente para futuras referencias.
+11.7 El ejercicio 11.3 pide al lector que escriba una serie de instrucciones sencillas. En realidad, estas instrucciones forman
+el núcleo de un importante tipo de programa de procesamiento de archivos, a saber, un programa de coincidencia
+de archivos. En el procesamiento de datos comerciales, es común tener varios archivos en cada sistema. Por
+ejemplo, en un sistema de cuentas por cobrar, por lo general existe un archivo maestro que contiene la información
+detallada sobre cada cliente, tal como su nombre, su dirección, su número telefónico, su saldo, el límite de crédito,
+los términos de descuento, las condiciones del contrato y posiblemente una historia condensada de las compras
+recientes y de los pagos en efectivo.
+Conforme ocurren las transacciones (es decir, las ventas hechas y los pagos en efectivo llegan en el correo),
+éstas se almacenan dentro de un archivo. Al final de cada periodo comercial (es decir, un mes para algunas empresas,
+una semana para algunas otras y un día en otros casos), el archivo de transacciones (llamado “trans.dat”
+en el ejercicio 11.3) se aplica al archivo maestro (llamado “maesviej.dat” en el ejercicio 11.3), y de este modo
+actualiza cada registro de cuenta con las compras y los pagos. Después de la ejecución de cada una de estas actualizaciones,
+el archivo maestro se sobrescribe como un archivo nuevo (“maesnuev.dat”), el cual se utiliza para
+el siguiente periodo comercial y para comenzar de nuevo el proceso de actualización
+Los programas de coincidencia de archivos deben lidiar con ciertos problemas que no existen en los programas
+de un solo archivo. Por ejemplo, no siempre ocurre una coincidencia. Un cliente en el archivo maestro podría no
+hacer compras o pagos en efectivo durante el periodo comercial actual y, por lo tanto, no aparecerá registro alguno
+de este cliente en el archivo de transacciones. De modo similar, un cliente que hizo algunas compras o pagos en
+efectivo podría haberse mudado a esta localidad, y la empresa no tuvo la oportunidad de crear un registro maestro
+para este cliente.
+Utilice las instrucciones escritas en el ejercicio 11.3 como base para escribir un programa completo de coincidencia
+de cuentas por cobrar. Utilice el número de cuenta de cada archivo como la clave del registro, para efectos
+de coincidencia. Suponga que cada archivo es un archivo secuencial con los registros almacenados en orden creciente
+de número de cuenta.
+Cuando ocurra una coincidencia (es decir, los registros de la misma cuenta aparecen tanto en el archivo maestro
+como en el archivo de transacciones), agregue el monto en moneda del archivo de transacciones al saldo actual
+del archivo maestro y escriba el registro en “maesnuev.dat”. (Suponga que la compra se indica con montos
+positivos en el archivo de transacciones, y que los pagos se indican con montos negativos.) Cuando exista un registro
+maestro para una cuenta en particular, pero no un registro de transacción correspondiente, solamente escriba
+el registro maestro dentro de “maesnuev.dat”. Cuando exista un registro de transacción, pero no un registro
+maestro correspondiente, imprima el mensaje “El registro de transacción no coincide con el nú-
+mero de cuenta … ” (llene el número de cuenta a partir del registro de la transacción).
+11.8 Después de escribir el programa del ejercicio 11.7, escriba un programa para crear algunos datos de prueba que
+evalúe el programa del ejercicio 11.7. Utilice el siguiente ejemplo de datos de cuentas: 
+Archivo Maestro:
+Número de cuenta Nombre Saldo
+100 Alejandro Pérez 348.17
+300 María Sánchez 27.19
+500 Samuel Jiménez 0.00
+700 Susana Salcedo -14.22
+Archivo de Transacciones:
+Número de cuenta Monto
+100 027.14
+300 062.11
+400 100.56
+900 082.17
+
+11.9 Ejecute el programa del ejercicio 11.7, utilizando los datos de prueba creados en el ejercicio 11.8. Utilice el programa
+listado en la sección 11.7 para imprimir el nuevo archivo maestro. Verifique cuidadosamente los resultados.
+11.10 Es posible (en realidad común) tener varios registros de transacciones con la misma clave de registro. Esto ocurre
+debido a que un cliente en particular pudo haber hecho varias compras y pagos en efectivo durante un periodo comercial.
+Rescriba su programa de cuentas por cobrar del ejercicio 11.7 para proporcionar la posibilidad de manejar
+varios registros de transacción con la misma clave de registro. Modifique los datos de prueba del ejercicio 11.8
+para incluir los siguientes registros de transacciones adicionales:
+
+Número de cuenta Monto
+300 83.89
+700 80.78
+700 01.53
+
+11.11 Escriba instrucciones que realicen cada una de las siguientes tareas. Suponga que se definió la estructura
+struct persona {
+char apellido[ 15 ];
+char nombre[ 15 ];
+char edad[ 4 ];
+};
+y que el archivo ya está abierto para escritura.
+a) Inicialice el archivo “nomedad.dat” de manera que existan 100 registros con apellido = “sin-asignar”,
+nombre= “” y edad=“0”.
+b) Introduzca 10 apellidos, nombres y edades, y escríbalos en el archivo.
+c) Actualice un registro; si no existe información en el registro, indique al usuario que “No hay información”.
+d) Elimine un registro que tenga información, por medio de la reinicialización de dicho registro en particular.
+11.12 Usted es el dueño de una tienda de herramientas y necesita mantener un inventario que le pueda decir cuáles herramientas
+tiene, cuántas tiene y el costo de cada una. Escriba un programa que inicialice el archivo “herram.dat”
+con 100 registros vacíos, que le permita introducir los datos relacionados con cada herramienta, que le permita listar
+todas sus herramientas, que le permita eliminar un registro de una herramienta que ya no tiene, y que le permita
+actualizar cualquier información en el archivo. El número de identificación de cada herramienta debe ser su número
+de registro. Utilice la siguiente información para comenzar su archivo:
+# Registro Nombre de la Herramienta Cantidad Costo
+03 Lijadora eléctrica 007 57.98
+17 Martillo 076 11.99
+24 Guía de serrucho 021 11.00
+39 Podadora 003 79.50
+56 Sierra mecánica 018 99.99
+68 Destornillador 106 06.99
+77 Mazo 011 21.50
+83 Llave inglesa 034 07.50
+11.13 Generador de números telefónicos con palabras. Los números telefónicos estándares contienen dígitos de 0 a 9.
+Los números 2 a 9 contienen, cada uno, tres letras asociadas, como indica la siguiente tabla
+
+Dígito Letra
+2 A B C
+3 D E F
+4 G H I
+5 J K L
+6 M N O
+7 P R S
+8 T U V
+9 W X Z
+A mucha gente le parece difícil memorizar los números telefónicos, de modo que utilizan la correspondencia
+entre los dígitos y las letras para desarrollar palabras de siete letras que corresponden a sus números telefónicos.
+Por ejemplo, una persona cuyo número telefónico es 686-2377 podría utilizar la correspondencia que indica la tabla
+anterior para desarrollar la palabra de siete letras “NUMEROS”.
+
+Con frecuencia, las empresas intentan obtener números telefónicos que sean fáciles de recordar por sus clientes.
+Si una empresa puede anunciar una palabra simple para que los clientes la marquen, entonces sin duda alguna,
+la empresa recibirá unas cuantas llamadas más.
+Cada palabra de siete letras corresponde exactamente a un número telefónico de siete números. El restaurante
+que desea incrementar sus pedidos a domicilio seguramente podría hacer eso con el número 553-8356 (es decir,
+“LLEVELO”).
+Cada número telefónico de siete dígitos corresponde a muchas palabras de siete letras. Desafortunadamente, la
+mayoría de éstas representan solamente yuxtaposiciones irreconocibles de letras. Sin embargo, es posible que el
+dueño de una barbería se sintiera contento de saber que el número telefónico de su negocio, 222-3556, corresponde
+a “CABELLO”. El dueño de una tienda de licores sin duda estaría encantado de saber que el teléfono de su negocio,
+542-6737, corresponde a “LICORES”. Un veterinario cuyo teléfono fuera 627-2682, estaría encantado de que
+corresponde a “MASCOTA”.
+Escriba un programa en C que, dado un número de siete dígitos, escriba en un archivo cada posible palabra de
+siete letras que corresponda al número. Existen 2187 (3 a la séptima potencia) de tales palabras. Evite los números
+telefónicos con los dígitos 0 y 1.
+11.14 Si usted tiene un diccionario computarizado, modifique el programa que escribió en el ejercicio 11.13 para buscar
+las palabras en el diccionario. Algunas combinaciones de siete letras creadas por este programa consisten en dos o
+más palabras (el número telefónico 333-4337 produce “ELLIDER”).
+11.15 Modifique el ejemplo de la figura 8.14 para utilizar las funciones fgetc y fputs, en lugar de getchar y puts.
+El programa debe dar al usuario la opción de leer desde la entrada estándar, y de escribir en la salida estándar, o de
+leer desde un archivo específico y de escribir en un archivo específico. Si el usuario elige la segunda opción, haga
+que el usuario introduzca los nombres del archivo para la entrada y para la salida.
+11.16 Escriba un programa que utilice el operador sizeof para determinar los tamaños en bytes de diferentes tipos de datos
+en el sistema de su computadora. Escriba los resultados en el archivo “tamaniodatos.dat”, para que más tarde
+pueda imprimir los resultados. El formato de los resultados en el archivo deben aparecer de la siguiente manera
+
+Tipo de dato Tamanio
+char 1
+unsigned char 1
+short int 2
+unsigned short int 2
+int 4
+unsigned int 4
+long int 4
+unsigned long int 4
+float 4
+double 8
+long double 16
+
+[Nota: Los tamaños correspondientes al tipo de dato, en su computadora pueden ser diferentes a los que listamos
+arriba.]
+11.17 En el ejercicio 7.19 escribió una simulación de software de una computadora que utilizaba un lenguaje máquina especial,
+llamado Lenguaje Máquina Simpletron (LMS). En la simulación, cada vez que quería ejecutar un programa
+en LMS, usted introducía el programa desde el teclado. Si cometió un error mientras escribía el programa en
+LMS, el simulador se reiniciaba y el código en SML se reintroducía. Sería bueno poder leer el programa en LMS
+desde un archivo, en lugar de escribirlo cada vez. Esto reduciría los errores y el tiempo para preparar la ejecución
+de programas en LMS.
+a) Modifique el simulador que escribió en el ejercicio 7.19, para que lea programas en LMS desde un archivo especificado
+por el usuario desde el teclado.
+b) Después de que se ejecuta el Simpletron, éste despliega en la pantalla el contenido de sus registros. Sería bueno
+capturar la salida en un archivo; modifique el simulador para que éste escriba su salida en un archivo, además
+de desplegarla en la pantalla.
+
