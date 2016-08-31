@@ -1,0 +1,68 @@
+RESUMEN
+• Los apuntadores son variables que contienen como sus valores las direcciones de otras variables.
+• Los apuntadores deben definirse antes de utilizarlos.
+• La definición
+• int *ptr;
+• define a ptr como un apuntador a un objeto de tipo int y se lee, “ptr es un apuntador a un int”. Aquí, el * se utiliza
+para indicar que la variable es un apuntador.
+• Existen tres valores que pueden utilizarse para inicializar un apuntador: 0, NULL, o una dirección. Inicializar un apuntador
+en 0, o inicializar el mismo apuntador en NULL es lo mismo.
+• El único entero que puede asignarse a un apuntador es 0.
+• El operador de dirección (&) devuelve la dirección del operando.
+• El operando del operador de dirección debe ser una variable; el operador de dirección no puede aplicarse a constantes,
+expresiones, o a variables declaradas con la clase de almacenamiento register.
+• El operador *, conocido como operador de indirección o desreferencia, devuelve el valor de memoria del objeto al cual
+apunta su operando. A esto se le llama desreferenciar un apuntador.
+• Cuando llamamos a una función con un argumento que queremos que la función modifique, pasamos la dirección del argumento.
+Después, la función que se invoca utiliza el operador de indirección (*) para modificar el valor del argumento
+de la función que se invocó.
+• Una función que recibe una dirección como argumento debe incluir un apuntador a su parámetro formal correspondiente
+• No es necesario incluir los nombres de los apuntadores en el prototipo de la función; sólo es necesario incluir el tipo de
+los apuntadores. Los nombres de los apuntadores pueden incluirse por razones de documentación, pero el compilador los
+ignora.
+• El calificador const permite al programador informar al compilador que no se puede modificar el valor de una variable
+en particular.
+• Si se intenta modificar un valor declarado como const, el compilador lo atrapa y despliega un mensaje de error o de
+advertencia, dependiendo del compilador en particular.
+• Existen cuatro maneras de pasar un apuntador a una función: un apuntador no constante a un dato no constante, un apuntador
+constante a un dato no constante, un apuntador no constante a un dato constante y un apuntador constante a un dato
+constante.
+• Los arreglos se pasan por referencia de manera automática, debido a que el valor del nombre del arreglo es la dirección
+del mismo arreglo.
+• Para pasar por referencia un solo elemento de un arreglo a una función, debe pasarse la dirección específica del elemento
+del arreglo.
+• C proporciona el operador unario especial sizeof para determinar el tamaño en bytes de un arreglo (o cualquier otro
+tipo de dato), en tiempo de compilación.
+• Cuando se aplica el operador sizeof al nombre de un arreglo, éste devuelve un entero que representa el número total
+de bytes del arreglo.
+• El operador sizeof puede aplicarse a cualquier nombre de variable, tipo o constante.
+• El tipo size_t es un tipo definido en el encabezado (<stddef.h>) como el tipo integral (unsigned o unsigned
+long) del valor devuelto por el operador sizeof.
+• Las operaciones aritméticas que pueden aplicarse a los apuntadores son: incremento de un apuntador (++), decremento de un
+apuntador (--), suma (+ o +=) de un apuntador y un entero, resta ( o =) de un apuntador a un entero, y la resta de
+un apuntado a otro.
+• Cuando se suma o se resta un entero a un apuntador, éste se incrementa o decrementa el número de veces enteras del tamaño
+del objeto al cual apunta.
+• Las operaciones aritméticas con apuntadores sólo pueden realizarse en porciones contiguas de memoria, tales como arreglos.
+Todos los elementos de un arreglo se almacenan en espacios contiguos de memoria.
+• Cuando se aplica la aritmética de apuntadores sobre un arreglo de carácteres, los resultados son como en la aritmética
+normal, debido a que cada carácter se almacena en un byte de memoria.
+• Los apuntadores pueden asignarse uno a otro, si ambos son del mismo tipo. La excepción a esto es un apuntador a void,
+el cual es un tipo genérico de apuntador que puede apuntar a datos de cualquier tipo. A los apuntadores a void se les
+pueden asignar apuntadores de otros tipos y pueden asignarse a apuntadores de otros tipos sin una conversión.
+• No se debe desreferenciar un apuntador a void.
+• Los apuntadores pueden compararse por medio de los operadores de igualdad y de relación. Por lo general, la comparación
+de apuntadores es valiosa sólo si apuntan a miembros del mismo arreglo.
+• A los apuntadores se les puede asignar subíndices de la misma manera que a los nombres de arreglos.
+• Un nombre de arreglo sin un subíndice es un apuntador al primer elemento del arreglo.
+• En la notación apuntador/desplazamiento, el desplazamiento hace lo mismo que el subíndice de un arreglo.
+• Todas las expresiones con arreglos con subíndices pueden escribirse por medio de un apuntador y un desplazamiento, por
+medio del mismo nombre de arreglo como un apuntador, o por medio de un apuntador separado que apunta al arreglo.
+• El nombre de un arreglo es un apuntador constante que apunta siempre a la misma posición de memoria. Los nombres
+de arreglo no pueden modificarse como los apuntadores.
+• Es posible tener arreglos de apuntadores.
+• Es posible tener apuntadores a funciones.
+• Un apuntador a una función es la dirección en donde reside el código de la función.
+• Los apuntadores a funciones pueden pasarse como funciones, devolverse como funciones, almacenarse en arreglos y asignarse
+a otros apuntadores.
+• Un uso común de los apuntadores a funciones es en los llamados sistemas basados en menús.
