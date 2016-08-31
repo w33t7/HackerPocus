@@ -1,0 +1,860 @@
+EJERCICIOS
+12.6 Escriba un programa que concatene dos listas ligadas de caracteres. El programa debe incluir la función concatenar
+que tome como argumentos apuntadores a ambas listas, y que concatene la segunda lista a la primera.
+12.7 Escriba un programa que mezcle dos listas ordenadas de enteros en una sola lista ordenada de enteros. La función
+mezclar debe recibir apuntadores al primer nodo de cada lista a mezclar, y debe devolver un apuntador al primer
+nodo de la lista mezclada.
+12.8 Escriba un programa que inserte en orden 25 enteros al azar, del 0 al 100, en una lista ligada. El programa debe calcular
+la suma de los elementos y el promedio en punto flotante de ellos.
+12.9 Escriba un programa que genere una lista ligada de 10 caracteres, y que después genere una copia de la lista en orden
+inverso.
+12.10 Escriba un programa que introduzca una línea de texto, y que después utilice una pila para imprimir dicha línea en
+orden inverso.
+12.11 Escriba un programa que utilice una pila para determinar si una cadena es un palíndromo (es decir, que la cadena diga
+exactamente lo mismo si se lee hacia adelante o hacia atrás). El programa debe ignorar los espacios y la puntuación.
+12.12 Los compiladores utilizan las pilas para ayudar en el proceso de evaluación de expresiones y en la generación de
+código en lenguaje máquina. En éste y en el siguiente ejercicio, investigaremos cómo es que los compiladores evalúan
+expresiones aritméticas que sólo constan de constantes, operadores y paréntesis.
+Los humanos por lo general escriben expresiones como 3+4 y 7/9, en las que el operador + o / (en este
+caso) se escriben entre los operandos; a esto se le conoce como notación infijo. Las computadoras “prefieren” la
+notación postfijo, en la que el operador se escribe a la derecha de sus dos operandos. Las expresiones infijo anteriores
+aparecerían en notación postfijo como 34+ y 79/, respectivamente.
+Para evaluar una expresión infijo compleja, un compilador primero convertiría la expresión a notación postfijo,
+y evaluaría ésta versión de la expresión. Cada uno de estos algoritmos requiere sólo una pasada de la expresión de
+izquierda a derecha. Cada algoritmo utiliza una pila para dar soporte a su operación, y en cada uno se utiliza una
+pila para un propósito diferente.
+En este ejercicio, usted escribirá una versión del algoritmo de conversión de infijo a postfijo. En el siguiente,
+usted escribirá una versión del algoritmo de evaluación de la expresión postfijo.
+Escriba un programa que convierta una expresión aritmética ordinaria en notación infijo con enteros de un
+solo dígito como la siguiente (suponga que se introduce una expresión válida)
+(6 + 2) * 5 – 8 / 4
+a una expresión postfijo. La versión postfijo de la expresión infijo anterior es
+6 2 + 5 * 8 4 / -
+El programa debe leer la expresión en un arreglo de caracteres llamado infijo, y utilizar las versiones modificadas
+de las funciones pila implementadas en este capítulo, para ayudar a generar la expresión postfijo en el arreglo
+de caracteres llamado postfijo. El algoritmo para crear una expresión postfijo es el siguiente:
+1) Meter un paréntesis izquierdo ‘(’ en la pila.
+2) Agregar un paréntesis derecho ‘)’ al final de infijo.
+3) Mientras la pila no esté vacía, leer infijo de izquierda a derecha y hacer lo siguiente:
+Si el carácter actual en infijo es un dígito, cópialo al siguiente elemento de postfijo.
+Si el carácter actual en infijo es un paréntesis izquierdo, mételo en la pila.
+Si el carácter actual en infijo es un operador,
+Saca los operadores (si hay alguno) de la cima de la pila, mientras tengan una precedencia mayor
+o igual que la del operador actual, e inserta en postfijo los operadores sacados.
+Mete el carácter actual de infijo en la pila.
+Si el carácter actual en infijo es un paréntesis derecho
+Saca los operadores de la cima de la pila e insértalos en postfijo, hasta que haya un paréntesis
+izquierdo en la cima de la pila.
+Saca (y descarta) el paréntesis izquierdo de la pila.
+Las siguientes operaciones aritméticas se permiten en una expresión:
++ suma
+- resta
+* multiplicación
+/ división
+^ exponenciación
+% módulo
+La pila debe mantenerse con las siguientes declaraciones:
+struct nodoPila {
+char dato;
+struct nodoPila *ptrSiguiente;
+};
+typedef struct nodoPila NodoPila;
+typedef NodoPila *ptrNodoPila;
+
+El programa debe constar de una función main y otras ocho funciones con los siguientes encabezados de función:
+void convierteAPostfijo( char infijo[ ], char postfijo[ ] )
+Convierte la expresión infijo en notación postfijo.
+int esOperador( char c )
+Determina si c es un operador.
+int precedencia( char operador1, char operador2 )
+Determina si la precedencia del operador1 es menor, igual o mayor que la precedencia del operador2. La
+función devuelve -1, 0 y 1, respectivamente.
+void empujar( ptrNodoPila *ptrCima, char valor )
+Mete un valor a la pila.
+char sacar( ptrNodoPila *ptrCima)
+Saca un valor de la pila.
+char cimaPila( ptrNodoPila ptrCima)
+Devuelve el valor en la cima de la pila, sin sacarlo de ella.
+int estaVacia( ptrNodoPila ptrCima )
+Determina si la pila está vacía.
+void imprimePila( ptrNodoPila ptrCima )
+Imprime la pila.
+12.13 Escriba un programa que evalúe una expresión postfijo (suponga que es válida) como:
+6 2 + 5 * 8 4 / -
+El programa debe leer una expresión postfijo que conste de dígitos y operadores en un arreglo de caracteres. Por
+medio de versiones modificadas de funciones pila implementadas en este capítulo, el programa debe explorar la expresión
+y evaluarla. El algoritmo es el siguiente:
+1) Agregar el carácter nulo (‘\0’) al final de la expresión postfijo. Cuando se encuentre el carácter nulo, no se
+necesitará mayor procesamiento.
+2) Mientras no se encuentre el ‘\0’, lee la expresión de izquierda a derecha.
+Si el carácter actual es un dígito,
+Mete su valor entero en la pila (el valor entero de un dígito carácter es su valor en el conjunto de
+caracteres de la computadora, menos el valor de ‘\0’ en el conjunto de caracteres de la
+computadora).
+De lo contrario, si el carácter actual es un operador,
+Saca los dos elementos de la cima de la pila hacia las variables x y y.
+Calcula y operador x.
+Mete el resultado del cálculo en la pila.
+3) Cuando se encuentre el carácter nulo en la expresión, saca el valor de la cima de la pila. Éste es el resultado de
+la expresión postfijo.
+[Nota: En el paso 2) anterior, si el operador es ‘\’, la cima de la pila es 2, y el siguiente elemento de la pila es 8, después
+saca 2 hacia x, saca 8 hacia y, evalúa 8/2, y mete el resultado, 4, de regreso a la pila. Esta nota también aplica para el
+operador ‘-’.] Las operaciones aritméticas permitidas en una expresión son:
++ suma
+ resta
+* multiplicación
+/ división
+^ exponenciación
+% módulo]
+
+La pila debe mantenerse con las siguientes declaraciones:
+struct nodoPila {
+int dato;
+struct nodoPila *ptrSiguiente;
+};
+typedef struct nodoPiloa NodoPila;
+typedef NodoPila *ptrNodoPila;
+El programa debe constar de una función main y otras seis instrucciones con los siguientes encabezados de función:
+int evaluaExpresionPostfijo( char *expr )
+Evalúa la expresión postfijo.
+int calcula( int op1, int op2, char operador )
+Evalúa la expresión op1 operador op2.
+void empujar( ptrNodoPila *ptrCima, int valor )
+Mete un valor a la pila.
+int sacar( ptrNodoPila *ptrCima )
+Saca un valor de la pila.
+int estaVacia( ptrNodoPila ptrCima )
+Determina si la pila está vacía.
+void imprimePila( ptrNodoPila ptrCima )
+Imprime la pila.
+12.14 Modifique el programa evaluador de expresiones postfijo correspondiente al ejercicio 12.13, para que pueda procesar
+operandos enteros mayores que 9.
+12.15 (Simulación de un supermercado.) Escriba un programa que simule una fila para pagar en un supermercado. La fila
+es una cola. Los clientes llegan en intervalos enteros aleatorios de 1 a 4 minutos. Obviamente, el flujo de llegada
+debe estar equilibrado. Si el promedio del flujo de llegada es mayor que el flujo promedio de servicio, la cola crecerá
+infinitamente. Incluso con flujos equilibrados, la aleatoriedad puede ocasionar filas largas. Ejecute la simulación
+del supermercado para 12 horas diarias (720 minutos), por medio del siguiente algoritmo.
+1) Elija un entero al azar entre 1 y 4 para determinar el minuto en el que llegó el primer cliente.
+2) En el tiempo de llegada del primer cliente:
+Determine el tiempo de atención al cliente (un entero al azar entre 1 y 4);
+Comience a atender al cliente;
+Programe el tiempo de llegada del siguiente cliente (un entero al azar entre 1 y 4, sumado al tiempo actual).
+3) Para cada minuto del día:
+Si el siguiente cliente llega,
+Decirlo así;
+Coloque al cliente en la cola;
+Programe el tiempo de llegada del siguiente cliente;
+Si la atención concluyó para el último cliente;
+Decirlo así;
+Saque de la cola al siguiente cliente que atenderá;
+Determine el tiempo en el que se concluyó la atención al cliente (un entero al azar entre 1 y 4,
+sumado al tiempo actual).
+Ahora ejecute su simulación para 720 minutos, y responda las siguientes preguntas:
+a) ¿Cuál es el máximo número de clientes en la cola, en cualquier momento?
+b) ¿Cuál es la espera más larga que un cliente experimenta?
+c) ¿Qué ocurre si el intervalo de llegada se modifica de 1 a 4 minutos a 1 a 3 minutos?
+12.16 Modifique el programa de la figura 12.19 para permitir que el árbol binario contenga valores duplicados.
+12.17 Escriba un programa basado en el programa de la figura 12.19 que introduzca una línea de texto, que separe en tokens
+un enunciado, que inserte las palabras en un árbol binario de búsqueda, y que imprima los recorridos inorden,
+en preorden y en postorden del árbol.
+
+[Pista: Lea la línea de texto en un arreglo. Utilice strtok para separar en tokens el texto. Cuando se encuentre
+un token, genere un nuevo nodo para el árbol, asigne el apuntador devuelto por strtok al miembro cadena del
+nuevo nodo, e inserte el nodo en el árbol.]
+12.18 En este capítulo, vimos que la eliminación de duplicados es directa, cuando se crea un árbol binario de búsqueda.
+Describa cómo realizaría una eliminación de duplicados, usando solamente un arreglo con un solo subíndice. Compare
+el rendimiento de la eliminación de duplicados basada en arreglos, con el rendimiento de la eliminación de duplicados
+basada en árboles binarios de búsqueda.
+12.19 Escriba una función llamada profundo, que reciba un árbol binario y que determine cuántos niveles tiene.
+12.20 (Impresión recursiva de una lista en orden inverso.) Escriba una función imprimeListaInversa, que recursivamente
+despliegue los elementos de una lista en orden inverso. Utilice su función en un programa de prueba que
+genere una lista ordenada de enteros y que imprima la lista en orden inverso.
+12.21 (Búsqueda recursiva en una lista.) Escriba una función buscaLista que recursivamente busque un valor en una
+lista ligada. La función debe devolver un apuntador hacia el valor, si es que lo encuentra; de lo contrario, debe
+devolver NULL. Utilice su función en un programa de prueba que genere una lista de enteros. El programa debe indicar
+al usuario que introduzca un valor a localizar en la lista.
+12.22 (Eliminación en un árbol binario.) En este ejercicio, explicamos la eliminación de elementos de árboles binarios
+de búsqueda. El algoritmo de eliminación no es tan directo como el de inserción. Existen tres casos que podemos
+encontrar cuando eliminamos un elemento: el elemento se encuentra en un nodo hoja (es decir, no tiene hijos); el
+elemento se encuentra en un nodo que tiene un solo hijo; o el elemento se encuentra en un nodo que tiene dos hijos.
+Si el elemento a eliminar se encuentra en un nodo hoja, el nodo se elimina y el apuntador del nodo padre se establece
+en NULL.
+Si el elemento a eliminar se encuentra en un nodo con un hijo, el apuntador del nodo padre se establece para
+que apunte al nodo hijo, y el nodo que contiene el dato se elimina. Esto ocasiona que el nodo hijo tome el lugar del
+nodo eliminado del árbol.
+El último caso es el más difícil. Cuando se elimina un nodo con dos hijos, otro nodo debe ocupar su lugar. Sin
+embargo, el apuntador del nodo padre no puede simplemente asignarse para que apunte a uno de los hijos del nodo
+a eliminar. En la mayoría de los casos, el árbol binario de búsqueda resultante no se apegará a las siguientes características
+de los árboles binarios de búsqueda: los valores de cualquier subárbol izquierdo son menores que el
+valor del nodo padre, y los valores de cualquier subárbol derecho son mayores que el valor del nodo padre.
+¿Qué nodo se utiliza como nodo de reemplazo para mantener estas características? Ya sea el nodo que contenga
+el valor más grande del árbol, que sea menor que el valor del nodo que se está eliminando, o el nodo que contenga
+el valor más pequeño del árbol, que sea mayor que el valor del nodo que se está eliminando. Consideremos
+el nodo con el valor más pequeño. En un árbol binario de búsqueda, el valor más grande, menor que el valor de un
+nodo padre se localiza en el subárbol izquierdo de éste, y se garantiza que se encuentre en el nodo más a la derecha
+del subárbol. Este nodo se localiza recorriendo hacia la derecha el subárbol izquierdo, hasta que el apuntador
+hacia el hijo derecho del nodo actual sea NULL. Ahora estamos apuntando hacia el nodo de reemplazo, el cual es
+un nodo hoja o un nodo con un solo hijo a su izquierda. Si el nodo de reemplazo es un nodo hoja, los pasos para
+realizar la eliminación son los siguientes:
+1) Almacenar el apuntador hacia el nodo a eliminar, en una variable apuntador temporal (este apuntador se utiliza
+para eliminar la memoria asignada dinámicamente).
+2) Establecer el apuntador del padre del nodo a eliminar, para que apunte hacia el nodo de reemplazo.
+3) Establezca en nulo al apuntador del padre del nodo de reemplazo.
+4) Establecer el apuntador hacia el subárbol derecho del nodo de reemplazo, para que apunte hacia el subárbol
+derecho del nodo a eliminar.
+5) Eliminar el nodo al que apunta la variable apuntador temporal.
+Los pasos para la eliminación de un nodo de reemplazo con un hijo izquierdo son similares a los correspondientes
+a los nodos de reemplazo sin hijos, pero el algoritmo también debe mover el hijo hacia la posición del nodo
+de reemplazo. Si el nodo de reemplazo es uno con un hijo izquierdo, los pasos para realizar la eliminación son
+los siguientes:
+1) Almacenar el apuntador hacia el nodo a eliminar, en una variable apuntador temporal.
+2) Establecer el apuntador del padre del nodo a eliminar, para que apunte hacia el nodo de reemplazo.
+3) Establecer el apuntador del padre del nodo de reemplazo, para que apunte hacia el hijo izquierdo del nodo
+de reemplazo.
+
+4) Establecer el apuntador del subárbol derecho del nodo de reemplazo, para que apunte hacia el subárbol derecho
+del nodo a eliminar.
+5) Eliminar el nodo al que apunta la variable apuntador temporal.
+Escriba una función eliminarNodo que tome como argumentos el apuntador hacia el nodo raíz del árbol y
+el valor a eliminar. La función debe localizar en el árbol el nodo que contenga el valor a eliminar, y utilizar los algoritmos
+que explicamos aquí para eliminar el nodo. Si el valor no se encuentra en el árbol, la función debe imprimir
+un mensaje que indique si se eliminó o no el valor. Modifique el programa de la figura 12.19 para utilizar esta
+función. Después de eliminar un elemento, llame a las funciones de recorrido inorden, preorden y postorden
+para confirmar que la operación de eliminación se llevó a cabo correctamente.
+12.23 (Búsqueda en un árbol binario.) Escriba una función busquedaArbolBinario que intente localizar un valor
+especificado en un árbol binario de búsqueda. La función debe tomar como argumentos un apuntador al nodo raíz
+del árbol binario y una clave de búsqueda a localizar. Si se encuentra el nodo con la clave de búsqueda, la función
+debe devolver un apuntador hacia ese nodo; de lo contrario, la función debe devolver un apuntador NULL.
+12.24 (Recorrido de un árbol binario en orden de niveles.) El programa de la figura 12.19 mostró tres métodos para recorrer
+un árbol binario: inorden, en preorden y en postorden. Este ejercicio presenta el recorrido en orden de niveles
+de un árbol binario, en el que los valores de los nodos se imprimen nivel por nivel, comenzando en el nivel del
+nodo raíz. Los nodos de cada nivel se imprimen de izquierda a derecha. El recorrido en orden de niveles no es un
+algoritmo recursivo. Éste utiliza la estructura de datos cola para controlar la salida de los nodos. El algoritmo es el
+siguiente:
+1) Insertar en la cola el nodo raíz.
+2) Mientras haya nodos a la izquierda de la cola,
+Obtener el siguiente nodo de la cola
+Imprimir el valor del nodo
+Si el apuntador hacia el hijo izquierdo del nodo no es nulo
+Insertar en la cola el nodo hijo izquierdo
+Si el apuntador hacia el hijo derecho del nodo no es nulo
+Insertar en la cola el nodo hijo derecho.
+Escriba una función ordenNiveles para realizar un recorrido en orden de niveles de un árbol binario. La
+función debe tomar como un argumento un apuntador hacia el nodo raíz del árbol binario. Modifique el programa
+de la figura 12.19 para utilizar esta función. Compare la salida de esta función con las salidas de los otros algoritmos
+de recorrido, para ver si éste funciona correctamente. [Nota: En este programa también necesitará modificar
+e incorporar las funciones para procesamiento de colas de la figura 12.13.]
+12.25 (Impresión de árboles.) Escriba una función recursiva salidaArbol para desplegar en la pantalla un árbol binario.
+La función debe desplegar el árbol fila por fila, con la cima del árbol a la izquierda de la pantalla, y el fondo
+del árbol hacia adelante a la derecha de la pantalla. Cada fila se despliega verticalmente. Por ejemplo, el árbol binario
+que aparece en la figura 12.22 se despliega de la siguiente manera:
+Capítulo 12 Estructuras de datos en C 457
+99
+97
+92
+83
+72
+71
+69
+49
+44
+40
+32
+28
+19
+18
+11
+
+Observe que el nodo hoja más a la derecha aparece en la cima de la salida de la columna más a la derecha, y
+que el nodo raíz aparece a la izquierda de la salida. Cada columna de salida inicia cinco espacios a la derecha de
+la columna anterior. La función despliegaArbol debe recibir como argumentos un apuntador al nodo raíz del
+árbol, y un entero espaciosTotales que represente el número de espacios que precede al valor a desplegar
+(esta variable debe comenzar en cero, para que el nodo raíz se despliegue a la izquierda de la pantalla). La función
+utiliza un recorrido modificado inorden para desplegar el árbol; éste comienza en el nodo más a la derecha del árbol,
+y trabaja hacia atrás a la izquierda. El algoritmo es el siguiente:
+Mientras el apuntador al nodo actual no sea nulo.
+Recursivamente llama a despliegaArbol con el subárbol derecho del nodo actual
+y espaciosTotales + 5.
+Utiliza una instrucción for para contar de 1 hasta espaciosTotales, y despliega los espacios.
+Despliega el valor del nodo actual.
+Establece el apuntador al nodo actual para que apunte hacia el subárbol izquierdo del nodo actual.
+Incrementa en 5 a espaciosTotales.
+SECCIÓN ESPECIAL: CÓMO CONSTRUIR SU PROPIO COMPILADOR
+En el ejercicio 7.18, presentamos el Lenguaje Máquina Simpletron (LMS) y creamos el simulador de computadora Simpletron
+para ejecutar programas escritos en LMS. En esta sección, construimos un compilador que convierte programas escritos
+en un lenguaje de programación de alto nivel a LMS. Esta sección “une” el proceso completo de programación. Escribiremos
+programas en este nuevo lenguaje de alto nivel, compilaremos los programas en el compilador, y ejecutaremos los programas
+en el simulador que construimos en el ejercicio 7.19.
+12.26 (El lenguaje Simple.) Antes de que comencemos a construir el compilador, explicaremos un lenguaje de alto nivel
+sencillo, pero poderoso, parecido a las primeras versiones del popular lenguaje BASIC. A éste le llamamos lenguaje
+Simple. Toda instrucción Simple consiste en un número de línea y la propia instrucción de Simple. Los números
+de línea deben aparecer en orden ascendente. Cada instrucción comienza con uno de los siguientes comandos Simple:
+rem, input, let, print, goto, if...goto, o end (vea la figura 12.23). Todos los comandos, excepto
+end, pueden utilizarse repetidamente. Simple evalúa sólo expresiones enteras por medio de los operadores +, -, *
+y/. Estos operadores tienen la misma precedencia que en C. Los paréntesis pueden utilizarse para modificar el orden
+de evaluación de una expresión.
+Nuestro compilador Simple reconoce solamente letras minúsculas. Todos los caracteres de un archivo Simple
+deben estar en minúsculas (las letras mayúsculas ocasionarán un error de sintaxis, a menos que aparezcan en una
+instrucción rem, en cuyo caso, se ignoran). Un nombre de variable es una sola letra. Simple no permite nombres
+458 Estructuras de datos en C Capítulo 12
+Comando Instrucción de ejemplo Descripción
+rem 50 rem este es un comentario El texto que va después de rem sólo se utiliza con
+fines de documentación y el compilador lo ignora.
+input 30 input x Despliega un signo de interrogación para indicar
+al usuario que introduzca un entero. Lee ese entero
+desde el teclado, y lo almacena en x.
+let 80 let u = 4 * (j – 56) Asigna a u el valor de 4 * (j – 56). Observe que
+una expresión arbitrariamente compleja puede
+aparecer a la derecha del signo de igual.
+print 10 print w Despliega el valor de w.
+goto 70 goto 45 Transfiere el control del programa a la línea 45.
+if...goto 35 if i == z goto 80 Compara si i y z son iguales, y transfiere el control
+del programa a la línea 80 si la condición es
+verdadera; de lo contrario, continúa la ejecución
+con la siguiente instrucción.
+end 99 end Termina la ejecución del programa.
+Figura 12.23 Comandos de Simple.
+de variables descriptivos, por lo que las variables deben explicarse en comentarios para indicar su uso en el programa.
+Simple sólo utiliza variables enteras, y no tiene declaraciones de variables; el simple hecho de mencionar
+un nombre de variable en un programa ocasiona que dicha variable se declare e inicialice automáticamente en cero.
+La sintaxis de Simple no permite manipulación de cadenas (leer, escribir, comparar cadenas, etcétera). Si se encuentra
+una cadena en un programa de Simple (después de un comando diferente de rem), el compilador genera
+un error de sintaxis. Nuestro compilador asumirá que los programas en Simple se introducen correctamente. El ejercicio
+12.29 pide al estudiante que modifique el compilador para que realice una verificación de errores de sintaxis.
+Simple utiliza la instrucción condicional if...goto y la instrucción no condicional goto, para alterar el flujo
+de control durante la ejecución de un programa. Si la condición de la instrucción if...goto es verdadera, el control
+se transfiere a una línea específica del programa. Los siguientes operadores de relación y de igualdad son válidos
+en una instrucción if...goto: <, >, <=, >=, == o !=. La precedencia de estos operadores es la misma que en C.
+Ahora consideremos diversos programas en Simple que muestran las características de Simple. El primer programa
+(figura 12.24) lee dos enteros desde el teclado, almacena los valores en las variables a y b, y calcula e imprime
+su suma (la cual almacena en la variable c).
+La figura 12.25 determina e imprime el mayor de dos enteros. Los enteros se introducen desde el teclado y se
+almacenan en s y t. La instrucción if...goto evalúa la condición s>=t. Si la condición es verdadera, el control
+se trasfiere a la línea 90 y s se despliega; de lo contrario, t se despliega y el control se transfiere a la instrucción
+end de la línea 99, en donde el programa termina.
+Simple no proporciona una estructura de repetición (como las de C, for, while o do...while). Sin embargo,
+Simple puede simular cada una de las estructuras de repetición de C, utilizando instrucciones if...goto
+y goto. La figura 12.26 utiliza un ciclo controlado por centinela para calcular el cuadrado de diversos enteros. CaCapítulo
+12 Estructuras de datos en C 459
+01 10 rem determina e imprime la suma de dos enteros
+02 15 rem
+03 20 rem introduce los dos enteros
+04 30 input a
+05 40 input b
+06 45 rem
+07 50 rem suma los enteros y almacena el resultado en c
+08 60 let c = a + b
+09 65 rem
+10 70 rem imprime el resultado
+11 80 print c
+12 90 rem termina la ejecución del programa
+13 99 end
+Figura 12.24 Determina la suma de dos enteros.
+
+de variables descriptivos, por lo que las variables deben explicarse en comentarios para indicar su uso en el programa.
+Simple sólo utiliza variables enteras, y no tiene declaraciones de variables; el simple hecho de mencionar
+un nombre de variable en un programa ocasiona que dicha variable se declare e inicialice automáticamente en cero.
+La sintaxis de Simple no permite manipulación de cadenas (leer, escribir, comparar cadenas, etcétera). Si se encuentra
+una cadena en un programa de Simple (después de un comando diferente de rem), el compilador genera
+un error de sintaxis. Nuestro compilador asumirá que los programas en Simple se introducen correctamente. El ejercicio
+12.29 pide al estudiante que modifique el compilador para que realice una verificación de errores de sintaxis.
+Simple utiliza la instrucción condicional if...goto y la instrucción no condicional goto, para alterar el flujo
+de control durante la ejecución de un programa. Si la condición de la instrucción if...goto es verdadera, el control
+se transfiere a una línea específica del programa. Los siguientes operadores de relación y de igualdad son válidos
+en una instrucción if...goto: <, >, <=, >=, == o !=. La precedencia de estos operadores es la misma que en C.
+Ahora consideremos diversos programas en Simple que muestran las características de Simple. El primer programa
+(figura 12.24) lee dos enteros desde el teclado, almacena los valores en las variables a y b, y calcula e imprime
+su suma (la cual almacena en la variable c).
+La figura 12.25 determina e imprime el mayor de dos enteros. Los enteros se introducen desde el teclado y se
+almacenan en s y t. La instrucción if...goto evalúa la condición s>=t. Si la condición es verdadera, el control
+se trasfiere a la línea 90 y s se despliega; de lo contrario, t se despliega y el control se transfiere a la instrucción
+end de la línea 99, en donde el programa termina.
+Simple no proporciona una estructura de repetición (como las de C, for, while o do...while). Sin embargo,
+Simple puede simular cada una de las estructuras de repetición de C, utilizando instrucciones if...goto
+y goto. La figura 12.26 utiliza un ciclo controlado por centinela para calcular el cuadrado de diversos enteros. Ca
+
+01 10 rem determina el mayor de dos enteros
+02 20 input s
+03 30 input t
+04 32 rem
+05 35 rem evalúa si s >= t
+06 40 if s >= t goto 90
+07 45 rem
+08 50 rem t es mayor que s, por lo que se imprime t
+09 60 print t
+10 70 goto 99
+11 75 rem
+12 80 rem s es mayor o igual que t, por lo que se imprime s
+13 90 print s
+14 99 end
+Figura 12.25 Encuentra el mayor de dos enteros.
+
+01 10 rem calcula el cuadrado de diversos enteros
+02 20 input j
+03 23 rem
+04 25 rem evalúa si se trata del valor centinela
+05 30 if j == -9999 goto 99
+06 33 rem
+07 35 rem calcula el cuadrado de j y asigna el resultado a k
+08 40 let k = j * j
+09 50 print k
+10 53 rem
+11 55 rem hace un ciclo para obtener el siguiente j
+12 60 goto 20
+13 99 end
+Figura 12.26 Calcula el cuadrado de diversos enteros
+
+da entero se introduce desde el teclado y se almacena en la variable j. Si el valor introducido es el centinela
+-9999, el control se transfiere a la línea 99, en donde el programa finaliza. De lo contrario, a k se le asigna el cuadrado
+de j, k se despliega en la pantalla y el control pasa a la línea 20, en donde se introduce el siguiente entero.
+Utilizando como guía los programas de ejemplo de las figuras 12.24, 12.25 y 12.26, escriba un programa en
+Simple para realizar las siguientes tareas:
+a) Introduzca tres enteros, determine su promedio e imprima el resultado.
+b) Utilice un ciclo controlado por centinela para introducir 10 enteros y calcular e imprimir su suma.
+c) Utilice un ciclo controlado por contador para introducir siete enteros, unos positivos y otros negativos, y calcular
+e imprimir su promedio.
+d) Introduzca una serie de enteros y determine e imprima el mayor. El primer entero introducido indica cuántos
+números deben procesarse.
+e) Introduzca 10 enteros e imprima el menor.
+f) Calcule e imprima la suma de los enteros pares del 2 al 30.
+g) Calcule e imprima el producto de los enteros nones del 1 al 9.
+12.27 (Construcción de un compilador. Prerrequisito: complete los ejercicios 7.18, 7.19, 12.12, 12.13 y 12.26.) Ahora
+que ya presentamos el lenguaje Simple, explicaremos cómo construir nuestro compilador Simple. Primero, considere
+el proceso por medio del cual un programa en Simple se convierte a LMS y se ejecuta con el simulador
+Simpletron (vea la figura 12.27). El compilador lee y convierte un archivo que contiene un programa en Simple a
+código SML. El código LMS se envía a un archivo en disco, en el que las instrucciones LMS aparecen una por
+línea. Después, el archivo LMS se carga en el simulador Simpletron, y los resultados se envían a un archivo en
+disco y a la pantalla. Observe que el programa Simpletron desarrollado en el ejercicio 7.19 toma su entrada desde
+el teclado. Éste debe modificarse para leer desde un archivo, para que pueda ejecutar los programas producidos por
+nuestro compilador.
+El compilador realiza dos pasadas al programa en Simple para convertirlo a LMS. La primera pasada construye
+una tabla de símbolos, en la que cada número de línea, nombre de variable y constante del programa en Simple
+se almacena con su tipo y su correspondiente ubicación en el código final SML (más adelante explicaremos con
+detalle la tabla de símbolos). La primera pasada también produce las instrucciones correspondientes en LMS para
+cada instrucción en Simple. Como veremos, si el programa en Simple contiene instrucciones que transfieren el control
+a una línea posterior del programa, la primera pasada resulta en un programa LMS que contiene algunas
+instrucciones incompletas. La segunda pasada del compilador localiza y completa las instrucciones incompletas, y
+envía el programa LMS a un archivo.
+Primera pasada
+El compilador comienza leyendo una instrucción del programa en Simple desde memoria. La línea debe separarse
+en sus tokens individuales (es decir, en “piezas” de una instrucción), para procesarla y compilarla (para facilitar esta
+tarea, podemos utilizar la función strtok de la biblioteca estándar). Recuerde que toda instrucción comienza
+con un número de línea seguido por un comando. Conforme el compilador separa una instrucción en tokens, si el
+token es un número de línea, una variable o una constante, ésta se coloca en la tabla de símbolos. Un número de
+línea sólo se coloca en la tabla de símbolos, si es el primer token de una instrucción. La tablaSimbolos es un
+arreglo de estructuras entradaTabla que representa a cada símbolo del programa. No existe restricción alguna
+con respecto al número de símbolos que puede aparecer en el programa. Por lo tanto, tablaSimbolos para un
+programa en particular podría ser larga. Por ahora, haga que tablaSimbolos sea un arreglo de 100 elementos.
+Usted puede incrementar o reducir su tamaño, una vez que el programa esté funcionando.
+La definición de la estructura entradaTabla es la siguiente:
+struct entradaTabla {
+int simbolo;
+char tipo; /* ‘C’, ‘L’ o ‘V’ */
+int ubicacion; /* 00 a 99 */
+};
+Cada estructura entradaTabla contiene tres miembros. El miembro simbolo es un entero que contiene la representación
+ASCII de una variable (recuerde que los nombres de variables constan de un solo carácter), de un nú-
+mero de línea o de una constante. El miembro tipo es uno de los siguientes caracteres, los cuales indican el tipo
+del símbolo: ‘C’ para una constante, ‘L’ para un número de línea, o ‘V’ para una variable. El miembro ubicacion
+contiene la ubicación en memoria Simpletron (00 a 99) a la que el símbolo hace referencia. La memoria
+Simpletron es un arreglo de 100 enteros en el que se almacenan las instrucciones y los datos LMS. Para un nú-
+mero de línea, la ubicación es el elemento del arreglo memoria Simpletron en el que comienzan las instrucciones
+LMS para la instrucción en Simple. Para una variable o constante, la ubicación es el elemento del arreglo memoria
+Simpletron en el que la variable o constante está almacenada. Las variables y constantes se asignan desde el final
+de la memoria Simpletron hacia atrás. La primera variable o constante se almacena en la ubicación 99, la siguiente
+en 98, etcétera.
+La tabla de símbolos juega un papel importante en la conversión de programas en Simple a LMS. En el capí-
+tulo 7 aprendimos que una instrucción LMS es un entero de cuatro dígitos que consta de dos partes: el código de
+operación y el operando. El código de operación es definido por comandos en Simple. Por ejemplo, el comando
+sencillo input corresponde al código de operación LMS 10 (lee), el comando print corresponde al código 11 (escribe).
+El operando es una ubicación en memoria que contiene los datos sobre los que el código de operación realiza
+su tarea (por ejemplo, el código de operación 10 lee un valor desde el teclado y lo almacena en la ubicación
+de memoria especificada por el operando). El compilador busca tablaSimbolos para determinar la ubicación de
+memoria Simpletron para cada símbolo, de tal forma que la ubicación correspondiente pueda utilizarse para completar
+las instrucciones de LMS.
+La compilación de cada instrucción LMS se basa en su comando. Por ejemplo, después de que el número de
+línea correspondiente a una instrucción rem se inserta en la tabla de símbolos, el compilador ignora el resto de la
+instrucción, ya que un comentario sólo sirve para documentación. Las instrucciones input, print, goto y end,
+corresponden a las instrucciones de LMS read, write, branch (hacia una ubicación específica) y halt. Las instrucciones
+que contienen estos comandos de Simple se convierten directamente a LMS. [Nota: Una instrucción goto
+puede contener una referencia no resuelta, si el número de línea especificado hace referencia a una instrucción más
+avanzada dentro del archivo correspondiente al programa en Simple; en ocasiones, a esto se le llama referencia adelantada.]
+Cuando se compila una instrucción goto con una referencia no resuelta, a la instrucción LMS se le debe colocar
+una bandera para indicar que la segunda pasada del compilador debe completar la instrucción. Las banderas
+se almacenan en el arreglo de tipo entero de 100 elementos llamado banderas, en el que cada elemento se inicializa
+en 1. Si la ubicación en memoria a la que hace referencia un número de línea del programa en Simple aún
+no se conoce (es decir, no se encuentra en la tabla de símbolos), el número de línea se almacena en el arreglo banderas
+en el elemento que tiene el mismo subíndice que la instrucción incompleta. El operando de la instrucción
+incompleta se establece temporalmente en 00. Por ejemplo, una instrucción no condicional bifurcar (que hace una referencia adelantada) se deja como +4000, hasta la segunda pasada del compilador. En un momento describiremos
+la segunda pasada del compilador.
+La compilación de instrucciones if...goto y let es más complicada que la de otras instrucciones; éstas
+son las únicas instrucciones que producen más de una instrucción LMS. Por una instrucción if...goto, el compilador
+produce código para evaluar la condición y para ramificarse hacia otra línea, en caso necesario. El resultado
+de la ramificación podría ser una referencia no resuelta. Cada uno de los operadores de relación y de igualdad
+puede simularse por medio de las instrucciones de LMS branch zero y branch negative (o posiblemente una combinación
+de ambas).
+Para una instrucción let, el compilador produce código para evaluar una expresión aritmética arbitrariamente
+compleja que conste de variables enteras y/o constantes. Las expresiones deben separar cada operando y operador
+con espacios. Los ejercicios 12.12 y 12.13 presentaron el algoritmo de conversión de infijo a postfijo y el de
+evaluación de postfijos que utilizan los compiladores para evaluar expresiones. Antes de continuar con su compilador,
+debe completar cada uno de estos ejercicios. Cuando un compilador encuentra una expresión, éste la convierte
+de notación infijo a postfijo, y después evalúa la expresión en postfijo.
+¿Cómo es que el compilador produce el lenguaje máquina para evaluar una expresión que contiene variables?
+El algoritmo de evaluación postfijo contiene un “gancho” que permite a nuestro compilador generar instrucciones
+LMS, en lugar de realmente evaluar la expresión. Para aceptar a este “gancho” en el compilador, el algoritmo de
+evaluación postfijo debe modificarse para que busque en la tabla de símbolos cada símbolo que encuentre (y que
+posiblemente lo inserte), que determine la ubicación en memoria correspondiente a ese símbolo, y que meta la ubicación
+de memoria en la pila, en lugar del símbolo. Cuando se encuentra un operador en la expresión postfijo, las
+dos ubicaciones de memoria en la cima de la pila son eliminadas, y se produce lenguaje máquina para que efectúe
+la operación, utilizando como operando las ubicaciones de memoria. El resultado de cada subexpresión se almacena
+en una ubicación de memoria temporal y se mete nuevamente en la pila para que la evaluación de la expresión
+postfijo pueda continuar. Cuando se completa la evaluación postfijo, la posición de memoria que contiene el resultado
+es la única ubicación que se deja en la pila. Ésta se saca, y se generan instrucciones LMS para asignar el resultado
+a la variable que se encuentra a la izquierda de la instrucción let.
+Segunda pasada
+La segunda pasada del compilador realiza dos tareas: resuelve cualquier referencia no resuelta y envía el código
+LMS a un archivo. La resolución de referencias ocurre de la siguiente manera:
+1) Busca en el arreglo banderas alguna referencia no resuelta (es decir, un elemento con un valor diferente de 1).
+2) Localiza en el arreglo tablaSimbolos la estructura que contenga el símbolo almacenado en el arreglo
+banderas (asegúrese de que el tipo del símbolo sea ‘L’, en el caso de un número de línea).
+3) Inserte la ubicación de memoria, desde el miembro ubicacion, en la instrucción que contiene la referencia
+no resuelta (recuerde que una instrucción que contiene una referencia no resuelta tiene el operando 00).
+4) Repita los pasos 1, 2 y 3, hasta que se alcance el final del arreglo banderas.
+Después de que se completa el proceso de resolución, el arreglo completo que contiene el código LMS se envía a
+un archivo en disco con una instrucción LMS por línea. Este archivo puede leerse para su ejecución con el Simpletron
+(después de que el simulador se modifique para que lea su entrada desde un archivo).
+Un ejemplo completo
+El siguiente ejemplo ilustra una conversión completa de un programa en Simple a LMS, tal como la realizaría el
+compilador de Simple. Considere un programa en Simple que introduce un entero y suma los valores entre 1 y ese
+entero. El programa y las instrucciones LMS producidas por la primera pasada aparecen en la figura 12.28. La tabla
+de símbolos construida por la primera pasada, aparece en la figura 12.29.
+Programa en Simple Ubicación e instrucción SML Descripción
+5 rem suma 1 a x ninguna rem ignorado
+10 input x 00 +1099 lee x y lo coloca en la
+posición 99
+Figura 12.28 Instrucciones SML producidas después de la primera pasada del compilador.
+(Parte 1 de 2.)
+
+Programa en Simple Ubicación e instrucción SML Descripción
+15 rem verifica que y == x ninguna rem ignorado
+20 if y == x goto 60 01 +2098 carga y(98) en un acumulador
+02 +3199 resta x(99) del acumulador
+03 +4200 si el resultado es cero,
+ramifica hacia una ubicación
+no resuelta
+25 rem incrementa y ninguna rem ignorado
+30 let y = y + 1 04 +2098 carga y en un acumulador
+05 +3097 suma 1(97) al acumulador
+06 +2196 almacena 96 en una ubicación
+temporal
+07 +2096 carga 96 desde la ubicación
+temporal
+08 +2198 almacena en y al acumulador
+35 rem suma y al total ninguna rem ignorado
+40 let t = t + y 09 +2095 carga t(95) en el
+acumulador
+10 +3098 suma y al acumulador
+11 +2194 almacena 94 en una ubicación
+temporal
+2 +2094 carga 94 desde la ubicación
+temporal
+13 +2195 almacena el acumulador en t
+45 rem ciclo sobre y ninguna rem ignorado
+50 goto 20 14 +4001 ramifica hacia la ubicación 01
+55 rem despliega resultado ninguna rem ignorado
+60 print t 15 +1195 despliega t en la pantalla
+99 end 16 +4300 termina la ejecución
+Figura 12.28 Instrucciones LMS producidas después de la primera pasada del compilador.
+(Parte 2 de 2.)
+Símbolo Tipo Ubicación
+5L 00
+10 L 00
+‘x’ V 99
+15 L 01
+20 L 01
+‘y’ V 98
+25 L 04
+30 L 04
+Figura 12.29 Tabla de símbolos para el programa de la figura 12.28. (Parte 1 de 2.)
+
+Símbolo Tipo Ubicación
+1C 97
+35 L 09
+40 L 09
+‘t’ V 95
+45 L 14
+50 L 14
+55 L 15
+60 L 15
+99 L 16
+Figura 12.29 Tabla de símbolos para el programa de la figura 12.28. (Parte 2 de 2.)
+
+La mayoría de las instrucciones en Simple se convierten directamente en instrucciones sencillas de LMS. Las
+excepciones en este programa son los comentarios, la instrucción if...goto de la línea 20 y las instrucciones
+let. Los comentarios no se traducen en lenguaje máquina. Sin embargo, el número de línea de un comentario se
+coloca en la tabla de símbolos, en caso de que se haga referencia a dicho número de línea en una instrucción goto
+o en una if...goto. La línea 20 del programa especifica que si la condición y == x es verdadera, el control del
+programa se transfiere a la línea 60. Debido a que la línea 60 aparece más adelante en el programa, la primera pasada
+del compilador todavía no ha colocado 60 en la tabla de símbolos (los números de línea se colocan en la tabla
+de símbolos solamente cuando aparecen como el primer token de una instrucción). Por lo tanto, no es posible en
+este momento determinar el operando de la instrucción de LMS branch zero en la ubicación 03 del arreglo de instrucciones
+LMS. El compilador coloca 60 en la ubicación 03 del arreglo banderas para indicar que la segunda
+pasada completará esta instrucción.
+Debemos dar seguimiento a la siguiente ubicación de la instrucción en el arreglo LMS, ya que no hay una correspondencia
+uno a uno entre instrucciones Simple e instrucciones LMS. Por ejemplo, la instrucción if...goto
+de la línea 20 se compila en tres instrucciones LMS. Cada vez que se produce una instrucción, debemos incrementar
+el contador de instrucciones hacia la siguiente ubicación en el arreglo LMS. Observe que el tamaño de la
+memoria del Simpletron podría representar un problema para programas en Simple con demasiadas instrucciones,
+variables y constantes. Es probable que el compilador se quede sin memoria. Para evaluar este caso, su programa
+debe tener un contador de datos que dé seguimiento a la ubicación del arreglo LMS en la que la siguiente variable
+o constante se almacenará. Si el valor de la instrucción contador es mayor que el valor del contador de datos, el
+arreglo LMS está lleno. En este caso, el proceso de compilación debe terminar y el compilador debe imprimir un
+mensaje de error que indique que se quedó sin memoria durante la compilación.
+Visión paso a paso del proceso de compilación
+Ahora veamos el proceso de compilación del programa en Simple de la figura 12.28. El compilador lee la primera
+línea del programa
+5 rem suma 1 a x
+desde memoria. El primer token de la instrucción (el número de línea) se determina por medio de strtok (vea el
+capítulo 8 para una explicación de las funciones para manipulación de cadenas en C). El token devuelto por
+strtok se convierte en un entero utilizando atoi, por lo que el símbolo 5 puede localizarse en la tabla de símbolos.
+Si el símbolo no se encuentra, éste se inserta en la tabla de símbolos. Debido a que nos encontramos al principio
+del programa y a que ésta es la primera línea, aún no hay símbolos en la tabla. Entonces, 5 se inserta en la
+tabla de símbolos como de tipo L (número de línea), y se asigna a la primera ubicación del arreglo LMS (00). Aunque
+esta línea es un comentario, por el número de línea se asigna un espacio en la tabla de símbolos (en caso de que
+se haga referencia a él en una instrucción goto o en una if...goto). Una instrucción rem no genera instrucción
+LMS alguna, por lo que el contador de instrucciones no se incrementa.
+Después, la instrucción
+10 input x
+
+se separa en tokens. El número de línea 10 se coloca en la tabla de símbolos como de tipo L, y se asigna en la
+primera ubicación del arreglo LMS (00, ya que un comentario inició el programa, y el contador de instrucciones
+es actualmente 00). El comando input indica que el siguiente token es una variable (sólo una variable puede aparecer
+en una instrucción input). Debido a que input corresponde directamente a una operación en código LMS,
+el compilador simplemente tiene que determinar la ubicación de x en el arreglo LMS. El símbolo x no se encontró
+en la tabla de símbolos, por lo que se inserta en dicha tabla como la representación ASCII de x, se le da el tipo
+V, y se le asigna la ubicación 99 del arreglo LMS (el almacenamiento de datos comienza en 99 y se asigna hacia
+atrás). Ahora, esta instrucción puede generar código LMS. El código de operación 10 (el código de operación de
+lectura de LMS) se multiplica por 100, y la ubicación de x (como se determinó en la tabla de símbolos) se suma
+para completar la instrucción. Después, la instrucción se almacena en la ubicación 00 del arreglo LMS. El contador
+de instrucciones se incrementa en 1, ya que se produjo una instrucción LMS.
+Después, la instrucción
+15 rem verifica y == x
+se separa en tokens. Se busca en la tabla de símbolos el número de línea 15 (el cual no se encuentra). El número
+de línea se inserta como de tipo L, y se asigna a la siguiente ubicación del arreglo, 01 (recuerde que las instrucciones
+rem no producen código, por lo que el contador de instrucciones no se incrementa).
+Después se separa en tokens la instrucción
+20 if y == x goto 60
+El número de línea 20 se inserta en la tabla de símbolos y se le da el tipo L, con la siguiente posición en el arreglo
+LMS, 01. El comando if indica que se va a evaluar una condición. La variable y no se encuentra en la tabla
+de símbolos, por lo que se inserta en ella y se le da el tipo V y la ubicación 98. Posteriormente, se generan instrucciones
+SML para evaluar la condición. Debido a que no hay un equivalente directo en SML para if...goto, ésta
+debe simularse realizando un cálculo que utilice x y y, y que realice una ramificación basada en el resultado.
+Si y es igual que x, el resultado de restar x de y es cero, por lo que la instrucción branch zero puede utilizarse con
+el resultado del cálculo para simular la instrucción if...goto. El primer paso requiere que y se cargue (desde
+la ubicación 98 de SML) en el acumulador. Esto produce la instrucción 01 +2098. Después, x se resta del acumulador.
+Esto produce la instrucción 02 +3199. El valor del acumulador puede ser cero, positivo o negativo. Debido
+a que el operador es ==, queremos utilizar branch zero. Primero, se busca en la tabla de símbolos la ubicación
+ramificada (en este caso 60), la cual no se encuentra. Entonces, 60 se coloca en el arreglo banderas en la ubicación
+03, y se genera la instrucción 03 +4200 (no podemos sumar la ubicación ramificada debido a que aún no
+hemos asignado una ubicación a la línea 60 en el arreglo SML). El contador de instrucciones se incrementa a 04.
+El compilador continúa con la instrucción
+25 rem incrementa y
+El número de línea 25 se inserta en la tabla de símbolos como de tipo L y se le asigna la ubicación 04 en SML. El
+contador de instrucciones no se incrementa.
+Cuando la instrucción
+30 let y = y + 1
+se separa en tokens, el número de línea 30 se inserta en la tabla de símbolos como de tipo L y se le asigna la ubicación
+04. El comando let indica que la línea es una instrucción de asignación. Primero, todos los símbolos de
+la línea se insertan en la tabla de símbolos (si aún no están ahí). El entero 1 se agrega a la tabla de símbolos como
+de tipo C y se le asigna la ubicación 97. Después, el lado derecho de la asignación se convierte de notación infijo
+a notación postfijo. Luego, se evalúa la expresión postfijo (y 1 +). El símbolo y se localiza en la tabla de símbolos,
+y su ubicación en memoria se mete en la pila. El símbolo 1 también se localiza en la tabla de símbolos, y su
+ubicación en memoria se mete en la pila. Cuando se encuentra el operador +, el evaluador postfijo saca la pila hacia
+el operando derecho del operador, y saca nuevamente la pila hacia el operando izquierdo del operador, después
+produce las instrucciones SML
+04 +2098 (carga y)
+05 +3097 (suma 1)
+El resultado de la expresión se almacena en una ubicación temporal de memoria (96) con la instrucción
+06 +2196 (almacena temporalmente)
+
+y la ubicación temporal se mete en la pila. Ahora que la expresión se evaluó, el resultado debe almacenarse en y
+(es decir, en la variable del lado izquierdo del =). Entonces, la ubicación temporal se carga en el acumulador y éste
+se almacena en y con las instrucciones
+07 +2096 (carga temporalmente)
+08 +2198 (almacena y)
+El lector notará inmediatamente que las instrucciones SML parecen redundantes. En un momento explicaremos este
+asunto.
+Cuando la instrucción
+35 rem suma y al total
+se separa en tokens, el número de línea 35 se inserta en la tabla de símbolos como de tipo L y se le asigna la posición
+09.
+La instrucción
+40 let t = t + y
+es parecida a la línea 30. La variable t se inserta en la tabla de símbolos como de tipo V y se le asigna la ubicación
+95. Las instrucciones siguen la misma lógica y formato que la línea 30, y se generan las instrucciones 09
++2095, 10 +3098, 11 +2194, 12 +2094 y 13 +2195. Observe que el resultado de t+y se asigna a la ubicación
+temporal 94 antes de que se asigne a t(95). Una vez más, el lector notará que las instrucciones que se
+encuentran en las ubicaciones de memoria 11 y 12 parecen redundantes. De nuevo, esto lo explicaremos en un
+momento.
+La instrucción
+45 rem ciclo sobre y
+es un comentario, por lo que la línea 45 se agrega a la tabla de símbolos como de tipo L y se le asigna la ubicación
+14.
+La instrucción
+50 goto 20
+transfiere el control a la línea 20. El número de línea 50 se inserta en la tabla de símbolos como de tipo L y se le
+asigna la ubicación SML 14. La instrucción equivalente de goto en SML es la instrucción no condicional branch
+(40), la cual transfiere el control a una ubicación SML específica. El compilador busca en la tabla de símbolos a
+la línea 20 y encuentra que ésta corresponde a la ubicación SML 01. El código de operación (40) se multiplica
+por 100 y la ubicación 01 se agrega a él para producir la instrucción 14 +4001.
+La instrucción
+55 rem despliega resultado
+es un comentario, por lo que la línea 55 se inserta en la tabla de símbolos como de tipo L y se le asigna la ubicación
+SML 15.
+La instrucción
+60 print t
+es una instrucción de salida. El número de línea 60 se inserta en la tabla de símbolo como de tipo L y se le asigna
+la ubicación 15. El equivalente de print en SML es el código de operación 11 (escribir). La ubicación de t se
+determina a partir de la tabla de símbolos y se agrega al resultado del código de operación multiplicado por 100.
+La instrucción
+99 end
+es la línea final del programa. El número de línea 99 se almacena en la tabla de símbolos como de tipo L y se le
+asigna la ubicación SML 16. El comando end produce la instrucción SML +4300 (43 es halt en SML), la cual se
+escribe como la instrucción final en el arreglo memoria SML.
+Esto completa la primera pasada del compilador. Ahora consideraremos la segunda pasada. Se busca en el arreglo
+banderas cualquier valor diferente de -1. La ubicación 03 contiene 60, por lo que el compilador sabe que
+la instrucción 03 está incompleta. El compilador completa la instrucción buscando 60 en la tabla de símbolos, determina
+su ubicación y la agrega a la instrucción incompleta. En este caso, la búsqueda determina que la línea 60
+corresponde a la ubicación 15, por lo que la instrucción completa 03 +4215 se produce y reemplaza a 03 +4200.
+Ahora, el programa en Simple se compiló con éxito.
+
+Para construir el compilador, tendrá que realizar cada una de las siguientes tareas:
+a) Modifique el programa simulador Simpletron que escribió en el ejercicio 7.19 para que tome su entrada desde
+un archivo especificado por el usuario (vea el capítulo 11). Además, el simulador debe enviar sus resultados a un
+archivo en disco en el mismo formato que el desplegado en pantalla.
+b) Modifique el algoritmo de evaluación infijo a postfijo del ejercicio 12.12 para procesar operandos enteros de
+varios dígitos y operandos de nombres de variables de una sola letra. [Pista: Puede utilizar la función strtok
+de la biblioteca estándar para localizar cada constante y variable en una expresión, y las constantes pueden convertirse
+de cadenas a enteros por medio de la función atoi de la biblioteca estándar.] [Nota: La representación
+de datos de la expresión postfijo debe modificarse para que soporte nombres de variables y constantes enteras.]
+c) Modifique el algoritmo de evaluación postfijo para procesar operandos enteros de varios dígitos y operandos
+de nombres de variables. Además, el algoritmo debe ahora implementar el “gancho” que explicamos anteriormente,
+para que las instrucciones SML se produzcan, en lugar de evaluar directamente la expresión. [Pista: Puede
+utilizar la función strtok de la biblioteca estándar para localizar cada constante y variable en una expresión,
+y las constantes pueden convertirse de cadenas a enteros por medio de la función atoi de la biblioteca
+estándar.] [Nota: La representación de datos de la expresión postfijo debe modificarse para que soporte nombres
+de variables y constantes enteras.]
+d) Construya el compilador. Incorpore las partes (b) y (c) para evaluar expresiones de instrucciones let. Su programa
+debe contener una función que realice la primera pasada del compilador, y una función que realice la segunda
+pasada. Ambas funciones pueden llamar otras funciones para llevar a cabo sus tareas.
+12.28 (Optimización del compilador Simple.) Cuando un programa se compila y se convierte en LMS, se genera un conjunto
+de instrucciones. Ciertas combinaciones de instrucciones con frecuencia se repiten, por lo general en tercias
+conocidas como producciones. Una producción normalmente consiste en tres instrucciones como load, add y store.
+Por ejemplo, la figura 12.30 ilustra cinco de las instrucciones LMS que se produjeron en la compilación del programa
+de la figura 12.28. Las tres primeras instrucciones forman la producción que suma 1 a y. Observe que las
+instrucciones 06 y 07 almacenan el valor del acumulador en la ubicación temporal 96, y después cargan de vuelta
+el valor en el acumulador, de tal forma que la instrucción 08 pueda almacenar el valor en la ubicación 98. Con frecuencia,
+una producción va seguida de una instrucción load para la misma ubicación en la que fue almacenada. Este
+código puede optimizarse eliminando la instrucción store y la subsiguiente instrucción load que operan en la
+misma ubicación de memoria. Esta optimización permitiría al Simpletron ejecutar el programa más rápidamente,
+ya que hay menos instrucciones en esta versión. La figura 12.31 muestra la optimización del SML para el programa de
+la figura 12.28. Observe que en el código optimizado hay cuatro instrucciones menos; un ahorro de memoria del 25%.
+Modifique el compilador para proporcionar una opción para optimizar el código en Lenguaje Máquina Simpletron
+que éste produce. Manualmente compare el código no optimizado con el optimizado, y calcule el porcentaje
+de reducción.
+Capítulo 12 Estructuras de datos en C 467
+04 +2098 (load)
+05 +3097 (add)
+06 +2196 (store)
+07 +2096 (load)
+08 +2198 (store)
+Figura 12.30 Código no optimizado del programa correspondiente a la figura 12.28.
+Programa en Simple Ubicación e instrucción SML Descripción
+5 rem suma 1 a x ninguna rem ignorado
+10 input x 00 +1099 lee x y lo coloca en
+la posición 99
+15 rem verifica que y == x ninguna rem ignorado
+20 if y == x goto 60 01 +2098 carga y(98) en un
+acumulador
+Figura 12.31 Código optimizado para el programa de la figura 12.28. (Parte 1 de 2.)
+
+ Programa en Simple Ubicación e instrucción SML Descripción
+02 +3199 resta x(99) del acumulador
+03 +4211 si el resultado es cero,
+ramifica hacia la ubicación 11
+25 rem incrementa y ninguna rem ignorado
+30 let y = y + 1 04 +2098 carga y en un acumulador
+05 +3097 suma 1(97) al acumulador
+06 +2198 almacena el acumulador en
+y(98)
+35 rem suma y al total ninguna rem ignorado
+40 let t = t + y 07 +2096 carga t desde la ubicación
+(96)
+08 +3098 suma y(98) al acumulador
+09 +2196 almacena el acumulador en
+t(96)
+45 rem ciclo sobre y ninguna rem ignorado
+50 goto 20 10 +4001 ramifica hacia la ubicación 01
+55 rem despliega resultado ninguna rem ignorado
+60 print t 11 +1196 despliega t(96) en la
+pantalla
+99 end 12 +4300 termina la ejecución
+Figura 12.31 Código optimizado para el programa de la figura 12.28. (Parte 2 de 2.
+
+12.29 (Modificaciones al compilador Simple.) Realice las siguientes modificaciones al compilador Simple. Algunas de
+estas modificaciones pueden requerir también algunas modificaciones al programa del simulador Simpletron escrito
+en el ejercicio 7.19.
+a) Permita que el operador módulo (%) se utilice en las instrucciones let. El Lenguaje Máquina Simpletron debe
+modificarse para incluir una instrucción módulo.
+b) Permita la exponenciación en una instrucción let, por medio del operador de exponenciación ^. El Lenguaje
+Máquina Simpletron debe modificarse para incluir una instrucción de exponenciación.
+c) Permita que el compilador reconozca letras mayúsculas y minúsculas en instrucciones Simple (por ejemplo,
+‘A’ es equivalente a ‘a’). No se necesitan modificaciones al simulador de Simpletron.
+d) Permita que las instrucciones input lean valores para múltiples variables, como input x, y. No se necesitan
+modificaciones al simulador de Simpletron.
+e) Permita que el compilador despliegue múltiples valores en una sola instrucción print, como print a, b, c.
+No se necesitan modificaciones al simulador de Simpletron.
+f) Agregue capacidades de verificación de sintaxis al compilador, para que se desplieguen mensajes de error cuando
+se encuentren errores de sintaxis en un programa en Simple. No se necesitan modificaciones al simulador de
+Simpletron.
+g) Permita arreglos de enteros. No se necesitan modificaciones al simulador de Simpletron.
+h) Permita subrutinas especificadas por los comandos de Simple, gosub y return. El comando gosub pasa el
+control del programa a una subrutina, y el comando return pasa el control de regreso a la instrucción posterior
+a la gosub. Esto es similar a una llamada de función en C. La misma subrutina puede ser llamada desde
+muchas gosubs distribuidas a lo largo de un programa. No se necesitan modificaciones al simulador de Simpletron.
+i) Permita estructuras de repetición de la forma
+for x = 2 to 10 step 2
+rem instrucciones Simple
+next
+
+j) Esta instrucción for realiza un ciclo desde 2 hasta 10 con un incremento de 2. La línea next marca el final
+del cuerpo de la línea for. No se necesitan modificaciones al simulador de Simpletron.
+k) Permita estructuras de repetición de la forma
+for x = 2 to 10
+rem instrucciones Simple
+next
+l) Esta instrucción for realiza un ciclo desde 2 hasta 10 con un incremento predeterminado de 1. No se necesitan
+modificaciones al simulador de Simpletron.
+m) Permita al compilador procesar la entrada y salida de cadenas. Esto requiere que se modifique al simulador de
+Simpletron para que procese y almacene valores de cadena. [Pista: Cada palabra en Simpletron puede dividirse
+en dos grupos, cada uno con un entero de dos dígitos. Cada entero de dos dígitos representa el equivalente
+decimal en ASCII de un carácter.] Agregue una instrucción en lenguaje máquina que imprima una cadena que
+comience en una cierta ubicación de memoria Simpletron. La primera mitad de la palabra en esa ubicación es una
+cuenta del número de caracteres en la cadena (es decir, la longitud de la cadena). Cada mitad siguiente de una palabra
+contiene un carácter ASCII expresado como dos dígitos decimales. La instrucción en lenguaje máquina
+verifica la longitud e imprime la cadena, traduciendo cada número de dos dígitos en su carácter equivalente.
+n) Permita al compilador procesar valores de punto flotante además de valores enteros. El simulador de Simpletron
+también debe modificarse para procesar valores de punto flotante.
+12.30 (Un intérprete de Simple.) Un intérprete es un programa que lee una instrucción de un programa en lenguaje de alto
+nivel, determina la operación a realizar por la instrucción, y la ejecuta de inmediato. El programa no se convierte
+primero a lenguaje máquina. Los intérpretes ejecutan lentamente, ya que cada instrucción encontrada en el programa
+primero debe descifrarse. Si las instrucciones se encuentran en un ciclo, éstas se descifran cada vez que son encontradas
+en el ciclo. Las primeras versiones del lenguaje de programación BASIC se implementaron como intérpretes.
+Escriba un intérprete para el lenguaje Simple que explicamos en el ejercicio 12.26. El programa debe utilizar
+el convertidor de infijo a postfijo que desarrollamos en el ejercicio 12.12 y el evaluador postfijo que desarrollamos
+en el ejercicio 12.13, para evaluar expresiones en una instrucción let. Las mismas restricciones aplicadas en el
+lenguaje Simple del ejercicio 12.26 deben mantenerse en este programa. Evalúe el intérprete con los programas en
+Simple escritos en el ejercicio 12.26. Compare los resultados de ejecutar estos programas en el intérprete, con los
+resultados de compilar los programas en Simple y de ejecutarlos en el simulador de Simpletron construido en el
+ejercicio 7.19
+
