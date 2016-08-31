@@ -1,0 +1,40 @@
+RESUMEN
+• Las estructuras autorreferenciadas contienen miembros llamados ligas que apuntan a estructuras del mismo tipo.
+• Las estructuras autorreferenciadas permiten que muchas estructuras estén ligadas en pilas, colas, listas y árboles.
+• La asignación dinámica de memoria reserva un bloque de bytes en memoria para almacenar un objeto de datos durante
+la ejecución de un programa.
+• La función malloc toma como argumento el número de bytes a asignar, y devuelve un apuntador void hacia la memoria
+asignada. Por lo general, la función malloc se utiliza con el operador sizeof. El operador sizeof determina el
+tamaño en bytes de la estructura a la que se le está asignando memoria.
+• La función free libera memoria.
+• Una lista ligada es una colección de datos almacenado en un grupo de estructuras autorreferenciadas conectadas.
+• Una lista ligada es una estructura de datos dinámica; la longitud de la lista puede aumentar o disminuir, conforme sea necesario.
+• Las listas ligadas pueden continuar creciendo, mientras exista memoria disponible.
+• Las listas ligadas proporcionan un mecanismo para la inserción y la eliminación simple de datos, mediante la reasignación
+de apuntadores.
+• Las pilas y las colas son versiones restringidas de una lista ligada.
+• Los nuevos nodos se agregan a una pila y se eliminan de ella, sólo en la cima. Por esta razón, a las pilas se les conoce
+como estructuras de datos últimas en entrar, primeras en salir (UEPS).
+• El miembro liga del último nodo de la pila se establece en NULL para indicar el fondo de la pila.
+• Las dos operaciones básicas que se utilizan para manipular una pila son empujar (push) y sacar (pop). La operación
+empujar crea un nuevo nodo y lo coloca en la cima de la pila. La operación sacar elimina un nodo de la cima de la
+pila, libera la memoria que estaba asignada al nodo eliminado y devuelve el valor eliminado.
+• En una cola, los nodos se eliminan de la cabeza y se agregan en el talón. Por esta razón, a la cola se le conoce como estructura
+de datos primera en entrar, primera en salir (PEPS). Las operaciones para agregar y eliminar se conocen como
+agregar (enqueue) y retirar (dequeue).
+• Los árboles son estructuras de datos más complejas que las listas ligadas, las colas y las pilas. Los árboles son estructuras
+de datos bidimensionales que requieren dos o más ligas por nodo.
+• Los árboles binarios contienen dos ligas por nodo.
+• El nodo raíz es el primer nodo del árbol.
+• Cada uno de los apuntadores del nodo raíz hace referencia a un hijo. El hijo izquierdo es el primer nodo del subárbol
+izquierdo y el hijo derecho es el primer nodo del subárbol derecho. A los hijos de un nodo se les conoce como hermanos.
+Si un nodo no tiene hijos, a éste se le llama nodo hoja.
+• Un árbol binario de búsqueda tiene la característica de que el valor del hijo izquierdo de un nodo es menor que el valor
+del nodo padre, y el valor del hijo derecho de un nodo es mayor o igual que el valor del nodo padre. Si puede determinarse
+que no hay valores duplicados, el valor del hijo derecho es simplemente mayor que el valor del nodo padre.
+• Un recorrido inorden de un árbol binario recorre el subárbol izquierdo inorden, procesa el valor del nodo y recorre el subárbol
+derecho inorden. El valor de un nodo no se procesa hasta que los valores de su subárbol izquierdo se procesan.
+• Un recorrido en preorden procesa el valor del nodo, recorre el subárbol izquierdo en preorden y recorre el subárbol derecho
+en preorden. El valor de cada nodo se procesa, conforma se encuentra cada nodo.
+• Un recorrido en postorden recorre el subárbol izquierdo en postorden, recorre el subárbol derecho en postorden, y procesa
+el valor del nodo. El valor de cada nodo no se procesa hasta que los valores de ambos subárboles se procesan.
