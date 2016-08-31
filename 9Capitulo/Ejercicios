@@ -1,0 +1,95 @@
+EJERCICIOS
+9.4 Escriba una instrucción printf o scanf para cada una de las siguientes tareas:
+a) Imprima el entero sin signo 40000 justificado a la izquierda, dentro de un campo de 15 posiciones con 8
+dígitos.
+b) Lea un valor hexadecimal dentro de la variable hex.
+c) Imprima 200 con y sin signo.
+d) Imprima 100 en forma hexadecimal, precedido por 0x.
+e) Lea los caracteres dentro del arreglo s, hasta que encuentre la letra p.
+f) Imprima 1.234 en un campo de 9 posiciones, precedido por ceros.
+g) Lea la hora de la forma hh:mm:ss; almacene las partes de la hora en las variables enteras hora, minuto y
+segundo. Ignore los dos puntos (:) del flujo de entrada. Utilice el carácter de supresión de asignación.
+h) Lea una cadena de la forma “caracteres” desde la entrada estándar. Almacene la cadena dentro del arreglo
+caracteres s. Elimine las comillas del flujo de entrada.
+i) Lea la hora de la forma hh:mm:ss; almacene las partes de la hora en las variables enteras hora, minuto y
+segundo. Ignore los dos puntos (:) del flujo de entrada. No utilice el carácter de supresión de asignación.
+9.5 Muestre lo que imprime cada una de las siguientes instrucciones. Si la instrucción es incorrecta, indique por qué.
+a) printf( “%-10d\n”, 10000 );
+b) printf( “%c\n”, “Esta es una cadena” );
+c) printf( “%*.*lf\n”, 8, 3, 1024.987654 );
+d) printf( “%#o\n%#X\n%#e\n”, 17, 17, 1008.83689 );
+e) printf( “% ld\n%+ld\n”, 1000000, 1000000 );
+f) printf( “%10.2E\n”, 444.93738 );
+g) printf( “%10.2g\n”, 444.93738 );
+h) printf( “%d\n”, 10.987 );
+9.6 Encuentre el error en cada uno de los siguientes segmentos de programa. Explique cómo se puede corregir cada
+error.
+a) printf( “%s\n”, ‘Feliz Cumpleanios’ );
+b) printf( “%c\n”, ‘Hola’ );
+c) printf( “%c\n”, “Esta es una cadena” );
+d) La siguiente instrucción debe imprimir “Buen Viaje”:
+printf( “”%s””, “Buen Viaje” );
+e) char dia[] = “Domingo”;
+printf( “%s\n”, dia[ 3 ] );
+f) printf( ‘Introduzca su nombre: ‘ );
+g) printf( %f, 123.456 );
+h) La siguiente instrucción debe imprimir los caracteres ‘0’ y ‘K’:
+printf( “%s%s\n”, ‘0’, ‘K’ );
+i) char s[ 10 ];
+scanf( “%c”, s[ 7 ] );
+9.7 Escriba un programa que cargue un arreglo de 10 elementos llamado numero, que lea enteros al azar entre 1 y
+1000. Por cada valor, imprima el valor y un total del número de caracteres impresos. Utilice el especificador de
+conversión %n para determinar el número de caracteres de salida para cada valor. Imprima el número total de caracteres
+de salida para todos los valores cargados, incluso el valor actual cada vez que se imprima. La salida del
+programa debe tener el siguiente formato:
+Capítulo 9 Entrada/Salida con formato en C 353
+Valor Caracteres totales
+342 3
+1000 7
+963 10
+6 11
+etc.
+9.8 Escriba un programa que evalúe la diferencia entre los especificadores de formato %d y %i, cuando se utilizan en
+la instrucciones
+scanf( “%i%d”, &x, &y );
+printf( “%d %d\n”, x, y );
+para imprimir los valores de salida. Pruebe el programa con el siguiente conjunto de datos de entrada.
+10 10
+-10 -10
+010 010
+0x10 0x10
+9.9 Escriba un programa que imprima un apuntador por medio de los especificadores de conversión entera y de conversión
+%p. ¿Cuál de éstos imprime valores extraños? ¿Cuál provoca errores? ¿En qué formato el especificador de
+conversión %p despliega la dirección en su sistema?
+9.10 Escriba un programa que evalúe los resultados de la impresión del valor entero 12345 y del valor de punto flotante
+1.2345 en distintos tamaños de campo. ¿Qué sucede cuando los valores se imprimen dentro de campos que
+contienen menos dígitos que valores?
+9.11 Escriba un programa que imprima el valor 100.453627 redondeado al dígito más cercano, décima, centésima,
+milésima y diezmilésima.
+9.12 Escriba un programa que imprima una cadena desde el teclado y que determine la longitud de la cadena. Imprima
+la cadena usando el doble de la longitud de la cadena como el ancho de campo.
+9.13 Escriba un programa que convierta las temperaturas enteras de 0 a 212 grados Fahrenheit a temperaturas en grados
+Celsius expresadas en punto flotante con 3 dígitos de precisión. Utilice la fórmula
+celsius = 5.0 / 9.0 * ( fahrenheit – 32 );
+para realizar el cálculo. La salida debe imprimirse en columnas de dos dígitos justificadas a la derecha con 10 caracteres
+cada una, y las temperaturas Celsius deben ser precedidas por un signo, tanto para valores positivos como para
+negativos.
+9.14 Escriba un programa que pruebe todas las secuencias de escape de la figura 9.16. Para las secuencias de escape que
+mueven el cursor, imprima el carácter antes y después de imprimir la secuencia de escape, de tal modo que sea claro
+hacia dónde se mueve el cursor.
+9.15 Escriba un programa que determine en dónde puede imprimirse el carácter ? como parte de una cadena de control
+de formato de printf, como una literal de carácter en lugar de una secuencia de escape \?.
+9.16 Escriba un programa que introduzca el valor 437 con cada uno de los especificadores de conversión de scanf.
+Imprima cada valor de entrada con todos los especificadores de conversión entera.
+9.17 Escriba un programa que utilice cada uno de los especificadores de conversión e, f y g para introducir el valor
+1.2345. Imprima los valores de cada variable para probar que puede utilizarse cada especificador de conversión
+para introducir el mismo valor.
+9.18 En algunos lenguajes de programación, las cadenas se introducen encerradas entre comillas sencillas o dobles. Escriba
+un programa que lea las tres cadenas suzy, “suzy” y ‘suzy’. ¿C ignora las comillas sencillas y dobles, o
+las lee como parte de la cadena?
+9.19 Escriba un programa que determine en dónde puede imprimirse el carácter ? como una constante de carácter ‘?’,
+en lugar de una constante de secuencia de escape ‘\?’ con el especificador de conversión %c dentro de la cadena
+de control de formato de una instrucción printf.
+9.20 Escriba un programa que utilice el especificador de conversión g para imprimir el valor 9876.12345. Imprima
+el valor con precisiones en el rango de 1 a 9.
+
