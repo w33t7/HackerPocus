@@ -1,0 +1,366 @@
+EJERCICIOS
+5.8 Muestre el valor de x después de que se realice cada una de las siguientes instrucciones.
+a) x = fabs( 7.5 );
+b) x = floor ( 7.5 );
+c) x = fabs( 0.0 );
+d) x = ceil( 0.0 );
+e) x = fabs( -6.4 );
+f) x = ceil( -6.4 );
+g) x = ceil ( -fabs( -8 + floor( -5.5 ) ) );
+5.9 Un estacionamiento cobra la cuota mínima de $2.00 por las tres primeras horas de estacionamiento. El estacionamiento
+cobra $0.50 adicional por hora o fracción después del tiempo mínimo. El cobro máximo para cualquier periodo
+de 24 horas es de $10.00. Suponga que ningún automóvil se estaciona por más de 24 horas, al mismo tiempo
+que otro. Escriba un programa que calcule e imprima los cobros por cada uno de los tres clientes que se estacionaron
+ayer en el estacionamiento. Debe introducir el número de horas que cada cliente pasó estacionado ahí. Su programa
+debe imprimir los resultados en una forma tabular, y debe calcular e imprimir los recibos de las percepciones
+de ayer. El programa debe utilizar la función calculaImporte para determinar el importe de cada cliente. Sus
+salidas deben ser semejantes al formato siguiente:
+Automóvil Horas Importe
+1 1.5 2.00
+2 4.0 2.50
+3 24.0 10.00
+Total 29.5 14.50
+5.10 Una aplicación de la función floor es la de redondear un valor al entero más cercano. La instrucción:
+y = floor(x + .5 );
+redondea el número x al entero más cercano, y asigna el resultado a y. Escriba un programa que lea varios números
+y utilice la instrucción anterior para redondear estos números al entero más cercano. Por cada uno de los nú-
+meros procesados, imprima el número original y el número redondeado.
+5.11 La función floor puede utilizarse para redondear un número a una posición decimal determinada. La instrucción:
+y = floor( x * 10 + .5 ) / 10;
+
+redondea x a la posición de las décimas (la primera posición a la derecha del punto decimal). La instrucción
+y = floor( x * 10 + .5 ) / 100;
+redondea x a la posición de las centésimas (la segunda posición a la derecha del punto decimal). Escriba un programa
+que defina cuatro funciones para redondear al número x de distintas maneras:
+a) redondeaAentero( numero )
+b) redondeaAdecimas ( numero )
+c) redondeaAcentesimas ( numero )
+d) redondeaAmilesimas ( numero )
+Por cada valor leído, su programa debe imprimir el valor original, el número redondeado al entero más cercano, el
+número redondeado a la décima más cercana, el número redondeado a la centésima más cercana, y el número redondeado
+a la milésima más cercana.
+5.12 Responda cada una de las siguientes preguntas.
+a) ¿Qué significa elegir números de manera “aleatoria”?
+b) ¿Por qué la función rand es tan útil para simular juegos de azar?
+c) ¿Por qué randomiza un programa por medio de srand? ¿Bajo qué circunstancias es recomendable no randomizar?
+d) ¿Por qué a menudo es necesario escalar y/o modificar los valores producidos por rand?
+e) ¿Por qué la simulación computarizada de situaciones reales es una técnica muy útil?
+5.13 Escriba instrucciones que asignen enteros de manera aleatoria a la variable n en los siguientes rangos:
+a) 1 ≤ n ≤ 2
+b) 1 ≤ n ≤ 100
+c) 0 ≤ n ≤ 9
+d) 1000 ≤ n ≤ 1112
+e) 1 ≤ n ≤ 1
+f) 3 ≤ n ≤ 11
+5.14 Para cada uno de los siguientes conjuntos de enteros, escriba una instrucción individual que imprima un número
+aleatorio de los conjuntos.
+a) 2, 4, 6, 8, 10.
+b) 3, 5, 7, 9, 11.
+c) 6, 10, 14,18, 22.
+5.15 Defina una función llamada hipotenusa que calcule la longitud de la hipotenusa de un triángulo recto, cuando
+se introducen los otros dos lados. Utilice esta función en un programa que determine la longitud de la hipotenusa
+para cada uno de los siguientes triángulos. La función debe tomar dos argumentos de tipo double y devolver la
+hipotenusa como double. Verifique su programa con los valores de los lados especificados en la figura 5.18.
+170 Funciones en C Capítulo 5
+Triángulo Lado 1 Lado 2
+1 3.0 4.0
+2 5.0 12.0
+3 8.0 15.0
+Figura 5.18 Valores de ejemplo para los lados del triángulo para el ejercicio 5.15.
+5.16 Escriba una función potenciaInt( base, exponente) que devuelva el valor de:
+baseexponente
+Por ejemplo, potenciaInt(3, 4)=3*3*3*3*3. Suponga que exponente es un entero positivo diferente de
+cero, y base es un entero. La función potenciaInt debe utilizar for para controlar los cálculos. No utilice las
+funciones matemáticas de la biblioteca.
+5.17 Escriba una función multiplo que determine para un par de enteros, si el segundo es múltiplo del primero. La
+función debe tomar dos argumentos enteros y devolver 1 (verdadero) si el segundo es un múltiplo del primero, y
+de lo contrario 0 (falso). Utilice esta función en un programa que introduzca una serie de pares de enteros.
+
+5.18 Escriba un programa que introduzca una serie de enteros y los pase, uno a la vez, a una función llamada impar
+que utilice el operador módulo para determinar si un entero es impar. La función debe tomar un argumento entero
+y devolver 1 si el entero es impar o 0 si no lo es.
+5.19 Escriba una función que despliegue en el margen izquierdo de la pantalla un cuadrado sólido de asteriscos cuyas
+medidas se especifiquen mediante el parámetro lado. Por ejemplo, si lado es 4, la función despliega:
+****
+****
+****
+****
+5.20 Modifique la función creada en el ejercicio 5.19 para formar el cuadrado de cualquier carácter que especifiquemos
+en el parámetro caracterLlenado. De este modo, si lado es igual a 5 y caracterLlenado es “#”, entonces
+esta función debe imprimir:
+#####
+#####
+#####
+#####
+#####
+5.21 Utilice técnicas similares a las empleadas en los ejercicios 5.19 y 5.20 para producir un programa que grafique un
+número variado de figuras.
+5.22 Escriba segmentos de programa que lleven a cabo cada una de las siguientes tareas:
+a) Calcular la parte entera de un cociente, cuando el entero a se divide entre el entero b.
+b) Calcular el residuo entero, cuando el entero a se divide entre el entero b.
+c) Utilice los segmentos de programa desarrolladas en a) y b), para escribir una función que introduzca un entero
+entre 1 y 32767 y que imprima una serie de dígitos, y que cada par de ellos se encuentre separado por dos espacios.
+Por ejemplo, el entero 4562 se debe imprimir como:
+4 5 6 2
+5.23 Escriba una función que tome el tiempo en tres argumentos enteros (para horas, minutos, y segundos), y que devuelva
+el número de segundos desde la última vez que el reloj “marcó las 12”. Utilice esta función para calcular
+los segundos que existen entre dos horas, las cuales se miden con el ciclo de 12 horas del reloj.
+5.24 Implemente las siguientes funciones enteras:
+a) La función celsius devuelve el equivalente en Celsius de la temperatura en Fahrenheit.
+b) La función fahrenheit devuelve el equivalente en Fahrenheit de la temperatura en Celsius.
+c) Utilice estas funciones para escribir un programa que imprima una gráfica que muestre el equivalente en
+Fahrenheit de las temperaturas Celsius de 0 a 100 grados, y los equivalentes Celsius de todas las temperaturas
+Fahrenheit de 32 a 212 grados. Imprima las salidas de forma tabular de modo que minimice el número de
+líneas de salida, pero que sean claras.
+5.25 Escriba una función que devuelva el más pequeño de tres números de punto flotante.
+5.26 Se dice que un número entero es un número perfecto, si la suma de sus factores, incluso el 1 (pero no el número
+mismo), arroja el mismo número. Por ejemplo, 6 es un número perfecto debido a que 6 = 1 + 2 + 3. Escriba la
+función perfecto que determine si el parámetro numero es un número perfecto. Utilice esta función en un programa
+que determine e imprima los números perfectos entre 1 y 1000. Imprima los factores de cada número perfecto
+para confirmar que el número es realmente perfecto. Rete el poder de su computadora y pruebe números más grandes
+que 1000.
+5.27 Se dice que un entero es primo si sólo es divisible entre 1 y entre sí mismo. Por ejemplo, 2, 3, 5 y 7 son primos,
+pero 4, 6, 8 y 9 no lo son.
+a) Escriba una función que determine si un número es primo.
+b) Utilice esta función en un programa que determine e imprima todos los números primos entre 1 y 10,000.
+¿Cuántos de estos 10,000 números tiene que verificar realmente antes de que esté seguro de que encontró todos
+los números primos?
+c) Inicialmente podría usted pensar que n/2 es el límite máximo que debe probar para ver si un número es primo,
+pero sólo necesita ir tan arriba como la raíz cuadrada de n. ¿Por qué? Rescriba el programa, y ejecútelo de ambas
+maneras. Estime la mejora en el rendimiento.
+5.28 Escriba una función que tome un valor entero y devuelva el número con los dígitos invertidos. Por ejemplo, dado
+el número 7631, la función debe regresar 1367.
+5.29 El máximo común divisor (MCD) de dos enteros es el entero más grande que divide cada uno de los números. Escriba
+un programa mcd que devuelva el máximo común divisor de dos enteros.
+5.30 Escriba una función puntosCalidad que tome el promedio de un estudiante y devuelva 4 si el promedio del estudiante
+está entre 90-100, 3 si el promedio es 80-89, 2 si el promedio es 70-79, 1 si el promedio es 60-69, y 0 si
+el promedio es menor que 60.
+5.31 Escriba un programa que simule un volado (el lanzamiento de una moneda). Por cada volado, el programa deberá
+imprimir Cara o Cruz. Permita que el programa lance la moneda 100 veces y cuente el número de veces que aparece
+cada lado de la moneda. Imprima los resultados. El programa debe llamar a una función aparte llamada resultado,
+la cual no tiene argumentos y devuelve 0 para Cara y 1 para Cruz. [Nota: Si el programa simula de manera
+realista el lanzamiento de monedas, entonces cada lado debe aparecer aproximadamente la mitad de las veces, para
+un total de 50 Caras y 50 Cruces.]
+5.32 Las computadoras juegan un rol cada vez más importante en la educación. Escriba un programa que ayude a cualquier
+estudiante de primaria a aprender a multiplicar. Utilice rand para producir dos enteros positivos de dos dí-
+gitos. Después, debe escribir una pregunta como ésta:
+¿Cuánto es 6 por 7?
+Entonces, el estudiante escribe la respuesta. Su programa verifica la respuesta. Si es correcta, imprime “¡Muy bien!”
+y hace otra pregunta. Si la pregunta es incorrecta, imprime “No. Por favor intenta de nuevo”, lo que permite
+al estudiante intentar la misma pregunta de manera repetida hasta que finalmente la contesta correctamente.
+5.33 Al uso de las computadoras en la educación se le conoce como Educación Asistida por Computadora (EAC). Un problema
+que se presenta en los ambientes EAC es la fatiga estudiantil. Esto puede eliminarse variando los diálogos de
+las computadoras para mantener la atención de los estudiantes. Modifique el programa del ejercicio 5.32, de manera
+que se impriman distintos comentarios para cada pregunta contestada de manera correcta y para cada pregunta contestada
+de manera incorrecta, de la siguiente forma:
+Mensajes para una respuesta correcta:
+¡Muy bien!
+¡Excelente!
+¡Buen trabajo!
+¡Mantén ese buen rendimiento!
+Mensajes para una respuesta incorrecta:
+No. Por favor intenta de nuevo.
+Incorrecto. Trata una vez más.
+No te rindas!
+No. Sigue intentando.
+Utilice el generador de números aleatorios para elegir un número de 1 a 4 y que seleccione el mensaje apropiado
+para cada respuesta. Utilice una instrucción switch con instrucciones printf para configurar los mensajes.
+5.34 Sistemas más sofisticados de educación asistida por computadora monitorean el rendimiento de un estudiante a lo
+largo de un periodo de tiempo. A menudo, la decisión de comenzar un nuevo tema se basa en el éxito del estudiante
+con los temas previos. Modifique el programa del ejercicio 5.33 para que cuente el número de respuestas correctas
+e incorrectas del estudiante. Después de contestar diez preguntas, su programa debe calcular el porcentaje de
+respuestas correctas. Si el porcentaje es menor que 75 por ciento, su programa debe imprimir “Por favor,
+pide ayuda adicional a tu profesor” y terminar.
+5.35 Escriba un programa en C que juegue el juego de “adivina un número” de la siguiente manera: su programa elige
+un número que debe adivinar el usuario, seleccionando al azar un número entero en el rango de 1 a 1000. Entonces,
+el programa escribe:
+Tengo un número entre 1 y 1000
+Puedes adivinar cuál es?
+Por favor escribe tu primera respuesta
+El jugador escribe su primera respuesta. El programa responde con uno de los siguientes mensajes:
+1. ¡Excelente! ¡Adivinaste el número!
+Quieres jugar otra vez (¿s o n?)
+2. Muy abajo. Intenta de nuevo.
+3. Muy arriba. Intenta de nuevo.
+Si la respuesta del jugador es incorrecta, su programa debe entrar en un ciclo hasta que finalmente el jugador adivine
+el número correcto. Su programa debe continuar indicándole al jugador Muy bajo o Muy alto, para ayudarle
+a “acercarse” a la respuesta correcta. [Nota: La técnica de búsqueda empleada en este problema se conoce como
+búsqueda binaria. Hablaremos más acerca de esto en el siguiente problema.]
+5.36 Modifique el programa del ejercicio 5.35 para contar el número de respuestas correctas que escribió el usuario. Si
+el número es 10 o menos, imprima ¡O sabe el secreto, o tiene suerte! Si el jugador adivina el número
+en diez ocasiones, entonces imprima ¡Ajá! ¡Usted sabe el secreto! Si el jugador necesita más de 10 intentos,
+entonces imprima ¡Usted puede hacerlo mejor! ¿Por qué no debe llevarse más de diez intentos? Bien, con
+cada “respuesta buena” el jugador debería ser capaz de eliminar la mitad de los números. Ahora sabe por qué cualquier
+número de 1 a 1000 se puede adivinar en 10 o menos oportunidades.
+5.37 Escriba una función recursiva potencia( base, exponente ) que cuando se invoque devuelva
+baseexponente
+Por ejemplo, potencia ( 3, 4 )= 3*3*3*3. Suponga que exponente es un entero mayor o igual que 1.
+Pista: El paso recursivo utilizará la relación:
+baseexponente = base * baseexponente - 1
+y la condición de terminación ocurre cuando exponente es igual a 1 debido a que
+base1 = base
+5.38 La serie de Fibonacci
+0, 1, 1, 2, 3, 5, 8, 13, 21, …
+comienza con los términos 0 y 11, y tiene la propiedad de que cada término sucesivo es la suma de los dos términos
+precedentes. a) Escriba una función no recursiva fibonacci(n) que calcule el enésimo número de Fibonacci.
+b) Determine el número de Fibonacci más grande que se puede imprimir en su sistema. Modifique el programa del
+inciso a) para utilizar un número double en lugar de un int para calcular y devolver los números de Fibonacci.
+Permita que el programa haga un ciclo hasta que falle debido a que excede el valor más alto.
+5.39 (Las torres de Hanoi.) Todo científico de computación en ciernes debe luchar con cierta clase de problemas, y la
+Torres de Hanoi (vea la figura 5.19) es uno de los más famosos. La leyenda cuenta que en un templo del lejano
+oriente, los sacerdotes intentaban mover una pila de discos de un asta a otra. El asta inicial contenía 64 discos ensartados
+y ordenados de abajo hacia arriba en orden de tamaño decreciente. Los sacerdotes intentaban mover la pila
+de una primera a una segunda bajo las restricciones de que sólo podían mover un disco a la vez, y en ningún
+
+Capítulo 5 Funciones en C 173
+
+Figura 5.19 Las Torres de Hanoi para el caso de cuatro discos
+
+
+momento podían colocar un disco más grande arriba de uno más pequeño. Una tercera asta estaba disponible para
+almacenar los discos de manera temporal. Supuestamente el mundo se acabará cuando los sacerdotes completen su
+tarea, por lo que tenemos pocos motivos para facilitar sus esfuerzos.
+Vamos a suponer que los sacerdotes intentan mover los discos del asta 1 al asta 3. Queremos desarrollar un algoritmo
+que imprima la secuencia precisa de la transferencia de cada disco.
+Si quisiéramos afrontar este problema con métodos tradicionales, rápidamente nos encontraríamos atascados
+sin esperanza para manejar los discos. En lugar de esto, si atacamos el problema considerando la recursividad, la
+tarea se hace posible automáticamente. Podemos considerar mover los n discos en términos del movimiento de só-
+lo n-1 discos (y por ende la recursividad) de la siguiente manera:
+a) Mueva n – 1 discos del asta 1 al asta 2, utilice el asta 3 como área de almacenamiento temporal.
+b) Mueva el último disco (el mayor) del asta 1 al asta 3.
+c) Mueva los n – 1, del asta 2 al asta 3, utilizando el asta 1 como área de almacenamiento temporal.
+El proceso finaliza cuando la última tarea involucra el movimiento del disco n – 1. Es decir, el caso base. Esto
+se lleva a cabo mediante la tarea trivial de mover un disco, sin la necesidad del área de almacenamiento temporal.
+Escriba un programa para resolver el problema de las Torres de Hanoi. Utilice una función recursiva con cuatro
+parámetros:
+a) El número de discos a mover.
+b) El asta en la que se encuentran ensartados los discos.
+c) El asta a la que se moverán los discos.
+d) El asta que se utilizará como área de almacenamiento temporal.
+Su programa debe imprimir las instrucciones precisas necesarias para mover los discos desde el asta inicial al
+asta de destino. Por ejemplo, para mover una pila con tres discos del asta 1 al asta 3, su programa debe imprimir la
+siguiente serie de movimientos:
+1 → 3 (Esto significa mover un disco del asta 1 al asta 3).
+1 → 2
+3 → 2
+1 → 3
+2 → 1
+2 → 3
+1 → 3
+5.40 Cualquier programa que puede implementarse de manera recursiva, puede implementarse de manera iterativa, sin
+embargo, en ocasiones con una considerable dificultad y menor caridad. Intente escribir una versión iterativa de las
+Torres de Hanoi. Si tiene éxito, compare su versión iterativa con la versión recursiva desarrollada en el ejercicio 5.39.
+Investigue los problemas de rendimiento, claridad, y su habilidad para demostrar la eficiencia de los programas.
+5.41 (Cómo visualizar la recursividad.) Es interesante observar en acción “a la recursividad”. Modifique la función factorial
+de la figura 5.14 para imprimir su variable local y su llamada recursiva a la función. Para cada llamada recursiva,
+despliegue las salidas en una línea separada y agregue un nivel de sangrado. Haga lo mejor posible por
+hacer sus salidas claras, interesantes, y significativas. Aquí, su meta es diseñar e implementar un formato de salida
+que ayude a una persona a entender mejor la recursividad. Usted podría querer incluir dichas capacidades gráficas
+a los muchos otros ejemplos y ejercicios que aparecen a través del libro.
+5.42 El máximo común divisor de los enteros x y y es el entero más grande que divide tanto a x como a y. Escriba una
+función recursiva mcd que devuelva el máximo común divisor de x y y. El mcd de x y y se define de manera
+recursiva de la siguiente manera: si y es igual a 0, entonces mcd(x, y) es x, de lo contrario mcd(( x, y ) es
+mcd( y, x%y ), en donde % es el operador módulo.
+5.43 ¿Será posible llamar a main de manera recursiva? Escriba un programa que contenga una función main. Incluya
+la variable static cuenta, inicializada en 1. Postincremente e imprima el valor de cuenta cada vez que se invoque
+a main. Ejecute su programa. ¿Qué sucede?
+5.44 Los ejercicios 5.32 a 5.34 desarrollaron un programa de educación asistida por computadora para enseñar a un estudiante
+de primaria a multiplicar. Este ejercicio sugiere mejoras a ese programa.
+a) Modifique el programa para permitir al usuario registrar el nivel de capacidad. Un nivel igual a 1 significa el
+uso de números de un solo dígito para el problema, un nivel igual a dos significa el uso de números de dos dígitos,
+etcétera.
+b) Modifique el programa para permitir al usuario elegir el tipo de problemas que desea estudiar. Una opción igual a
+1 significa sólo problemas de sumas, 2 significa sólo problemas de restas, 3 significa sólo problemas de multiplicación,
+4 significa sólo problemas de división, y 5 significa la mezcla aleatoria de problemas de todos los tipos. 
+
+5.45 Escriba una función distancia que calcule la distancia entre dos puntos (x1, y1) y (x2, y2). Todos los números
+y los valores de retorno deben ser de tipo double.
+5.46 ¿Qué hace el siguiente programa?
+01 #include <stdio.h>
+02
+03 /* la función main comienza la ejecución del programa */
+04 int main()
+05 {
+06 int c; /* variable para mantener el carácter introducido por el usuario */
+07
+08 if ( ( c = getchar() ) != EOF ) {
+09 main();
+10 printf( “%c”, c );
+11 } /* fin de if */
+12
+13 return 0; /* indica terminación exitosa */
+14
+15 } /* fin de main */
+5.47 ¿Qué hace el siguiente programa?
+01 #include <stdio.h>
+02
+03 int misterio( int a, int b ); /* prototipo de función */
+04
+05 /* la función main comienza la ejecución del programa */
+06 int main()
+07 {
+08 int x; /* primer entero */
+09 int y; /* segundo entero */
+10
+11 printf( “Introduzca dos enteros: “ );
+12 scanf( “%d%d”, &x, &y );
+13
+14 printf( “El resultado es %d\n”, misterio( x, y ) );
+15
+16 return 0; /* indica terminación exitosa */
+17
+18 } /* fin de main */
+19
+20 /* El parámetro b debe ser un entero positivo
+21 para evitar la recursividad infinita */
+22 int misterio( int a, int b )
+23 {
+24 /* caso base */
+25 if ( b == 1 ) {
+26 return a;
+27 } /* fin de if */
+28 else { /* paso recursivo */
+29 return a + misterio( a, b - 1 );
+30 } /* fin de else */
+31
+32 } /* fin de la función misterio */
+
+5.48 Después de que haya determinado lo que hace el programa de la figura 5.47, modifíquelo para que funcione de manera
+apropiada después de eliminar la restricción de que el segundo argumento sea positivo.
+5.49 Escriba un programa que verifique tantas funciones matemáticas de la biblioteca de la figura 5.2 como pueda. Practique
+con cada una de estas funciones haciendo que su programa imprima las tablas de retorno de los valores para
+una diversidad de valores de argumentos.
+5.50 Encuentre el error en cada uno de los siguientes segmentos de programa y explique cómo corregirlos:
+a) double cubo( float ); /* Prototipo de función */
+...
+cubo (float numero ) /* definición de función */
+{
+return numero = numero * numero;
+}
+b) register auto int x = 7;
+c) int numeroAleatorio = srand();
+d) double y = 123.45678;
+int x;
+x = y;
+printf( “%f\n”, (double) x );
+e) double cuadrado( double numero )
+{
+double numero;
+return numero * numero;
+}
+f) int suma( int n )
+{
+if ( n == 0 )
+return 0;
+else
+return n + suma( n );
+}
+5.51 Modifique el programa del juego de craps que aparece en la figura 5.10 para permitir las apuestas. Empaque, como
+una función, la porción del programa que ejecuta un juego de craps. Inicialice la variable saldoBanco en
+$1000. Indique al usuario que introduzca la apuesta. Utilice un ciclo while para verificar si la apuesta es
+menor o igual que saldoBanco; si no es así, indique al usuario que reintroduzca la apuesta hasta que lo haga con
+una cantidad válida. Después de introducir una cantidad válida, ejecute el juego de craps. Si el jugador pierde, disminuya
+saldoBanco con el importe de la apuesta, imprima el nuevo saldoBanco, verifique si saldoBanco
+es igual que cero, y si lo es imprima el mensaje “Lo siento. ¡Su saldo se agoto!” Durante el transcurso
+del juego, imprima mensajes para crear algo de “conversación” tal como “mhm…, parece que va a la quiebra”,
+o “¡Ande!, atrévase!”, o “¡Ya estás grande, ahora es el momento de arriesgarse!”
