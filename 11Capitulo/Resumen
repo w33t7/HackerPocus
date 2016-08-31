@@ -1,0 +1,57 @@
+RESUMEN
+• Todos los elementos de datos procesados por una computadora se reducen a combinaciones de ceros y unos.
+• El elemento de datos más pequeño en una computadora puede asumir el valor de 0 o 1. A dicho elemento de dato se le
+llama bit (la abreviatura de “dígito binario”; un dígito que puede asumir uno de dos valores).
+• A los dígitos, a las letras y a los símbolos especiales se les conoce como caracteres. Un conjunto de caracteres es el conjunto
+de todos los caracteres que pueden utilizarse para escribir programas y representar elementos de datos en una computadora
+en particular. Cada carácter del conjunto de caracteres de una computadora se representa como un patrón de ocho
+unos y ceros (llamado byte).
+• Un campo es un grupo de caracteres que tienen un significado común.
+• Un registro es un grupo de campos relacionados.
+• Al menos un campo de cada registro se elige como la clave del registro. La clave de registro identifica a un registro como
+parte de una persona o entidad en particular.
+• El tipo más popular de organización para los registros en un archivo es el llamado archivo de acceso secuencial, en el que
+se accede a los registros de manera consecutiva hasta que se localiza el dato deseado.
+• En ocasiones, a un grupo de campos relacionados se le llama base de datos. A una colección de programas diseñados para
+crear y manejar una base de datos se le llama sistema de administración de bases de datos (DBMS).
+• C ve a un archivo simplemente como un flujo secuencial de bytes.
+• C abre tres archivos y sus flujos relacionados (la entrada estándar, la salida estándar y el error estándar) cuando comienza
+la ejecución de un programa.
+• A los apuntadores de archivo asignados a la entrada, a la salida y al error estándar se les llama stdin, stdout y
+stderr, respectivamente.
+• La función fgetc lee un carácter desde un archivo especificado. La función fputc escribe un carácter en un archivo
+especificado.
+• La función fgets lee una línea desde el archivo especificado. La función fputs escribe una línea en un archivo especificado.
+• FILE es un tipo de estructura definida en el encabezado stdio.h. El programador no necesita conocer las especificaciones
+de esta estructura para utilizar archivos. Cuando un archivo se abre, devuelve un apuntador al archivo de la estructura
+FILE.
+• La función fopen toma dos argumentos, el nombre del archivo y el modo de apertura, y abre el archivo. Si el archivo
+existe, su contenido se descarta sin advertencia alguna. Si el archivo no existe y se abre para escritura, fopen crea el
+archivo.
+• La función feof determina si se activó el indicador de fin de archivo.
+• La función fprintf es equivalenete a printf, con la excepción de que printf recibe como argumento un apuntador
+al archivo en donde se escribirán los datos.
+• La función fclose cierra el archivo al que apunta su argumento.
+• Para crear un archivo o para descartar el contenido de un archivo antes de escribir los datos, abra el archivo para escritura
+(“w”). Para leer un archivo existente, abra el archivo para lectura (“r”). Para agregar registros al final de un archivo
+existente, abra el archivo para agregar (“a”). Para abrir un archivo de modo que se pueda escribir o leer en él, abra el archivo para actualización en alguna de estas tres formas, “r+”, “w+” o “a+”. El modo “r+” simplemente abre el archivo
+para lectura y escritura. El modo “w+” crea el archivo si éste no existe y, si existe, descarta el contenido actual del
+archivo. El modo “a+” crea el archivo si no existe, y la escritura se hace al final del archivo.
+• La función fscanf es equivalente a scanf, con la excepción de que fscanf recibe como argumento un apuntador al archivo
+(por lo general, diferente a stdin) desde el cual se leerán los datos.
+• La función rewind provoca que el programa reubique la posición del apuntador de posición del archivo especificado al
+principio del archivo.
+• El procesamiento de archivos de acceso aleatorio se utiliza para acceder directamente a un registro.
+• Para facilitar el acceso aleatorio, los datos se almacenan en registros de longitud fija. Dado que cada registro tiene la misma
+longitud, la computadora puede calcular rápidamente (como una función de la clave de registro) la ubicación exacta
+de un registro con respecto al principio del archivo.
+• Los datos pueden agregarse con facilidad a un archivo de acceso aleatorio sin destruir otros datos del archivo. Los datos
+almacenados previamente en un archivo con registros de longitud fija también pueden modificarse y eliminarse sin rescribir
+el archivo completo.
+• La función fwrite escribe un bloque (un número específico de bytes) de datos en un archivo.
+• El operador en tiempo de compilación sizeof devuelve el tamaño de su operando.
+• La función fseek establece el apuntador de posición del archivo en una posición específica en el archivo, basándose en
+la posición inicial de la búsqueda en el archivo. La búsqueda puede comenzar desde una de tres ubicaciones; SEEK_SET
+comienza desde el principio del archivo, SEEK_CUR comienza desde la posición actual del archivo, y SEEK_END comienza
+desde el final del archivo.
+• La función fread lee un bloque (un número específico de bytes) de datos de un archivo.
