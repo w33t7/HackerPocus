@@ -1,0 +1,62 @@
+RESUMEN
+• Las estructuras, algunas veces llamadas agregados, son colecciones de variables relacionadas bajo un mismo nombre.
+• Las estructuras pueden contener variables de diferentes tipos de datos.
+• La palabra reservada struct comienza toda definición de estructura. Dentro de las llaves de una definición de estructura
+se encuentran las declaraciones de los miembros de la estructura.
+• Los miembros de la misma estructura deben tener nombres únicos.
+• Una definición de estructura crea un nuevo tipo de dato que puede utilizarse para definir variables.
+• Existen dos métodos para definir variables de estructuras. El primer método es definir las variables como se hace con las
+variables de otros tipos de datos, por medio del tipo struct etiquetaNombre. El segundo método consiste en incluir
+las variables entre la llave que cierra la definición de la estructura y el punto y coma que finaliza la definición de la
+estructura.
+• La etiqueta con el nombre de la estructura es opcional. Si la estructura se define sin una etiqueta, las variables del tipo de
+datos derivado debe definirse en la definición de la estructura, y no pueden definirse otras variables de un nuevo tipo de estructura.
+• Una estructura puede inicializarse con una lista de inicializadores, colocando después del nombre de la variable un signo
+de igual y una lista de inicializadores separados por comas, encerrada entre llaves. Si hay menos inicializadores en la
+lista que miembros en la estructura, los miembros restantes se inicializan automáticamente en cero (o NULL, si el miembro
+es un apuntador).
+• Estructuras completas pueden asignarse a variables de estructuras del mismo tipo.
+• Una variable de estructura puede inicializarse con una variable de estructura del mismo tipo.
+• El operador miembro de la estructura se utiliza cuando se accede a un miembro de la estructura, a través del nombre de
+la variable de estructura.
+• El operador apuntador de la estructura (->), creado con un signo menos (-) y un signo de mayor que (>), se utiliza cuando
+se accede a un miembro de la estructura a través de un apuntador a la estructura.
+• Las estructuras y los miembros individuales de las estructuras se pasan por valor a las funciones.
+• Para pasar por referencia una estructura, pase la dirección de la variable estructura.
+• Un arreglo de estructuras se pasa automáticamente por referencia.
+• Para pasar un arreglo por valor, genere una estructura con el arreglo como miembro.
+• Al crear un nuevo nombre con typedef, no se crea un nuevo tipo; éste crea un nombre que es un sinónimo del tipo definido
+previamente.
+• Una unión es un tipo de dato derivado con miembros que comparten el mismo espacio de almacenamiento. Los miembros
+pueden ser de cualquier tipo.
+• El espacio reservado para una unión es lo suficientemente grande para almacenar su miembro más grande. En la mayoría
+de los casos, las uniones contienen variables de dos o más tipos. Sólo se puede hacer referencia a un miembro, y por
+lo tanto a un tipo de dato, a la vez.
+• Una unión se declara mediante la palabra reservada union, en el mismo formato que una estructura.
+• Una unión puede inicializarse con un valor del tipo de su primer miembro.
+• El operador a nivel de bits AND (&) toma dos operandos integrales. Un bit del resultado se establece en 1, si los bits correspondientes
+a cada uno de los operandos son 1.
+• Las máscaras se utilizan para ocultar algunos bits, mientras se preservan otros.
+• El operador a nivel de bits OR incluyente (|) toma dos operandos. Un bit en el resultado se establece en 1, si el bit correspondiente
+a cualquiera de sus operandos se establece en 1.
+• Cada uno de los operadores binarios a nivel de bits tiene un operador de asignación correspondiente.
+• El operador a nivel de bits OR excluyente (^) toma dos operandos. Un bit del resultado se establece en 1, si exactamente
+uno de los bits correspondientes a los dos operandos se establece en 1.
+• El operador de desplazamiento a la izquierda (<<) desplaza hacia la izquierda a los bits de su operando izquierdo, el nú-
+mero de bits especificado por su operando derecho. Los bits desocupados a la derecha se reemplazan con ceros.
+• El operador de desplazamiento a la derecha (>>) desplaza hacia la derecha a los bits de su operando izquierdo, el número
+de bits especificado por su operando derecho. Realizar un desplazamiento a la derecha sobre un entero sin signo ocasiona
+que los bits desocupados a la izquierda se reemplazan con ceros. Los bits desocupados en enteros con signo pueden reemplazarse
+con ceros o unos; esto depende de la máquina.
+• El operador a nivel de bits de complemento (~) toma un operando e invierte sus bits; esto produce el complemento en
+unos del operando.
+• Los campos de bits reducen el espacio utilizado, almacenando los datos en el número mínimo de bits necesarios.
+• Los miembros de un campo de bits deben declararse como int o unsigned.
+• Un campo de bits se declara colocando el nombre de un miembro int o unsigned seguido por dos puntos y el ancho
+del campo de bits.
+• El ancho de un campo de bits debe ser una constante entera entre 0 y el número total de bits utilizado para almacenar una
+variable int en su sistema.
+• Si un campo de bits se especifica sin un nombre, el campo se utiliza como relleno en la estructura.
+• Un campo de bits sin nombre con un ancho 0, alinea el siguiente campo de bits en un nuevo límite de palabras.
+• Una enumeración, designada por la palabra reservada enum, es un conjunto de enteros que se representan por medio de identificadores.
+Los valores de una enum inician con 0, a menos que se especifique lo contrario, y se incrementan en 1.
