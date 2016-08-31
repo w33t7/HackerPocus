@@ -1,0 +1,173 @@
+EJERCICIOS
+10.5 Proporcione la definición para cada una de las siguientes estructuras y uniones:
+a) La estructura inventario que contiene un arreglo de caracteres nombreParte[ 30 ], la variable entera
+numeroParte, la variable de punto flotante precio, y las variables enteras almacen y resurtir.
+b) La unión datos que contiene char c, short s, long b, float f y double d.
+c) Una estructura llamada direccion que contiene los arreglos de caracteres direccionCalle[ 25],
+ciudad[ 20 ], estado[ 3 ] y codigoPostal[ 6 ].
+d) Una estructura estudiante que contiene los arreglos nombre[ 15 ] y apellido[ 15 ], y la variable
+direccionCasa del tipo struct direccion de la parte (c).
+e) Una estructura prueba que contiene campos de 16 bits con anchos de 1 bit. Los nombres de los campos de bits
+son las letras de la a a la p.
+10.6 Dadas las siguientes definiciones de estructuras y variables,
+struct cliente{
+char apellido[ 15 ];
+char nombre[ 15 ];
+int numeroCliente;
+struct {
+char numeroTelefonico[ 11 ];
+char direccion[ 50 ];
+char ciudad[ 15 ];
+char estado[ 3 ];
+char codigoPostal[ 6 ];
+} personal;
+} registroCliente, *ptrCliente;
+ptrCliente = &registroCliente;
+escriba una expresión que pueda utilizarse para acceder a los miembros de la estructura en cada una de las siguientes
+partes:
+a) Al miembro apellido de la estructura registroCliente.
+b) Al miembro apellido de la estructura apuntada por ptrCliente.
+c) Al miembro nombre de la estructura registroCliente.
+d) Al miembro nombre de la estructura apuntada por ptrCliente.
+e) Al miembro numeroCliente de la estructura registroCliente.
+f) Al miembro numeroCliente de la estructura apuntada por ptrCliente.
+g) Al miembro numeroTelefonico del miembro personal de la estructura registroCliente.
+h) Al miembro numeroTelefonico del miembro personal de la estructura apuntada por ptrCliente.
+i) Al miembro direccion del miembro personal de la estructura registroCliente.
+j) Al miembro direccion del miembro personal de la estructura apuntada por ptrCliente.
+k) Al miembro ciudad del miembro personal de la estructura registroCliente.
+l) Al miembro ciudad del miembro personal de la estructura apuntada por ptrCliente.
+m) Al miembro estado del miembro personal de la estructura registroCliente.
+n) Al miembro estado del miembro personal de la estructura apuntada por ptrCliente.
+o) Al miembro codigoPostal del miembro personal de la estructura registroCliente.
+p) Al miembro codigoPostal del miembro personal de la estructura apuntada por ptrCliente.
+10.7 Modifique el programa de la figura 10.16 para barajar las cartas, utilizando un barajado de alto rendimiento (como
+muestra la figura 10.3). Imprima el mazo resultante en un formato de dos columnas como en la figura 10.4. Preceda
+a cada carta con su color.
+10.8 Genere una unión entero con miembros char c, short s, int i, y long b. Escriba un programa que introduzca
+un valor de tipo char, un short, un int y un long, y que almacene los valores en variables de unión del tipo
+union entero. Cada variable de unión debe imprimirse como un char, un short, un int y un long. ¿Los
+valores siempre se imprimen correctamente?
+10.9 Genere una unión puntoFlotante con miembros float f, double d y long double x. Escriba un programa
+que introduzca un valor de tipo float, un double y un long double, y que almacene los valores en
+variables de unión del tipo union puntoFlotante. Cada variable de unión debe imprimirse como un float,
+un double y un long double. ¿Los valores siempre se imprimen correctamente?
+10.10 Escriba un programa que desplace hacia la derecha una variable entera de 4 bits. El programa debe imprimir el entero
+en bits, antes y después de cada operación de desplazamiento. ¿Su sistema coloca 0s o 1s en los bits desocupados?
+10.11 Si su computadora utiliza enteros de 2 bytes, modifique el programa de la figura 10.7 para que funcione con enteros
+de 2 bytes.
+10.12 Desplazar hacia la izquierda un entero unsigned un bit es equivalente a multiplicar el valor 2. Escriba una función
+potencia2 que tome dos argumentos enteros, numero y potencia, y que calcule
+numero *2potencia
+Utilice el operador de desplazamiento para calcular el resultado. Imprima los valores como enteros y como bits.
+10.13 El operador de desplazamiento a la izquierda puede utilizarse para empacar dos valores de carácter en una variable
+entera unsigned. Escriba un programa que introduzca dos caracteres desde el teclado y que los pase a la función
+empacaCaracteres. Para empacar dos caracteres en una variable entera unsigned, asigne el primer carácter
+a la variable unsigned, desplace 8 posiciones de bits hacia la izquierda la variable unsigned y combine la
+variable unsigned con el segundo carácter por medio del operador OR incluyente a nivel de bits. El programa debe
+arrojar los caracteres en su formato de bits, antes y después de que se empaquen en la variable entera unsigned,
+para demostrar que los caracteres están empacados correctamente en la variable unsigned.
+
+10.14 Por medio del operador de desplazamiento a la derecha, el operador a nivel de bits AND y una máscara, escriba
+una función empacaCaracteres que tome la variable entera unsigned del ejercicio 10.13, y que la desempaque
+en dos caracteres. Para desempacar dos caracteres de una variable entera unsigned, combine la variable
+unsigned con la máscara 65280 (00000000 00000000 11111111 00000000), y desplace 8 bits hacia la
+derecha al resultado. Asigne el valor resultante a una variable char. Después combine la variable entera unsigned
+con la máscara 255 (00000000 00000000 00000000 11111111). Asigne el resultado a otra variable
+char. El programa debe imprimir la variable entera unsigned en bits, antes de que sea desempacada, y después
+debe imprimir los caracteres en bits para confirmar que se desempacaron correctamente.
+10.15 Si su sistema utiliza enteros de 4 bytes, rescriba el programa del ejercicio 10.13 para empacar 4 caracteres.
+10.16 Si su sistema utiliza enteros de 4 bytes, rescriba la función desempacarCaracteres del ejercicio 10.14 para
+desempacar 4 caracteres. Genere las máscaras que necesite para desempacar los cuatro caracteres, desplazando 8
+bits hacia la izquierda el valor 255 de la variable mascara, 0, 1, 2 o 3 veces (dependiendo del byte que esté desempacando).
+10.17 Escriba un programa que invierta el orden de los bits de un valor entero unsigned. El programa debe introducir
+el valor del usuario y llamar a la función invierteBits para imprimir los bits en orden inverso. Imprima el
+valor en bits, tanto antes como después de que los bits se inviertan, para confirmar que se invirtieron de manera
+correcta.
+10.18 Modifique la función despliegaBits de la figura 10.7 para que sea portable entre sistemas que usen enteros
+de 2 bytes o enteros de 4 bytes. [Pista: Utilice el operador sizeof para determinar el tamaño de un entero en una
+máquina en particular.]
+10.19 El siguiente programa utiliza la función multiplo para determinar si el entero introducido desde el teclado es un
+múltiplo de algún entero X. Revise la función multiplo, después determine el valor de X
+
+01 /* ej10_19.c */
+02 /* Este programa determina si el valor es un múltiplo de X. */
+03 #include <stdio.h>
+04
+05 int multiplo( int num ); /* prototipo */
+06
+07 int main()
+08 {
+09 int y; /* y almacenará un entero introducido por el usuario */
+10
+11 printf( “Introduce un entero entre 1 y 32000: “ );
+12 scanf( “%d”, &y );
+13
+14 /* si y es un múltiplo de X */
+15 if ( multiplo( y ) ) {
+16 printf( “%d es un multiplo de X\n”, y );
+17 } /* fin de if */
+18 else {
+19 printf( “%d no es un multiplo de X\n”, y );
+20 } /* fin de else */
+21
+22 return 0; /* indica terminación exitosa */
+23 } /* fin de main */
+24
+25 /* determina si suma es un múltiplo de X */
+26 int multiplo( int num )
+27 {
+28 int i; /* contador */
+29 int mascara = 1; /* inicializa mascara */
+30 int mult = 1; /* initialize mult */
+(Parte 1 de 2.)
+
+31
+32 for ( i = 1; i <= 10; i++, mascara <<= 1 ) {
+33
+34 if ( ( num & mascara ) != 0 ) {
+35 mult = 0;
+36 break;
+37 } /* fin de if */
+38
+39 } /* fin de for */
+40
+41 return mult;
+42 } /* fin de la función multiplica */
+(Parte 2 de 2.)
+10.20 ¿Qué es lo que hace el siguiente programa?
+01 /* ej10_20.c */
+02 #include <stdio.h>
+03
+04 int misterio( unsigned bits ); /* prototipo */
+05
+06 int main()
+07 {
+08 unsigned x; /* x almacenará un entero introducido por el usuario */
+09
+10 printf( “Introduce un entero: “ );
+11 scanf( “%u”, &x );
+12
+13 printf( “El resutado es %d\n”, misterio( x ) );
+14
+15 return 0; /* indica terminación exitosa */
+16 } /* fin de main */
+17
+18 /* ¿Qué hace la función ? */
+19 int misterio( unsigned bits )
+20 {
+21 unsigned i; /* contador */
+22 unsigned mascara = 1 << 31; /* inicializa mascara */
+23 unsigned total = 0; /* inicializa total */
+24
+25 for ( i = 1; i <= 32; i++, bits <<= 1 ) {
+26
+27 if ( ( bits & mascara ) == mascara ) {
+28 total++;
+29 } /* fin de if */
+30
+31 } /* fin de for */
+32
+33 return !( total % 2 ) ? 1 : 0;
+34 } /* fin de la función misterio */
+
