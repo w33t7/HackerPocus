@@ -1,0 +1,72 @@
+RESUMEN
+• C almacena listas de valores en arreglos. Un arreglo es un grupo de posiciones de memoria relacionadas. Estas posiciones
+están relacionadas por el hecho de que tienen el mismo nombre y el mismo tipo. Para hacer referencia a una posición o
+elemento en particular del arreglo, especificamos el nombre del arreglo y el subíndice.
+• Un subíndice puede ser un entero o una expresión entera. Si un programa utiliza una expresión como subíndice, entonces
+la expresión se evalúa para determinar el elemento particular del arreglo.
+• Es importante notar la diferencia cuando se hace referencia al séptimo elemento del arreglo y cuando se hace referencia
+al elemento siete. El séptimo elemento tiene un subíndice de 6, mientras que el elemento siete tiene un subíndice de 7
+(en realidad el octavo elemento del arreglo). Ésta es una fuente de errores de desplazamiento en uno.
+• Los arreglos ocupan espacio en memoria. Para reservar 100 elementos para el arreglo entero b y 27 elementos para el
+arreglo entero x, el programador escribe
+int b[ 100 ], x[ 27 ];
+• Un arreglo de tipo char puede utilizarse para almacenar una cadena de caracteres.
+• Los elementos de un arreglo pueden inicializarse en una declaración, en instrucciones de asignación, e introduciendo directamente
+los valores en los elementos del arreglo.
+• Si hay menos inicializadores que elementos en el arreglo, C inicializa los elementos sobrantes en cero.
+• C no evita que se haga referencia a elementos que se encuentran fuera de los límites de un arreglo.
+• Un arreglo de caracteres puede inicializarse mediante una literal de cadena.
+• Todas las cadenas en C finalizan con el carácter nulo. El carácter constante que representa el carácter nulo es ‘\0’.
+• Los arreglos de caracteres pueden inicializarse con caracteres constantes en una lista de inicialización
+• Se puede acceder de manera directa a los caracteres individuales de una cadena almacenada en un arreglo, mediante la
+notación de subíndices para arreglos.
+• Desde el teclado es posible introducir una cadena en un arreglo de caracteres, utilizando scanf y el especificador de
+conversión %s.
+• Es posible desplegar un arreglo de caracteres que representa una cadena, mediante printf y el especificador de conversión
+%s.
+• Aplique static a la definición de un arreglo local para que el arreglo no se cree cada vez que se llame a la función, y
+para que el arreglo no se destruya cada vez que la función salga.
+• Los arreglos que son static se inicializan automáticamente en tiempo de compilación. Si el programador no inicializa
+explícitamente un arreglo static, el compilador lo inicializa en cero.
+• Para pasar un arreglo a una función, se pasa el nombre del arreglo. Para pasar un elemento particular de un arreglo a una
+función, simplemente pase el nombre del arreglo seguido por el subíndice [que se encuentra entre corchetes] del elemento
+particular.
+• C pasa por referencia los arreglos a funciones; las funciones llamadas pueden modificar los valores de los elementos en
+los arreglos originales de la función que llama. El nombre del arreglo en realidad es la dirección del primer elemento del
+arreglo. Debido a que la dirección inicial del arreglo es pasada, la función llamada sabe precisamente el lugar en donde
+está almacenado el arreglo.
+• Para recibir un arreglo como argumento, la lista de parámetros de la función debe especificar que se recibirá un arreglo. El
+tamaño del arreglo no es necesario en los corchetes del arreglo (en el caso de los arreglos con un solo subíndice).
+• Cuando se utiliza con printf, el especificador de conversión %p normalmente despliega las direcciones como números
+hexadecimales, pero esto depende de la plataforma.
+• C proporciona el calificador especial de tipo const para evitar modificaciones a los valores de un arreglo en una función.
+Cuando un parámetro de arreglo es precedido por el calificador const, los elementos del arreglo se vuelven constantes
+en el cuerpo de la función, e intentar modificarlos dará como resultado un error en tiempo de compilación.
+• Podemos ordenar un arreglo, utilizando la técnica de ordenamiento burbuja. Se hacen diversas pasadas al arreglo. En cada
+pasada, se comparan pares sucesivos de elementos. Si un par se encuentra en orden (o si los valores son idénticos), se
+deja así. Si un par está en desorden, los valores se intercambian. Para arreglos pequeños, el ordenamiento burbuja es aceptable,
+pero para arreglos grandes funciona de manera ineficiente comparado con otros algoritmos más sofisticados de
+ordenamiento.
+• La búsqueda lineal compara cada elemento del arreglo con la clave de búsqueda. Debido a que el arreglo no se encuentra
+en un orden particular, la probabilidad de que el valor se encuentre en el primer elemento o en el último es la misma.
+Por lo tanto, en promedio, el programa tendrá que comparar la clave de búsqueda con la mitad de los elementos del arreglo.
+La búsqueda lineal funciona bien para arreglos pequeños o para arreglos desordenados.
+• El algoritmo de la búsqueda binaria elimina la mitad de los elementos de un arreglo ordenado después de cada comparación.
+El algoritmo localiza el elemento central del arreglo y lo compara con la clave de búsqueda. Si son iguales, se localizó
+la clave de búsqueda y se devuelve el subíndice de ese elemento. Si no son iguales, el problema se reduce a buscar
+en una mitad del arreglo.
+• En el peor de los casos, por medio de la búsqueda binaria, la búsqueda en un arreglo de 1023 elementos tomará sólo 10
+comparaciones. En un arreglo de 1048576 (220) elementos tomará un máximo de 20 comparaciones para encontrar la clave.
+En un arreglo de 1000 millones de elementos tomará un máximo de 30 comparaciones para encontrar la clave.
+• Los arreglos pueden utilizarse para representar tablas de valores que consisten en información acomodada en filas y columnas.
+Para identificar un elemento en particular de una tabla, se especifican dos subíndices: el primero (por convención)
+identifica la fila en la que el elemento se encuentra, y el segundo (por convención) identifica la columna en la que
+se encuentra el elemento. Las tablas o arreglos que requieren dos subíndices para identificar un elemento en particular
+son conocidos como arreglos con dos subíndices.
+• Un arreglo con múltiples subíndices puede inicializarse cuando se declara mediante una lista de inicialización.
+• Cuando una función recibe como argumento a un arreglo con un solo subíndice, los corchetes del arreglo se encuentran
+vacíos en la lista de parámetros de la función. El primer subíndice de un arreglo con múltiples subíndices tampoco es necesario,
+pero los subíndices subsiguientes sí lo son. El compilador utiliza estos subíndices para determinar las posiciones
+en memoria de los elementos correspondientes a arreglos con múltiples subíndices.
+• Para pasar una fila de un arreglo con dos subíndices a una función que recibe como argumento a un arreglo con un solo
+subíndice, simplemente pase el nombre del arreglo, seguido por el subíndice [entre corchetes] de esa fila.
