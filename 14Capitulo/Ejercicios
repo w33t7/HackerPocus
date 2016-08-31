@@ -1,0 +1,34 @@
+EJERCICIOS
+14.2 Escriba un programa que calcule el producto de una serie de enteros que se pasen a la función producto por medio
+de una lista variable de argumentos. Pruebe su función con diversas llamadas, cada una con un número diferente
+de argumentos.
+14.3 Escriba un programa que imprima los argumentos de la línea de comandos del programa.
+14.4 Escriba un programa que ordene un arreglo de enteros en orden ascendente o descendente. El programa debe utilizar
+argumentos en la línea de comandos para pasar un argumento: -a para el orden ascendente, o -d para el orden
+descendente. [Nota: Éste es el formato estándar para pasar las opciones a un programa en UNIX.]
+14.5 Escriba un programa que coloque un espacio entre cada carácter en un archivo. El programa primero debe escribir
+el contenido del archivo a modificar dentro de un archivo temporal con espacios entre cada carácter, después, debe
+copiar el archivo de nuevo al archivo original. Esta operación debe sobrescribir los comentarios originales del
+archivo.
+14.6 Lea los manuales de su compilador para determinar qué señales son soportadas por la biblioteca de manipulación
+de señales (signal.h). Escriba un programa que contenga manipuladores de señales para las señales estándar
+SIGABRT y SIGINT. El programa debe verificar si atrapa estas señales llamando a la función abort para generar
+una señal de tipo SIGABRT y escribiendo <ctrl>c para generar una señal de tipo SIGINT.
+14.7 Escriba un programa que asigne de modo dinámico un arreglo de enteros. El tamaño del arreglo debe introducirse
+desde el teclado. Deben asignarse valores desde el teclado a los elementos del arreglo. Imprima los valores del arreglo.
+A continuación, reasigne la memoria para un arreglo con la mitad de elementos. Imprima los valores restantes
+en el arreglo para confirmar que coinciden con la primera mitad de los valores del arreglo original.
+14.8 Escriba un programa que tome nombres de archivos como dos argumentos en la línea de comandos, lea los caracteres
+del primer archivo, uno a la vez, y escriba los caracteres en orden inverso en el segundo archivo.
+14.9 Escriba un programa que utilice instrucciones goto para simular una estructura anidada que imprima un cuadrado
+de asteriscos de la siguiente manera.
+*****
+* *
+* *
+* *
+*****
+El programa debe utilizar solamente las siguientes tres instrucciones printf:
+printf( “*” );
+printf( “ ” );
+printf( “\n” );
+
