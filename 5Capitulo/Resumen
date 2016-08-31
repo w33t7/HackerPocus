@@ -36,4 +36,64 @@ Si la funcion devuelve un valor, la instruccion:
 donde a es el valor de cambio (es decir, el primer numero del rango deseado de enteros consecutivos), y b es el factor de escalamiento (es decir, la longitud del rango de los enteros consecutivos)
 
 - Una enumeracion, introducida mediante la palabra reservada enum es un conjunto de enteros constantes representado medinate identificadores,; Los valores en un enum comienzan con 0  y se incrementan en 1. Tambien es posible asignar un valor entero a cada identificador en un enum. Los identificadores de una enumeracion deben ser unicos, pero los valores pueden ser duplicados.
-- En un programa, cada identificador tiene atributos 
+- En un programa, cada identificador tiene atributos clase de almacenamiento, duracion del alamacenamiento, alcance y vinculacion.
+- C proporciona cuatro clases de almacenamiento indicadas mediante los especificadores de clase de almacenamiento: auto, register, extern y static.
+- La duracion de alamacenamiento de un identificador se refiere al tiempo de existencia de un identificador en memoria.
+- El alcance de un identificador se refiere al lugar en el que se puede hacer referencia a un identificador dentro del programa.
+- La vinculacion de un identificador determina, para un programa con multiples archivos fuente, si un identificador es reconocido solo en el archivo fuente actual o en cualquier archivo fuente mediante las declaraciones apropiadas.
+- Las variables con duracion automatica de almacenamiento se crean cuando se entra al bloque en el que fueron definidas; estas existen mientras el bloque se encuentra activo y se destruyen cuando se abandona el bloque. Por lo general, las variables locales de una funcion tienen una duracion automatica de almacenamiento.
+- El especificador de clase de almacenamiento register puede colocarse antes de la declaracion de una variable automatica para sugerir al compilador que mantenga la variable en uno de los registros de alta velocidad del hardware de la computadora. El compilador podria ignorar las declaraciones register. La palabra reservada register solamente se puede utilizar con variables de duracion automatica de almacenamiento.
+- Las palabras reservadas extern y static se utilizan para declarar identificadores para las variables y las funciones
+de duración estática de almacenamiento.
+-Las variables con duración estática de almacenamiento se asignan y se inicializan una vez que comienza la ejecución del
+programa.
+• Existen dos tipos de identificadores con duración estática de almacenamiento: identificadores externos (tales como variables
+globales y nombres de función) y variables locales declaradas con el identificador de clase de almacenamiento static.
+• Las variables globales se crean al colocar las definiciones fuera de cualquier definición de función. Las variables globales
+retienen sus valores a través de la ejecución del programa.
+• Las variables locales declaradas como static retienen su valor a lo largo de las llamadas a la función en la que se definieron.
+• Todas las variables numéricas de duración estática de almacenamiento se inicializan en cero si el programador no las inicializa
+explícitamente.
+• Los cuatro tipos de alcance para un identificador son: alcance de función, alcance de archivo, alcance de bloque y alcance
+de prototipo de función.
+• Las etiquetas son los únicos identificadores con alcance de función. Las etiquetas se pueden utilizar en cualquier parte de
+la función en la que aparecen, pero no se puede hacer referencia a ellas fuera del cuerpo de la función.
+• Un identificador declarado fuera de cualquier función tiene alcance de archivo. Dicho identificador es “conocido” en todas
+las funciones desde el punto en el que se declara el identificador y hasta el punto en el que termina el archivo.
+• Los identificadores que se definen dentro de un bloque tienen alcance de bloque. El alcance de bloque termina al alcanzar
+la llave derecha de terminación de bloque (}).
+• Las variables definidas al principio de una función tienen alcance de bloque, así como los parámetros de ésta, los cuales
+son considerados como variables locales por la función.
+• Cualquier bloque puede contener definiciones de variables. Cuando los bloques están anidados, y un identificador en el
+bloque externo tiene el mismo nombre que un identificador en el bloque interno, el identificador en el bloque externo se
+mantiene “oculto” hasta que el bloque interno termina.
+• Los únicos identificadores con alcance de prototipo de función son los que se utilizan en la lista de parámetros de un prototipo
+de función. Los identificadores utilizados en el prototipo de una función pueden reutilizarse en cualquier parte del
+programa sin crear ambigüedades.
+• Una función recursiva es una función que se invoca a sí misma de manera directa o indirecta.
+• Si una función recursiva se invoca mediante un caso base, la función simplemente devuelve un resultado. Si la función
+se invoca a sí misma mediante un problema más complejo, la función divide el problema en dos partes conceptuales. Una
+pieza que la función sabe cómo resolver y una versión más sencilla del problema original. Debido a que este nuevo problema
+es similar al problema original, la función lanza una llamada recursiva para trabajar con el problema más sencillo.
+• Para que la recursividad termine, cada vez que la función recursiva se invoca a sí misma por medio de un problema más
+sencillo que el problema original, la secuencia de problemas cada vez más sencillos debe converger en el caso base. Cuando
+la función reconoce el caso base, devuelve el resultado a la función llamada previamente, y se origina una secuencia de
+resultados hacia arriba hasta que la llamada a la función original devuelve el resultado final.
+• El estándar de ANSI no especifica el orden en el que se evalúan los operandos de la mayoría de los operadores (incluso +).
+De los muchos operadores de C, el estándar especifica el orden de evaluación de los operandos de los operadores &&, ||, el
+operador coma (,) y ?:. Los primeros tres son operadores binarios cuyos dos operandos se evalúan de izquierda a derecha.
+El último operador es el único operador ternario de C. Su operando más a la izquierda se evalúa primero; si dicho operando
+da como resultado un número diferente de cero, el operando de en medio se evalúa a continuación y el último operando se ignora;
+si el operando más a la izquierda da como resultado cero, a continuación se evalúa el tercer operando y el operador que
+se encuentra en el centro se ignora.
+• Tanto la iteración como la recursividad se basan en una estructura de control: la iteración utiliza una estructura de repetición;
+y la recursividad utiliza una estructura de selección
+• Tanto la iteración como la recursividad involucran la repetición: la iteración utiliza de manera explícita una estructura de repetición;
+la recursividad logra la repetición a través de llamadas repetidas a una función.
+• La iteración y la recursividad involucran una prueba de terminación: la iteración termina cuando falla la condición de
+continuación de ciclo; la recursividad termina cuando se reconoce el caso base.
+• La iteración y la recursividad pueden repetirse indefinidamente: en el caso de la iteración ocurre un ciclo infinito si la
+condición de continuación de ciclo nunca se hace falsa; la recursividad infinita ocurre si el paso recursivo no reduce el
+problema de manera que converja en el caso base.
+• La recursividad invoca de manera repetida al mecanismo, y por consecuencia se presenta una sobrecarga de llamadas a
+función. Esto puede costar caro en cuanto a tiempo de proceso y a espacio de memoria.
