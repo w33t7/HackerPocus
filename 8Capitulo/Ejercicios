@@ -1,0 +1,269 @@
+EJERCICIOS
+8.5 Escriba un programa que lea un carácter desde el teclado y que pruebe el carácter con cada una de las funciones de
+la biblioteca de manipulación de caracteres. El programa debe imprimir el valor devuelto por cada función.
+8.6 Escriba un programa que lea una línea de texto mediante la función gets y que la introduzca en el arreglo s[ 100 ].
+Muestre la línea de texto con letras mayúsculas y con letras minúsculas.
+8.7 Escriba un programa que lea cuatro cadenas que representen enteros, que convierta las cadenas a enteros, que sume
+los valores, y que imprima el total de los cuatro valores.
+8.8 Escriba un programa que lea cuatro cadenas que representen valores en punto flotante, que convierta las cadenas a
+valores double, que sume los valores y que imprima el total de los cuatro valores.
+8.9 Escriba un programa que utilice la función strcmp para comparar dos cadenas introducidas por el usuario. El programa
+debe establecer si la primera cadena es menor, igual o mayor que la segunda cadena.
+8.10 Escriba un programa que utilice la función strncmp para comparar dos cadenas introducidas por el usuario. El
+programa debe introducir el número de caracteres a comparar. El programa debe establecer si la primera cadena es
+menor, igual o mayor que la segunda cadena.
+8.11 Escriba un programa que utilice la generación de números aleatorios para crear oraciones. El programa debe utilizar
+cuatro arreglos de apuntadores a char llamados, articulo, sustantivo, verbo y preposicion. El
+programa debe crear una oración mediante la selección de una palabra al azar de cada arreglo en el siguiente orden:
+articulo, sustantivo, verbo, preposicion, articulo y sustantivo. Al elegir cada palabra,
+ésta se debe concatenar a las palabras previas en un arreglo lo suficientemente grande para almacenar una oración
+completa. Las palabras deben separarse con espacios. Cuando se imprime la oración final, ésta debe comenzar con
+una letra mayúscula y terminar con punto. El programa debe generar 20 oraciones.
+Los arreglos deben rellenarse de la siguiente manera: El arreglo articulo debe contener los artíclos “el”
+“la”, “un”, “algun” y “cualquiera”; el arreglo sustantivo debe contener los sustantivos “nino”,
+“nina”, “perro”, “pueblo” y “carro”; el arreglo verbo debe contener los verbos “condujo”,
+“brinco”, “corrio”, ”camino”, y “salto”; el arreglo preposición debe contener la preposiciones
+“hacia”, ”desde”, “sobre”, “bajo” y “en”.
+Cuando escriba su programa y ya funcione, modifíquelo para producir una historia corta que consista en varias
+de estas oraciones. (¿Qué tal la posibilidad de un escritor de términos aleatorios?)
+8.12 (Rimas.) Una rima es un verso humorístico de 5 líneas en el cual, la primera y la segunda línea riman con la quinta,
+y la tercera línea rima con la cuarta. Mediante el uso de técnicas similares a las desarrolladas en el ejercicio 8.11,
+escriba un programa que genere rimas al azar. ¡Depurar el programa para generar buenas rimas es un problema desafiante,
+pero el resultado valdrá la pena!
+8.13 Escriba un programa que codifique frases en español al latín cerdo. El latín cerdo es una forma de codificación del
+lenguaje que con frecuencia se utiliza para el entretenimiento. Existen muchas variantes del método utilizado para
+formar frases en latín cerdo. Por sencillez, utilice el siguiente algoritmo:
+Para formar una frase en latín cerdo, a partir de una frase del español, divida la frase en tokens (palabras) mediante
+la función strtok. Para traducir cada palabra en español a latín cerdo, coloque la primera letra de la palabra
+en español al final de la misma palabra, y agregue las letras “ay”. Así, la palabra “salta” se convierte en
+“altasay”, la palabra “el” se convierte en “leay” y la palabra “computadora” se convierte en “omputadoracay”.
+Los espacios entre las palabras permanecen. Suponga lo siguiente: la frase en español consiste en
+palabras separadas por espacios en blanco, no existen signos de puntuación, y todas las palabras tienen dos o más
+letras. La función imprimePalabraLatin debe desplegar cada palabra. [Pista: Cada vez que se encuentre un
+token en la llamada a strtok, pase el apuntador del token a la función imprimePalabraLatin, e imprima
+la palabra en latín cerdo.]
+8.14 Escriba un programa que introduzca un número telefónico como una cadena de la forma (555) 555-5555. El
+programa debe utilizar la función strtok para extraer el código de área como un token, los primeros tres dígitos
+del número telefónico como un token y también los últimos cuatro dígitos del número telefónico. Los siete dígitos del
+número se deben concatenar en una sola cadena. El programa debe convertir la cadena del código de área a int,
+y convertir la cadena del número telefónico en un long. Tanto el código del área como el número telefónico deben
+imprimirse.
+8.15 Escriba un programa que introduzca una línea de texto, que divida en tokens la línea por medio de la función
+strtok y que muestre los tokens en orden inverso.
+8.16 Escriba un programa que introduzca una línea de texto y una cadena de búsqueda desde el teclado. Mediante el uso
+de la función strstr, localice la primera ocurrencia de la cadena de búsqueda en la línea de texto, y asigne la
+ubicación a la variable ptrBusca de tipo char *. Si encuentra la cadena de búsqueda, imprima el resto de la lí-
+nea de texto, comenzando con la cadena de búsqueda. Luego, utilice de nuevo strstr para localizar la siguiente
+ocurrencia de la cadena de búsqueda en la línea de texto. Si existe una segunda ocurrencia, imprima el resto de la
+línea de texto, comenzando con la segunda ocurrencia. [Pista: La segunda llamada a strstr debe contener ptrBusca
++ 1 como su primer argumento.]
+8.17 Escriba un programa basado en el ejercicio 8.16 que introduzca varias líneas de texto y que busque una cadena; utilice
+la función strstr para determinar el número total de ocurrencias de la cadena en las líneas de texto. Imprima
+el resultado.
+8.18 Escriba un programa que introduzca varias líneas de texto y busque un carácter, y utilice la función strchr para
+determinar el total de ocurrencias del carácter en las líneas de texto.
+8.19 Escriba un programa basado en el programa del ejercicio 8.18 que introduzca varias líneas de texto y que utilice la
+función strchr para determinar el total de ocurrencias de cada letra del alfabeto en las líneas de texto. Las letras
+mayúsculas y minúsculas deben contarse juntas. Almacene el total de cada letra dentro de un arreglo e imprima los
+valores de forma tabular, una vez determinados dichos totales.
+8.20 Escriba un programa que introduzca varias líneas de texto y que utilice strtok para contar el número total de palabras.
+Asuma que las palabras se separan por espacios o por caracteres de nueva línea.
+8.21 Utilice las funciones de comparación de cadenas que explicamos en la sección 8.6 y las técnicas de ordenamiento
+de arreglos desarrolladas en el capítulo 6 para escribir un programa que ordene alfabéticamente una lista de cadenas.
+Utilice los nombres de 10 o 15 ciudades de su región como datos de su programa.
+8.22 La tabla del apéndice D muestra las representaciones de los códigos numéricos correspondientes a los caracteres
+en el conjunto de caracteres ASCII. Estudie esta tabla y establezca si cada una de las siguientes frases es verdadera
+o falsa.
+a) La letra “A” se encuentra antes de la letra “B”.
+b) El dígito “9” se encuentra antes del dígito “0”.
+c) Los símbolos comunes para la suma, resta, multiplicación y división se encuentran antes de cualquier dígito.
+d) Los dígitos se encuentran antes que las letras.
+e) Si un programa de clasificación ordena las cadenas en secuencia ascendente, entonces el programa colocará el
+símbolo del paréntesis derecho antes que el símbolo del paréntesis izquierdo.
+8.23 Escriba un programa que lea una serie de cadenas y que imprima solamente aquellas cadenas que comiencen con
+la letra “b”.
+8.24 Escriba un programa que lea una serie de cadenas y que imprima solamente aquellas cadenas que terminen con las
+letras “ed”.
+8.25 Escriba un programa que introduzca un código ASCII y que imprima su carácter correspondiente. Modifique este
+programa de manera que genere todas las posibilidades para códigos de tres dígitos en el rango de 000 a 255, e intente
+imprimir su carácter correspondiente. ¿Qué sucede cuando ejecutamos este programa?
+8.26 Utilice como guía la tabla del conjunto de caracteres ASCII del apéndice D, y escriba sus propias versiones de las
+funciones para la manipulación de cadenas de la figura 8.1.
+8.27 Escriba sus propias versiones de las funciones de la figura 8.5 para convertir caracteres a números.
+8.28 Escriba dos versiones para cada una de las funciones para copiar cadenas de la figura 8.17. La primera versión debe
+utilizar subíndices de arreglos, y la segunda versión debe utilizar apuntadores y aritmética de apuntadores.
+8.29 Escriba sus propias versiones de las funciones getchar, gets, putchar y puts descritas en la figura 8.12.
+8.30 Escriba dos versiones de cada función de comparación de cadenas de la figura 8.20. La primera versión debe utilizar
+arreglos y subíndices, y la segunda versión debe utilizar apuntadores y aritmética de apuntadores.
+8.31 Escriba sus propias versiones de las funciones de la figura 8.22 para búsqueda de cadenas.
+8.32 Escriba sus propias versiones de las funciones de la figura 8.30 para manipulación de bloques de memoria.
+8.33 Escriba dos versiones de la función strlen de la figura 8.36. La primera versión debe utilizar arreglos y subíndices,
+y la segunda versión debe utilizar apuntadores y aritmética de apuntadores.
+
+SECCION ESPECIAL: EJERCICIOS AVANZADOS DE MANIPULACIÓN DE CADENAS
+Los ejercicios anteriores son clave para el libro y están diseñados para evaluar su comprensión sobre los conceptos
+fundamentales de la manipulación de cadenas. Esta sección incluye una colección de problemas avanzados e
+
+intermedios. Usted encontrará estos ejercicios desafiantes pero divertidos. Los problemas varían considerablemente
+en dificultad. Algunos requieren una o dos horas de programación e implementación. Otros son útiles para trabajos
+de laboratorio que requieren dos o tres semanas de estudio e implementación. Algunos son proyectos finales desafiantes.
+8.34 (Análisis de texto.) La disponibilidad de computadoras con capacidades para manipular cadenas ha originado algunos
+métodos para analizar los escritos de grandes autores. Se ha puesto mucha atención en el hecho de si William
+Shakespeare en realidad vivió. Algunos estudiosos creen que existe suficiente evidencia que indica que en realidad
+Christopher Marlowe escribió los escritos adjudicados a Shakespeare. Los investigadores aplican tres métodos para
+analizar los textos mediante una computadora.
+a) Escriba un programa que lea varias líneas de texto y que imprima una tabla que indique el número de ocurrencias
+de cada letra del alfabeto en el texto. Por ejemplo, la frase:
+Ser, o no ser: he ahí el dilema
+contiene dos “a”, ninguna “b”, ninguna “c”, una “d”, etcétera.
+b) Escriba un programa que lea varias líneas de texto y que imprima una tabla que indique el número de palabras
+de una sola letra, de dos letras, de tres letras,…, que aparecen en el texto. Por ejemplo, la frase
+¿Qué es más noble para el espíritu?
+contiene
+Longitud de la palabra Ocurrencias
+1 0
+2 2
+3 2
+4 1
+5 1
+6 0
+7 0
+8 1
+c) Escriba un programa que lea varias líneas de texto y que imprima una tabla que indique el número de ocurrencias
+de cada palabra diferente en el texto. La primera versión de su programa debe incluir las palabras de la tabla
+en el mismo orden en el que aparecen en el texto. Intente una impresión más interesante (y útil) en la que
+las palabras se ordenen de manera alfabética. Por ejemplo, las líneas:
+Ser, o no ser: he ahí el dilema
+¿Qué es más noble para el espíritu?
+contiene dos veces la palabra ser, dos veces la palabra “el”, una vez la palabra “dilema”, etcétera.
+8.35 (Procesamiento de palabras.) El tratamiento tan detallado sobre la manipulación de cadenas en el libro obedece,
+en gran medida, al crecimiento del procesamiento de palabras en los años recientes. Una importante función en el
+procesamiento de palabras es la justificación; la alineación de palabras a los márgenes derecho e izquierdo de una
+página. Esto genera una vista profesional del documento y da la apariencia de haber sido impresa en imprenta y no
+en una máquina de escribir. La justificación se puede llevar a cabo en la computadora mediante la inserción de uno
+o más espacios en blanco entre cada una de las palabras en la línea, de modo que la palabra más a la derecha se alinee
+con el margen derecho.
+Escriba un programa que lea varias líneas de texto y que imprima el texto en formato justificado. Suponga que
+el texto se imprime en una hoja de papel de 8 1/2 pulgadas de ancho y con márgenes de una pulgada, tanto a la derecha
+como a la izquierda de la hoja. Suponga que la computadora imprime 10 caracteres por pulgada horizontal.
+Por tal motivo, su programa debe imprimir 6 1/2 pulgadas de texto o 65 caracteres por línea.
+8.36 (Impresión de fechas en varios formatos.) Por lo general, las fechas se imprimen en diferentes formatos en la correspondencia
+de negocios. Los dos formatos más comunes son:
+21/07/2003 y 21 de julio del 2003
+Escriba un programa que lea la fecha en el primer formato y que la imprima en el segundo formato.
+
+8.37 (Protección de Cheques.) Con frecuencia se utilizan las computadoras como sistemas de verificación de cheques,
+tales como aplicaciones de nóminas o cuentas por pagar. Muchas historias extrañas circulan en torno a la impresión
+errónea de cheques por montos que exceden a un millón de dólares. Muchos sistemas de impresión de cheques imprimen
+dichos montos extraños debido a errores humanos o errores de la máquina. Por supuesto, los diseñadores
+de sistemas hacen muchos esfuerzos para construir controles dentro de sus sistemas para prevenir la emisión de
+cheques erróneos.
+Otro problema serio es la alteración intencional del monto de un cheque por parte de alguien que pretende cobrar
+dicho cheque de manera fraudulenta. Para prevenir que el monto sea alterado, la mayoría de los sistemas computarizados
+de impresión de cheques emplean una técnica llamada protección de cheques.
+Los cheques diseñados para impresión por computadora contienen un número fijo de espacios en los cuales la
+computadora puede imprimir el monto. Suponga que un cheque contiene nueve espacios en blanco en los que se
+supone que la computadora imprime el monto de un pago semanal. Si el monto es grande, entonces los nueve espacios
+serán ocupados, por ejemplo:
+11,230.60 (monto del cheque)
+---------
+123456789 (números de posición)
+Por otro lado, si el monto es menor que $1000, entonces quedarán varios espacios en blanco. Por ejemplo:
+99.87
+---------
+123456789
+contiene tres espacios en blanco. Si el cheque se imprime con espacios en blanco, es más fácil que alguien altere
+el monto del cheque. Para prevenir que un cheque sea alterado, muchos sistemas de impresión de cheques insertan
+asteriscos al principio para proteger el monto de la siguiente manera:
+****99.87
+---------
+123456789
+Escriba un programa que introduzca el monto a imprimir en el cheque y después imprima, si es necesario, el
+monto en formato protegido con asteriscos al principio. Suponga un total de nueve espacios disponibles para la impresión
+del monto.
+8.38 (Impresión del equivalente en palabras del monto del cheque.) Para continuar con el tema del ejemplo anterior, reiteramos
+la importancia de diseñar sistemas de impresión de cheques que prevengan la alteración de sus montos. Un
+método común de seguridad requiere que el monto del cheque se escriba en números y “deletreado” en palabras.
+Incluso si alguien es capaz de alterar el monto numérico del cheque, es extremadamente difícil modificar el monto
+en palabras.
+Muchos sistemas de cómputo para impresión de cheques no imprimen el monto del cheque en palabras. Quizá
+la principal razón para esta omisión sea el hecho de que la mayoría de los lenguajes de alto nivel utilizados en aplicaciones
+comerciales no contienen las características adecuadas de manipulación de cadenas. Otra razón es la ló-
+gica involucrada en la escritura de los equivalentes en palabras de los montos de los cheques.
+Escriba un programa que introduzca un monto numérico de cheque y que escriba el equivalente en palabras de
+dicho monto. Por ejemplo, el monto 112.34 se debe escribir como
+CIENTO DOCE y 34/100
+8.39 (Clave Morse.) Tal vez el esquema de código más famoso del mundo sea la clave Morse, desarrollado por Samuel
+Morse en 1832 para uso del sistema telegráfico. La clave Morse asigna una serie de puntos y guiones a cada letra
+del alfabeto, a cada dígito, y a algunos caracteres especiales (tales como el punto, la coma, los dos puntos y el punto
+y coma). En los sistemas basados en sonido, el punto representa un sonido corto y el guión representa un sonido largo.
+En los sistemas basados en luz y en los sistemas basados en banderas se emplean otras representaciones.
+La separación entre palabras se indica mediante un espacio, muy simple, la ausencia de un punto o un guión.
+En los sistemas basados en sonido, un espacio se indica mediante un espacio corto de tiempo durante el cual no se
+transmite sonido. En la figura 8.39 mostramos la versión internacional de la clave Morse.
+
+Carácter Código Carácter Código
+A .- T -
+B -... U ..-
+C -.-. V ...-
+D -.. W .--
+E. X -..-
+F ..-. Y -.--
+G --. Z --..
+H ....
+I .. Dígitos
+J .--- 1 .----
+K -.- 2 ..---
+L .-.. 3 ...--
+M -- 4 ....-
+N -. 5 .....
+O --- 6 -....
+P .--. 7 --..
+Q --.- 8 ---..
+R .-. 9 ----.
+S ... 0 -----
+Figura 8.39 Las letras del alfabeto expresadas en la clave Morse internacional.
+
+
+Escriba un programa que lea una frase en español y la convierta a clave Morse. Además, escriba un programa
+que lea la frase en clave Morse y la convierta a su equivalente en español. Utilice un espacio en blanco entre cada
+letra en clave Morse y tres espacios en blanco entre cada palabra en clave Morse.
+8.40 (Programa de conversión de medidas.) Escriba un programa que ayude al usuario a convertir medidas. Su programa
+debe permitir al usuario especificar los nombres de las unidades como cadenas (es decir, centímetros, litros,
+gramos, …, para el sistema métrico y, pulgadas, cuartos, libras, …, para el sistema inglés) y debe responder a preguntas
+simples como
+“¿Cuántas pulgadas hay en 2 metros?”
+“¿Cuántos litros hay en 10 cuartos?”
+Su programa debe reconocer las conversiones inválidas. Por ejemplo, la pregunta
+“¿Cuántos pies hay en 5 kilogramos?”
+no tiene sentido, ya que los “pies” son medidas de longitud mientras que los “kilogramos” son unidades de
+masa.
+8.41 (Cartas para exigir el pago de una deuda.) Muchas empresas gastan una gran cantidad de tiempo y dinero recuperando
+deudas atrasadas. Dunning es el proceso de solicitar repetida e insistentemente a un deudor que pague su
+deuda.
+A menudo se utilizan las computadoras para generar cartas automáticamente y en grados crecientes de severidad
+al hacerse vieja una deuda. La teoría es que al hacerse vieja una deuda, se hace más difícil de recuperar, y por
+lo tanto las cartas para recuperación se hacen más agresivas.
+Escriba un programa que contenga el texto de cinco cartas para recuperación cada vez más agresivas. Su programa
+debe aceptar como entrada lo siguiente:
+a) Nombre del deudor.
+b) Dirección del deudor.
+c) Número de cuenta del deudor.
+
+d) Monto de la deuda.
+e) Tiempo del monto de la deuda (es decir, un mes de retraso, dos meses de retraso, etcétera)
+Utilice el tiempo de la deuda para seleccionar uno de los cinco mensajes de texto, e imprima la carta de recuperación
+apropiada, de acuerdo con los datos proporcionados.
+UN DESAFIANTE PROYECTO DE MANIPUACIÓN DE CADENAS
+8.42 (Generador de crucigramas.) La mayoría de la gente ha resuelto un crucigrama en algún momento de su vida, pero
+pocos han intentado generar uno. Generar un crucigrama es un problema difícil. Lo sugerimos aquí como un proyecto
+de manipulación de cadenas que requiere de una sofisticación y esfuerzo importante. Existen muchos aspectos
+que el programador debe resolver para lograr que incluso el generador de crucigramas más sencillo funcione. Por
+ejemplo, ¿cómo representar las celdas del crucigrama dentro de la computadora? ¿Se deben utilizar una serie de
+cadenas, o de arreglos con dos subíndices? El programador necesita una serie de palabras (es decir, un diccionario
+computarizado) al que se pueda hacer referencia de manera directa en el programa. ¿De qué manera se deben almacenar
+estas palabras para facilitar las complejas manipulaciones que requiere el programa? El lector en verdad
+ambicioso querrá generar la parte de las “claves” del crucigrama en la que se imprimen las breves pistas para cada
+palabra “horizontal” y “vertical”, para quien resuelve el crucigrama. La simple impresión de una versión en blanco
+del crucigrama no es un problema sencillo.
+
