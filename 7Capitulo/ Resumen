@@ -1,0 +1,99 @@
+RESUMEN
+• La función islower determina si su argumento es una letra minúscula (a-z).
+• La función isupper determina si su argumento es una letra mayúscula (A-Z).
+• La función isdigit determina si su argumento es un dígito (0-9).
+• La función isalpha determina si su argumento es una letra mayúscula (A-Z), o una letra minúscula (a-z).
+• La función isalnum determina si su argumento es una letra mayúscula (A-Z), una letra minúscula (a-z) o un dígito
+(0-9).
+• La función isxdigit determina si su argumento es un dígito hexadecimal (A-F, a-f, 0-9).
+• La función toupper convierte una letra minúscula a mayúscula.
+• La función tolower convierte una letra mayúscula a minúscula.
+• La función isspace determina si su argumento es uno de los siguientes caracteres blancos: ‘ ’ (espacio), ’\f’,
+’\n’, ’\r’, ’\t’ o ’\v’.
+• La función iscntrl determina si su argumento es uno de los siguientes caracteres de control: ’\t’, ’\v’, ’\f’,
+’\a’, ’\b’, ’\r’ o ’\n’.
+• La función ispunct determina si su argumento es un carácter de impresión diferente del espacio en blanco, un dígito
+o una letra.
+• La función isprint determina si su argumento es cualquier carácter de impresión, incluso el espacio en blanco.
+• La función isgraph determina si su argumento es cualquier carácter de impresión, diferente del espacio en blanco.
+• La función atof convierte su argumento, una cadena con una serie de dígitos que representa un número de punto flotante,
+a un valor double.
+• La función atoi convierte su argumento, una cadena con una serie de dígitos que representa un número entero, a un
+valor entero.
+• La función atol convierte su argumento, una cadena con una serie de dígitos que representa un número entero largo, a
+un entero largo.
+• La función strtod convierte una secuencia de caracteres que representan un valor en punto flotante a double. La función
+recibe dos argumentos, una cadena (char *) y un apuntador a char *. Esta cadena contiene la secuencia de caracteres
+a convertir, y el apuntador char * se asigna al resto de la cadena después de la conversión.
+• La función strtol convierte una secuencia de caracteres que representan un entero a long. La función recibe tres argumentos,
+una cadena (char *), un apuntador a char * y un entero. La cadena contiene la secuencia de caracteres a
+convertir, el apuntador char * se asigna al resto de la cadena después de la conversión, y el entero especifica la base del
+valor a convertir.
+• La función strtoul convierte una secuencia de caracteres que representan un unsigned long. La función recibe tres
+argumentos, una cadena (char *), un apuntador a char * y un entero. La cadena contiene la secuencia de caracteres a
+convertir, el apuntador char * se asigna al resto de la cadena después de la conversión, y el entero especifica la base del
+valor a convertir.
+• La función gets lee caracteres desde la entrada estándar (teclado) hasta que encuentra el carácter de nueva línea o de
+fin de archivo. El argumento de gets es un arreglo de tipo char. Cuando termina la lectura, agrega al arreglo un carácter
+nulo (‘\0’).
+• La función putchar imprime su argumento de tipo carácter.
+• La función getchar lee un solo carácter desde la entrada estándar y lo devuelve como un entero. Si encuentra el carácter
+de fin de archivo, getchar devuelve EOF.
+• La función puts toma una cadena (char *) como argumento y la imprime seguida por el carácter nulo.
+• La función sprintf utiliza los mismos especificadores de conversión que printf, para imprimir datos con formato
+dentro de un arreglo de tipo char.
+• La función sscanf utiliza los mismos especificadotes de conversión que scanf, para leer datos con formato de una
+cadena de caracteres.
+• La función strcpy copia su segundo argumento (una cadena) dentro de su primer argumento (un arreglo de caracteres).
+El programador debe asegurarse de que el arreglo es lo bastante grande para almacenar la cadena y su carácter de terminación
+nulo.
+• La función strncpy es equivalente a strcpy, excepto que la llamada a strncpy especifica el número de caracteres
+que se copiarán desde la cadena hasta el arreglo de caracteres. El carácter de terminación solamente se copiará si el nú-
+mero de caracteres es uno más que la longitud de la cadena.
+• La función strcat agrega su segundo argumento de cadena, incluso el carácter de terminación nulo, a su primer argumento
+de cadena. El primer carácter de la segunda cadena remplaza el carácter nulo (‘\0’) de la primera cadena. El programador
+debe asegurarse de que el arreglo que se utiliza para almacenar la primera cadena sea lo suficientemente grande
+para almacenar a las dos cadenas.
+• La función strncat agrega un número específico de caracteres desde la segunda cadena a la primera cadena. Se agrega
+un carácter nulo al resultado.
+• La función strcmp compara su primer argumento de cadena con su segundo argumento de cadena, carácter por carácter.
+La función devuelve 0 si las cadenas son iguales, devuelve un valor negativo si la primera cadena es menor que la segunda
+cadena, y devuelve un valor positivo si la primera cadena es mayor que la segunda cadena.
+• La función strncmp es equivalente a strcmp, excepto que strncmp compara un número específico de caracteres. Si
+el número de caracteres en una de las cadenas es menor que el número de caracteres especificados, strncmp compara
+los caracteres hasta que encuentre el carácter nulo en la cadena más corta.
+• La función strchr busca la primera ocurrencia de un carácter dentro de una cadena. Si se encuentra el carácter,
+strchr devuelve un apuntador al carácter en la cadena; de lo contrario, strchr devuelve NULL.
+• La función strcspn determina la longitud de la parte inicial de la cadena de su primer argumento, que no contenga carácter
+alguno de la segunda cadena del segundo argumento. La función devuelve la longitud del segmento.
+• La función strpbrk busca la primera ocurrencia en el primer argumento de cualquier carácter en su segundo argumento.
+Si encuentra un carácter de su segundo argumento, strpbrk devuelve un apuntador al carácter; de lo contrario,
+strpbrk devuelve NULL.
+• La función strrchr busca la última ocurrencia de un carácter en la cadena. Si encuentra el carácter, strrchr devuelve
+un apuntador al carácter en la cadena; de lo contrario, strrchr devuelve NULL.
+• La función strspn determina la longitud de la parte inicial de la cadena de su primer argumento, que contenga sólo caracteres
+de la cadena de su segundo argumento. La función devuelve la longitud del segmento.
+• La función strstr busca la primera ocurrencia de su segundo argumento de cadena dentro de su primer argumento de
+cadena. Si encuentra la segunda cadena dentro de la primera, devuelve un apuntador a la ubicación de la cadena del primer
+argumento.
+• Una secuencia de llamadas a strtok rompe la cadena s1 en tokens (elementos) separados por caracteres contenidos en
+la cadena s2. La primera llamada contiene a s1 como primer argumento, y las llamadas subsiguientes continúan la división
+de la misma cadena con NULL como primer argumento. Cada llamada devuelve un apuntador al token actual. Si
+no existen tokens cuando se invoca a la función, la función devuelve un apuntador a NULL.
+• La función memcpy copia un número específico de caracteres desde el objeto al cual apunta el segundo argumento
+hacia el objeto al cual apunta el primer argumento. La función puede recibir un apuntador a cualquier tipo de objeto. Los
+apuntadores se reciben desde memcpy como apuntadores void y se convierten a apuntadores char para que se puedan
+utilizar en la función. La función memcpy manipula los bytes del objeto como caracteres.
+• La función memmove copia un número específico de bytes desde el objeto al cual apunta el segundo argumento hacia el
+objeto al cual apunta el primer argumento. La copia se lleva a cabo como si los dos bytes se copiaran desde el segundo
+argumento hacia un arreglo de caracteres temporal, y después se copiaran desde un arreglo temporal hacia el primer argumento.
+• La función memcmp compara el número especificado de caracteres de su primer y segundo argumento.
+• La función memchr busca la primera ocurrencia de un byte, representado como un unsigned char, en el número especificado
+de bytes de un objeto. Si encuentra el byte, devuelve un apuntador hacia dicho byte; de lo contrario, devuelve
+un apuntador NULL.
+• La función memset copia su segundo argumento, tratado como un unsigned char, hacia un número específico de
+bytes al que apunta su primer argumento.
+• La función strerror obtiene mediante errornum una cadena de texto del error de manera dependiente de la máquina.
+Devuelve un apuntador a la cadena.
+• La función strlen toma una cadena como argumento y devuelve el número de caracteres en la cadena; en la longitud
+de la cadena no se incluye el carácter de terminación nulo.
