@@ -16,10 +16,10 @@ Ejercicios de AUTOEVALUACION
   a) Cuando se llama a la funcion printf, esta siempre comienza la impresion al principio de una nueva linea. FALSO
   b) Cuando se ejecuta un programa, los comentarios ocasionan que la computadora imprima el texto encerrado entre /* y */ sobre la pantallas FALSO
   c) Cuando la secuencia de escape \n se utiliza en una cadeana de control de formato printf, esta ocasiona que el cursor se coloque al principio de la siguiente linea de la pantalla.
-  d) Todas las variables deben declararse, antes de que se utilicen
-  e) A todas las variables se les debe asignar un tipo cuando se declaran.
-  f) C considera identicas a las varibales numero y NuMEro.
-  g) Las declaraciones pueden aparecer en cualquier parte del cuerpo de una funcion.
+  d) Todas las variables deben declararse, antes de que se utilicen //VERDADERO
+  e) A todas las variables se les debe asignar un tipo cuando se declaran. //FALSO
+  f) C considera identicas a las varibales numero y NuMEro. //FALSO
+  g) Las declaraciones pueden aparecer en cualquier parte del cuerpo de una funcion. //
   h) Todos los argumentos que se encuentran despues de la cadena de control de formato en una funcion printf deben ser precedidos por un amperson (&)
   i) El operador modulo (%) puede utilizarse solo con operandos enteros.
   j) Los operadores aritmeticos *, /, %, + y - tienen el mismo nivel de precedencia.
@@ -67,8 +67,8 @@ Ejercicios de AUTOEVALUACION
   c) primerNumero + segundoNumero = sumaDeNumeros  //primerNumero + segundoNumero = sumaDeNumeros;
   d) if (numero => masGrande)
         masGrande == numero;
-  e) */ Programa para determinar el número más grande de tres enteros /*
-  f) Scanf( %d”, unEntero );
+  e) */ Programa para determinar el número más grande de tres enteros /*  // /*Programa para determinar el número más grande de tres enteros /*
+  f) Scanf( %d”, unEntero ); //scanf("%d", &unEntero);
   g) printf( “El residuo de %d entre %d es\n”, x, y, x % y );
   h) if ( x = y );
         printf( %d es igual que %d\n”, x, y );
@@ -77,31 +77,36 @@ Ejercicios de AUTOEVALUACION
   
 2.8 Complete los espacios en blanco:
 
-a) Los se utilizan para documentar un programa y para mejorar su legibilidad.
-b) La función que se utiliza para desplegar información en la pantalla es .
-c) En C, una instrucción para tomar decisiones es .
-d) En general, las instrucciones son quienes realizan los cálculos.
-e) La función introduce valores desde el teclado.
-2.9 Escriba una sola instrucción o línea de C que realice lo siguiente:
-a) Imprima el mensaje “Escriba dos números”.
-b) Asigne el producto de las variables b y c a la variable a.
-c) Indique que un programa realiza un cálculo de nómina (es decir, utilice texto que ayude a documentar un programa).
-d) Escriba tres valores enteros desde el teclado y coloque estos valores en las variables enteras a, b y c.
+  a) Los__comentarios__ se utilizan para documentar un programa y para mejorar su legibilidad.
+  b) La función que se utiliza para desplegar información en la pantalla es __printf__ .
+  c) En C, una instrucción para tomar decisiones es __if__.
+ d) En general, las instrucciones son quienes realizan los cálculos.
+  e) La función __scanf__ introduce valores desde el teclado.
+
+2.9 Escriba una sola instrucción o línea de C que realice lo siguiente: 
+
+  a) Imprima el mensaje “Escriba dos números”. // printf("Escriba dos numeros");
+  b) Asigne el producto de las variables b y c a la variable a. // a= a * b;
+  c) Indique que un programa realiza un cálculo de nómina (es decir, utilice texto que ayude a documentar un programa). //*Este programa realiza un calculo de nomina*/
+  d ) Escriba tres valores enteros desde el teclado y coloque estos valores en las variables enteras a, b y c. //scanf("%d%d%d", &a, &b, &c);
+
 2.10 Indique cuáles de las siguientes oraciones son verdaderas y cuáles son falsas. Si son falsas, explique su respuesta.
-a) Los operadores de C se evalúan de izquierda a derecha.
-b) Los siguientes son nombres de variables válidos: _guion_bajo_, m928134, t5, j7, sus_ventas,
-su_cuenta_total, a, b, c, z, z2.
-c) La instrucción printf(“a = 5;”); es un típico ejemplo de una instrucción de asignación.
-d) Una expresión aritmética válida que no contiene paréntesis se evalúa de izquierda a derecha.
-e) Los siguientes son nombres no válidos de variables: 3g, 87, 67h2, h22, 2h.
+
+a) Los operadores de C se evalúan de izquierda a derecha. //FALSO se evaluan dependiendo de su asignacion
+b) Los siguientes son nombres de variables válidos: _guion_bajo_, m928134, t5, j7, sus_ventas,su_cuenta_total, a, b, c, z, z2. // Verdadero
+c) La instrucción printf(“a = 5;”); es un típico ejemplo de una instrucción de asignación. //FALSO, solo imprime.
+d) Una expresión aritmética válida que no contiene paréntesis se evalúa de izquierda a derecha.// FALSO, las operaciones tienen una asignacion
+e) Los siguientes son nombres no válidos de variables: 3g, 87, 67h2, h22, 2h. // NOSE
+
 2.11 Complete los espacios en blanco:
-a) ¿Qué operaciones aritméticas se encuentran en el mismo nivel de precedencia que la multiplicación?
-.
-b) En una expresión aritmética, cuando los paréntesis están anidados, ¿qué conjunto de paréntesis se evalúa primero?
-c) Una posición en la memoria de la computadora que contiene diferentes valores en diferentes momentos, a lo
-largo de la ejecución de un programa se conoce como .
+
+a) ¿Qué operaciones aritméticas se encuentran en el mismo nivel de precedencia que la multiplicación? // %,/
+b) En una expresión aritmética, cuando los paréntesis están anidados, ¿qué conjunto de paréntesis se evalúa primero? // del centro hacia afuera
+c) Una posición en la memoria de la computadora que contiene diferentes valores en diferentes momentos, a lo largo de la ejecución de un programa se conoce como __volatil__ .
+
 2.12 ¿Qué se imprime cuando se ejecuta cada una de las siguientes instrucciones? Si no se imprime algo, entonces responda
 “nada”. Suponga que x=2 y y=3.
+
 a) printf( “%d”, x );
 b) printf( “%d”, x + x );
 c) printf( “x=” );
