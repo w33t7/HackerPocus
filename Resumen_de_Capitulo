@@ -1,0 +1,163 @@
+Parte 1: Programación por procedimientos en C
+Capítulo 1 —Introducción a las computadoras, a Internet y a la World Wide Web— Explica qué son
+las computadoras, cómo funcionan y cómo se programan. Introduce la idea de la programación estructurada y
+explica por qué este conjunto de técnicas motivaron una revolución en la forma de escribir los programas. El
+capítulo brinda una breve historia del desarrollo de los lenguajes de programación, desde los lenguajes máquina
+y los lenguajes ensambladores hasta los lenguajes de alto nivel; también explica los orígenes de C, C++ y
+Java. El capítulo incluye una introducción a los ambientes típicos de programación en C. Nosotros analizamos
+el gran interés que se ha suscitado en Internet con el advenimiento de la World Wide Web y el lenguaje de programación
+Java.
+Capítulo 2 —Introducción a la programación en C— Proporciona una introducción concisa a la escritura
+de programas en C. Presenta un tratamiento detallado de las operaciones aritméticas y para la toma de decisiones
+en C. Después de estudiar este capítulo el estudiante sabrá cómo escribir programas sencillos, pero
+completos, en C.
+Capítulo 3 —Desarrollo de programas estructurados— Tal vez éste sea el capítulo más importante del
+libro, en especial para estudiantes serios de ciencias de la computación. Éste introduce la idea de los algoritmos
+(procedimientos) para resolver problemas; explica la importancia de la programación estructurada para
+producir programas que sean claros, corregibles, que se puedan mantener y que probablemente funcionen al
+primer intento; introduce las instrucciones de control básicas de la programación estructurada, es decir, instrucciones
+de secuencia, de selección ( if e if…else ) y de repetición (while); explica la técnica de refinamiento
+arriba-abajo, paso a paso, que es importante para producir programas estructurados adecuados, y presenta la
+popular herramienta para programar, el pseudocódigo estructurado. Los métodos y técnicas utilizados en el
+capítulo 3 son aplicables a la programación estructurada en cualquier lenguaje de programación, no sólo en C.
+Este capítulo ayuda al estudiante a desarrollar buenos hábitos de programación y a prepararse para lidiar con
+tareas de programación más importantes a lo largo del libro.
+Capítulo 4 —Control de programas en C— Mejora las nociones de la programación estructurada e
+introduce instrucciones adicionales de control. Examina detalladamente la repetición y compara los ciclos controlados
+por un contador y los ciclos controlados por centinelas. Introduce la instrucción for como un medio
+conveniente para implementar ciclos controlados por contador; presenta la instrucción de selección switch
+y la instrucción de repetición do…while. El capítulo concluye con una explicación de los operadores lógicos.
+Capítulo 5 —Funciones en C— Explica el diseño y la construcción de módulos de programa. Las capacidades
+relacionadas con las funciones en C incluyen funciones de la biblioteca estándar, funciones definidas
+por el programador, recursividad y capacidades de llamadas por valor. Las técnicas que presentamos en el capítulo
+5 son básicas para producir y apreciar los programas estructurados adecuadamente, en especial los programas
+grandes y el software que los programadores de sistemas y de aplicaciones podrían desarrollar en la
+realidad. Presentamos la estrategia de “divide y vencerás” como un medio efectivo para resolver problemas
+complejos, dividiéndolos en componentes más sencillos que interactúan entre sí. Los estudiantes disfrutan el
+tratamiento de números aleatorios y la simulación, y aprecian la explicación del juego de azar con dados, el cual
+utiliza de manera elegante las instrucciones de control. En este capítulo introducimos la enumeración, y en el
+capítulo 10 proporcionamos una explicación más detallada. El capítulo 5 ofrece una sólida introducción a la recursividad,
+e incluye una tabla que resume docenas de ejemplos de recursividad y ejercicios distribuidos en el
+resto del libro. Algunos libros dejan la recursividad para un capítulo posterior; sin embargo, nosotros pensamos
+que es mejor cubrir este tema de manera gradual a lo largo del texto. Los diversos ejercicios incluyen
+varios problemas clásicos de recursividad como el de la torre de Hanoi.
+Capítulo 6 —Arreglos en C— Explica la estructuración de datos en arreglos, o grupos de elementos de
+datos relacionados del mismo tipo. El capítulo presenta diversos ejemplos, tanto de un solo subíndice, como
+de dos subíndices. Es bien sabido que estructurar datos de manera adecuada es tan importante como utilizar
+efectivamente instrucciones de control al desarrollar programas bien estructurados. Los ejemplos investigan
+
+distintas formas comunes de manipulación de arreglos, la impresión de histogramas, el ordenamiento de datos,
+el paso de arreglos a funciones, y una introducción al campo del análisis de encuestas (con estadística simple).
+Una característica de este capítulo es la cuidadosa explicación de las técnicas elementales de ordenamiento y
+búsqueda, y la presentación de la búsqueda binaria como una enorme mejora de la búsqueda lineal. Los ejercicios
+que aparecen al final del capítulo incluyen diversos problemas interesantes y desafiantes, como las técnicas
+mejoradas de ordenamiento, el diseño de un sistema de reservaciones para una aerolínea, una introducción
+al concepto de los gráficos de tortuga (que se hicieron famosos gracias al lenguaje LOGO), y los problemas del
+recorrido del caballo y las ocho reinas, que muestran la idea de la programación heurística, la cual se utiliza
+ampliamente en el campo de la inteligencia artificial.
+Capítulo 7 —Apuntadores en C— Presenta una de las características más poderosas y difíciles de dominar
+del lenguaje C: los apuntadores. El capítulo proporciona explicaciones detalladas acerca de los operadores
+para apuntadores, de las llamadas por referencia, de las expresiones con apuntadores, de la aritmética con apuntadores,
+de la relación entre apuntadores y arreglos, de los arreglos de apuntadores y de los apuntadores a funciones.
+Los ejercicios del capítulo incluyen una encantadora simulación de la clásica carrera entre la tortuga y
+la liebre, barajar y repartir cartas y cómo manejar algoritmos y recorridos recursivos a través de laberintos.
+También incluimos una sección especial llamada “Cómo construir su propia computadora”. Esta sección explica
+la programación en lenguaje máquina y continúa con un proyecto que involucra el diseño y la implementación
+de un simulador de una computadora que permite al lector escribir y ejecutar programas en lenguaje
+máquina. Esta característica única del libro le será especialmente útil a aquel lector que desee comprender cómo
+funcionan en realidad las computadoras. Nuestros estudiantes disfrutan este proyecto y a menudo implementan
+mejoras sustanciales, muchas de las cuales se las sugerimos en los ejercicios. En el capítulo 12, otra sección
+especial guía al lector a través de la construcción de un compilador; el lenguaje máquina que produce el
+compilador se ejecuta después en el simulador de lenguaje máquina producido en el capítulo 7.
+Capítulo 8 —Caracteres y cadenas en C— Trata de los fundamentos del procesamiento de datos no
+numéricos. El capítulo incluye un recorrido a través de las funciones para procesamiento de caracteres y cadenas,
+disponibles en las bibliotecas de C. Las técnicas que explicamos aquí se utilizan ampliamente en la construcción
+de procesadores de palabras, en software para diseño y composición de páginas, y en aplicaciones de
+procesamiento de texto. El capítulo incluye una variedad de ejercicios que exploran las aplicaciones de procesamiento
+de texto. El estudiante disfrutará los ejercicios sobre escritura de poemas humorísticos de cinco versos,
+escritura de poemas al azar, conversión del español a latín vulgar, generación de palabras de siete letras
+que equivaldrían a un número telefónico dado, justificación de texto, protección de cheques, escritura del monto
+de un cheque en palabras, generación de código Morse, conversiones métricas y letras de cambio. El último
+ejercicio reta al estudiante a utilizar un diccionario computarizado para crear un generador de crucigramas.
+Capítulo 9 — Formato de datos de entrada/salida en C— Presenta todas las poderosas capacidades de
+formato de printf y scanf. Aquí explicamos las capacidades de printf para el formato de resultados,
+tales como redondeo de valores de punto flotante a un número dado de lugares decimales, alineación de columnas
+de números, justificación a la derecha y a la izquierda, inserción de información literal, cómo forzar un signo
+de suma, impresión de ceros, uso de notación exponencial, uso de números octales y hexadecimales, y control de
+anchos de campo y precisiones. Explicamos todas las secuencias de escape de printf para el movimiento del
+cursor, la impresión de caracteres especiales y cómo ocasionar una alerta audible. Examinamos todas las
+capacidades de scanf para el formato de datos de entrada, incluyendo la entrada de tipos específicos de datos
+y cómo evitar caracteres específicos en un flujo de entrada. Explicamos todos los especificadores de conversión
+de scanf para la lectura de valores decimales, octales, hexadecimales, de punto flotante, de carácter y
+de cadena. También explicamos la introducción de datos para que coincidan (o no) con los caracteres de un
+conjunto. Los ejercicios del capítulo virtualmente prueban todas las capacidades de formato para datos de
+entrada/salida.
+Capítulo 10 —Estructuras, uniones, manipulaciones de bits y enumeraciones en C— Presenta diversas
+características importantes. Las estructuras son como los registros en otros lenguajes de programación,
+los cuales agrupan elementos de datos de varios tipos. En el capítulo 11 utilizamos las estructuras para formar
+archivos que consisten en registros de información. En el capítulo 12, utilizamos las estructuras junto con los
+apuntadores y la asignación dinámica de memoria para formar estructuras dinámicas de datos, como listas
+ligadas, colas, pilas y árboles. Las uniones permiten que un área de memoria sea utilizada por diferentes tipos
+
+de datos en diferentes momentos; compartir la memoria de este modo puede reducir los requerimientos de memoria
+de un programa o sus requerimientos de almacenamiento secundario. Las enumeraciones proporcionan
+un medio conveniente para definir constantes simbólicas útiles; esto ayuda a escribir programas más autodocumentados.
+Las poderosas capacidades para la manipulación de bits en C permiten a los programadores escribir
+programas que ejerciten capacidades de hardware de más bajo nivel. Esto ayuda a los programas a procesar cadenas
+de bits, encender o apagar bits específicos y a almacenar información de manera más compacta. Dichas
+capacidades, que con frecuencia sólo se encuentran en lenguajes ensambladores de bajo nivel, son valoradas
+por programadores que escriben software de sistemas como sistemas operativos y software para redes. Una característica
+del capítulo es la simulación revisada y de alto rendimiento de cómo barajar y repartir cartas. Ésta
+es una excelente oportunidad para el profesor para enfatizar la calidad de los algoritmos.
+Capítulo 11 —Procesamiento de archivos en C— Explica las técnicas utilizadas para el procesamiento
+de archivos de texto con acceso secuencial y acceso aleatorio. El capítulo comienza con una introducción a la
+jerarquía de datos como bits, bytes, campos, registros y archivos. Después presenta la visión de C con respecto
+a los archivos y los flujos. Explica los archivos de acceso secuencial utilizando programas que muestran có-
+mo abrir y cerrar archivos, cómo almacenar datos en un archivo de manera secuencial, y cómo leer los datos
+de un archivo de manera secuencial. También explica los archivos de acceso aleatorio utilizando programas que
+muestran cómo crear un archivo de manera secuencial para acceso aleatorio, cómo leer y escribir datos en un
+archivo con acceso aleatorio, y cómo leer datos de manera secuencial desde un archivo al que se accedió de
+manera aleatoria. El cuarto programa de acceso aleatorio combina muchas de las técnicas de acceso a archivos,
+tanto secuencial como aleatorio, en un programa completo de procesamiento de transacciones.
+Capítulo 12 —Estructuras de datos en C— Explica las técnicas utilizadas para crear y manipular estructuras
+de datos dinámicas. El capítulo comienza con explicaciones sobre las estructuras autorreferenciadas y la
+asignación dinámica de memoria, y continúa con una explicación sobre cómo crear y mantener distintas estructuras
+de datos dinámicas, las cuales incluyen listas ligadas, colas (o líneas de espera), pilas y árboles. Para cada
+tipo de estructura de datos presentamos programas completos y funcionales, y mostramos ejemplos de los resultados.
+El capítulo ayuda a los estudiantes a dominar los apuntadores. Incluye muchos ejemplos que utilizan
+la indirección (o desreferencia) y la doble indirección, un concepto particularmente difícil. Uno de los problemas
+al trabajar con apuntadores es que a los estudiantes se les dificulta visualizar las estructuras de datos y
+cómo se entrelazan sus nodos. El ejemplo del árbol binario es una maravillosa conclusión al estudio de los
+apuntadores y de las estructuras de datos dinámicas. Este ejemplo crea un árbol binario, refuerza la eliminación
+de duplicados, e introduce los recorridos recursivos del árbol en preorden, inorden y posorden. Los estudiantes
+tienen un sentido genuino de la responsabilidad cuando estudian e implementan este ejemplo; particularmente
+aprecian el poder ver que el recorrido inorden despliega los valores de los nodos en orden. El capítulo incluye
+una amplia colección de ejercicios. Lo más destacado de los ejercicios es la sección especial de “Cómo
+construir su propio compilador”. Los ejercicios guían al estudiante a través del desarrollo de un programa de
+conversión de expresiones de infijo a posfijo, y de un programa de evaluación de expresiones posfijo. Después
+modificamos el algoritmo de evaluación de expresiones posfijo para generar código en lenguaje máquina. El
+compilador coloca este código en un archivo (utilizando las técnicas del capítulo 11). Los estudiantes pueden
+ejecutar el lenguaje máquina producido por sus compiladores en los simuladores de software que construyeron
+en los ejercicios del capítulo 7.
+Capítulo 13 —El preprocesador de C— Proporciona explicaciones detalladas sobre las directivas del
+preprocesador. El capítulo incluye información sobre la directiva #include (la cual ocasiona que se incluya
+una copia del archivo especificado en la posición de la directiva en el archivo de código fuente, antes de que
+el archivo se compile) y la directiva #define que crea constantes simbólicas y macros. El capítulo explica la
+compilación condicional para permitir al programador controlar la ejecución de las directivas del preprocesador
+y la compilación del código del programa. También explica el operador #, el cual convierte su operando en
+una cadena, y el operador ## que concatena dos tokens. Aquí presentamos constantes simbólicas predefinidas,
+tales como _LINE_, _FILE_, _DATE_ y _TIME_. Por último presentamos la macro assert del archivo de
+encabezado assert.h. La macro assert es muy valiosa en la evaluación, depuración, verificación y validación
+de programas.
+Capítulo 14 —Otros temas de C— Presenta temas adicionales que incluyen diversos conceptos que por
+lo general no se cubren en cursos introductorios. Nosotros mostramos cómo redirigir la entrada de programas
+para que provengan de un archivo, cómo redirigir la salida de un programa para que se ubique en un archivo,
+cómo redirigir la salida de un programa para que sea la entrada de otro (a lo que se le llama “canalización”),
+también a añadir la salida de un programa a un archivo existente, a desarrollar funciones que utilicen listas de
+argumentos de longitud variable, a pasar argumentos de líneas de comandos a la función main y utilizarlos en
+un programa, a compilar programas cuyos componentes se encuentran en múltiples archivos, a registrar funciones
+con atexit para que se ejecuten al terminar el programa, a terminar la ejecución de un programa con
+la función exit, cómo utilizar los calificadores de tipo const y volatile, cómo especificar el tipo de una
+constante numérica mediante los sufijos de entero y de punto flotante, a utilizar la biblioteca de manejo de se-
+ñales para atrapar eventos inesperados, cómo crear y utilizar arreglos dinámicos con calloc y realloc, y
+a utilizar uniones como una técnica para ahorrar espacio.
