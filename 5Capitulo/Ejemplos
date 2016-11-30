@@ -1,0 +1,95 @@
+/*Figura 5.3: fig05_03.c
+  Creacion y uso de una funcion definida por el usuario*/
+  
+  #include<stdio.h>
+  
+  int cuadrado(int y); /*prototipo de la funcion*/
+  
+  /*La funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+    int x; /*contador*/
+    
+    /*repite 10 veces el ciclo y calcula e imprime el cuadrado de x*/
+    for(x=1; x<=10; x++){
+      printf("%d", cuadrado (x) ); /*llamada a la funcion*/
+    }/*fin de for*/
+    
+    printf("\n");
+    
+    return 0; /*indicaa terminacion exitosa*/
+  } /*fin del main*/
+  
+  /*defrinicion de la funcion cuadrado, devuelve el cuadrado del parametro*/
+  int cuadrado(int y)/*y es una copia del argumento para la funcion*/
+  {
+    return y*y; /*devuelve el cuadrado de y como un int*/
+  } /*fin de la funcion cuadrado*/
+  
+  
+ ********************************************************************************************
+ 
+ /*Figura 5.4: fig05_04.c
+  Encuentra el maximo de tres enteros*/
+  
+ #include <stdio.h>
+ 
+ int maximo(int x, int y, int z); /*prototipo de la funcion*/
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+  int numero1; /*primer entero*/
+  int numero2; /*segundo entero*/
+  int numero3; /*tercer entero*/
+  
+  printf("Introduzca tres enteros: ");
+  scanf("%d%d%d", &numero1, &numero2, &numero3);
+  
+  /*numero1, numero2 y numero3 son argumentos
+    para la llamada a la funcion maximo*/
+   printf("El maximo es: %d\n", maximo(numero1, numero2, numero3));
+   
+   return 0;/*indica terminacion exitosa*/ 
+ }/*fin de main*/
+ 
+ /*Definicion de la funcion maximo*/
+ /*x, y, y Z son parametros*/
+ int maximo(int x, int y, int z)
+ {
+  int max = x; /*asume que x es el mayor*/
+  
+  if ( y > max) {/*si y es mayor que max, asigna y a max*/
+    max = y;
+  } /*fin de if*/
+  
+  if (z>max) {/*si z es mayor que max, asigna z a max*/
+    max = z;
+  } /*fin de if*/
+  
+  return max; /*max es el valor mas grande*/
+ } /*fin de la funcion maximo*/
+ 
+ 
+ ********************************************************************************************
+ /*Figura 5.7: fig05_07.c
+  Escalamiento y cambio de enteros producidos por 1 + rand() % 6*/
+#include <stdio.h>
+#include <stdlib.h>
+
+/*La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int i; /*contador*/
+  
+  /*repite 20 veces*/
+  for (i=1; i<=20; i++){
+  /*Obtiene y despliega um numero aleatorio entre 1 y 6 */
+  printf("%d10d", 1 + (rand() % 6));
+  
+  /*Si el */
+  }
+}
+
+ 
+ 
