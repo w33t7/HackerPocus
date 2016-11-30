@@ -1,0 +1,289 @@
+/* Figura 4.1: fig04_01.c 
+  Repeticion controlada por contador */
+  
+  #include<stdio.h>
+  
+  /*La funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+    int contador = 1; /* inicializacion */
+    
+    while (contador <= 10 ){/*condicion de repeticion*/
+      printf ("%d\n", contador ); /*despliega contador*/
+      ++contador; /*incremento*/
+    }/*fin del while*/
+    
+    return 0; /*indica terminacion exitosa*/
+  }/*fin de la funcion main*/
+  
+  ***********************************************************************************************************
+  
+  /*Figura 4.2: fig04_02.c
+    Repeticion controlada por contador mediante la instruccion for*/
+    
+#include <stdio.h>
+
+/*La funcion main comienza la ejecucion del programa*/
+
+int main()
+{
+  int contador; /*definicion del contador*/
+  
+  /*La inicializacion, condicion de repeticion e incremento
+    se incluyen en el encabezado de la instruccion for */
+    
+    for (contador =1 1; contador <= 10; contador++) {
+      printf("%d\n", contador);
+    }
+    
+    return 0; /*indica terminacion exitosa del programa*/
+    
+    } /*fin de la funcion main*/
+    
+ ********************************************************************************************
+ 
+ /*Figura 4.5: fig04_05.c
+  Suma con for */
+  
+ #include <stdio.h>
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+  int suma = 0; /*inicializa la suma*/
+  int numero; /*numero por adicionar a suma*/
+  
+  for (numero = 2; numero <= 100; numero += 2){
+    suma += numero; /*suma el numero a suma*/
+  } /*fin de for*/
+  
+  printf("La suma es %d\n", suma);/*muestra la suma*/
+  
+  return 0; /*indica terminacion exitosa*/
+ }/*fin de la funcion main*/
+ 
+ 
+ 
+ ********************************************************************************************
+ 
+ /*Figura 4.6: fig04_06.c
+    Calculo del interes compuesto */
+    
+#include <stdio.h>
+#include <math.h>
+
+/*la funcion main comienza la ejecucion del programa*/
+
+int main()
+{
+  double monto;    /*monto del deposito*/
+  double principal= 1000.0; /*monto principal*/
+  double tasa = .05;         /*interes compuesto anual*/
+  int anio;  /*contador de anios*/
+  
+  /*muestra el encabezado de salida de la tabla*/
+  printf("%4s%21s\n", "Anio", "Monto del deposito");
+  
+  /*calcula el monto del deposito para cada uno de los diez anios*/
+  for (anio = 1; anio <= 10 ; anio ++) {
+  
+  /*calcula el nuevo monto para el anio especificado*/
+  monto = principal * pow(1.0 + tasa, anio );
+  
+  /*muestra una linea de la tabla*/
+  printf("%4d%21.2f\n", anio, monto);
+  }/*fin del for*/
+  
+  return 0; /*indica terminacion exitosa del programa*/
+}/*fin de la funcion main*/
+
+
+
+ ********************************************************************************************
+ 
+ /* Figura 4.7: fig04_07.c
+  Cuenta las calificaciones expresadas en letras*/
+
+#include<stdio.h>
+
+/*La funcion main comienza la ejecucion del programa*/
+
+int main()
+{
+
+  int calificacion; /*una calificacion*/
+  int cuentaA=0; /*numero de As*/
+  int cuentaB=0; /*Numero de Bs*/
+  int cuentaC=0; /*Numero de Cs*/
+  int cuentaD=0; /*Numero de Ds*/
+  int cuentaF=0; /*numero de Fs*/
+  
+  printf("Introduzca la letra que corresponde a la calificacion \n");
+  printf("Introduzca el caracter EOF para finalizar la entrada de datos\n");
+  
+  /*repite hasta que el usuario digita la secuencia de teclas de fin de archivo */
+  
+  while((calificacion=getchar()) != EOF){
+  
+  /*determina cual calificacion se introdujo*/
+  switch (calificacion){/*switch anidado dentro del while*/
+    
+    case 'A': /*La calificacion es A*/
+    case 'a': /* o a */
+    
+      ++cuentaA; /*incrementa cuentaA*/
+      break; /*necesario para salir de switch*/
+      
+    case 'B': /*La calificacion es B*/
+    case 'b': /* o b*/
+    
+      ++cuentaB; /*incrementa ceuntaB*/
+      break; /*sale de switch*/
+      
+    case 'C': /*La calificacion es C*/
+    case 'c': /* o c */
+    
+      ++cuentaC; /*La calificacion es C*/
+      break; /* sale de switch*/
+      
+    case 'D': /*La calificacion es D*/
+    case 'd': /* o d*/
+    
+      ++cuentaD: /*La calificacion es D*/
+      break; /*sale del switch*/
+      
+    case 'F': /*La calificacion es F*/
+    case 'f': /*o f*/
+    
+      ++cuentaF; /*incrementa cuentaF*/
+      break; /*sale de switch*/
+      
+      case '\n'; /*ignorar nuevas lineas*/
+      case '\r'; /*tabuladores*/
+      case ' '; /*y espacios en la entrada*/
+      break; /*fin de switch*/
+      
+      default: /*atrapa todos los demas caracteres*/
+      printf ("Introdujo una letra incorrecta");
+      printf ("Introduzca una nueva calificacion. \n");
+      break; /* opcional: de todas maneras saldra del switch */
+      } /*fin de switch */
+  }/*fin de while*/
+  
+  /*muestra el resumen de los resultados*/
+  printf("\nLos totales por calificacion son: \n");
+  printf("A: %d\n", cuentaA); /*despliga el numero de calificaciones A*/
+  printf("B: %d\n", cuentaB); /*despliga el numero de calificaciones B*/
+  printf("C: %d\n", cuentaC); /*despliga el numero de calificaciones C*/
+  printf("D: %d\n", cuentaD); /*despliga el numero de calificaciones D*/
+  printf("F: %d\n", cuentaF); /*despliga el numero de calificaciones F*/
+  
+  return 0; /*indica teminacion exitosa del programa*/
+} /*fin de la funcion main*/
+
+
+ ********************************************************************************************
+ 
+ /*Figura 4.9: fig04_09.c
+  Uso de la instruccion de repeticion do/while*/
+  
+ #include <stdio.h>
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ 
+ int main()
+ {
+ int contador = 1; /*inicializa el contador*/
+ 
+ do{
+  printf("%d", contador); /*despliega el contador*/
+ } while( ++contador <= 10); /*fin del do...while*/
+ 
+ return 0; /*indica la terminacion exitosa del programa*/
+ }/*fin de la funcion main*/
+ 
+ 
+ 
+ ********************************************************************************************
+ /*Figura4.11: fig04_11.c
+  Uso de la instruccion break dentro de la instruccion for*/
+ #include <stdio.h>
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+ int x; /*contador*/
+ 
+ /*repite 10 veces el ciclo*/
+ for (x=1; x<= 10; x++){
+ 
+ /*si x es 5, termina el ciclo*/
+ if (x == 5){
+  break; /*rompe el ciclo solo si x es 5*/
+ }/*fin de if*/
+ 
+ printf("\nRompe el ciclo en x==%d\n",x);
+ 
+ return 0;/*indica la terminacion exitosa del programa*/
+ }/*fin de la funcion main*/
+ 
+ 
+ 
+ ********************************************************************************************
+ /*Figura4.12: fig04_12.c
+  Uso de la instruccion continue dentro de una instruccion for*/
+#include <stdio.h>
+
+/*La funcion main comienza la ejecucion del programa */
+int main()
+{
+  int x; /*contador*/
+  
+  /*repite el ciclo 10 veces*/
+  for(x=1; x<= 10; x++){
+  
+  /*Si x es 5, continua con la siguiente iteracion del ciclo*/
+  if(x==5){
+    continue; /*ignora el resto del codigo en el cuerpo del ciclo*/
+  }/*fin de if*/
+  
+  printf("%d", x); /*despliega el valor de x*/
+  } /*fin de for*/
+  
+  printf("\nUtiliza continue para ignorar la impresion del valor 5\n");
+  
+  return 0; /*indica la terminacion exitosa del programa*/
+}
+ }
+ 
+
+ ********************************************************************************************
+ /*Figura 4.12: fig04_12.c
+  Uso de la instruccion continue dentro de una instruccion for*/
+#include <stdio.h>
+
+/*La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int x; /*contador*/
+  
+  /*repite el ciclo 10 veces*/
+  for(x=1; x <= 10; x++) {
+  
+    /*si x es 5, continua con la siguiente iteracion del ciclo*/
+    if (x==5){
+      continue; /*iugnorar el resto del codigo en el cuerpo del ciclo*/
+    }/*fin de if*/\
+    
+    printf("%d", x); /*despliega el valor de x*/
+  }/*fin de for*/
+
+  printf("\nUtiliza continue para ignorar la impresion del valor 5\n");
+  
+  return 0; /*indica la terminacion exitosa del programa*/
+} /*fin de la funcion main*/
+
+
+ ********************************************************************************************
+ 
+ 
