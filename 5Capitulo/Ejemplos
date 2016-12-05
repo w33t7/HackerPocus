@@ -87,9 +87,175 @@ int main()
   /*Obtiene y despliega um numero aleatorio entre 1 y 6 */
   printf("%d10d", 1 + (rand() % 6));
   
-  /*Si el */
-  }
-}
+  /*Si el contador es divisible etr 5, cmienza una nueva linea de salida*/
+    if (i%5 == 0) {
+      printf("\n");
+    }/*fin del if*/
+  } /*fin de for*/
+  return 0; /*indica terminacion extosa*/
+}/*fin de main*/
 
- 
- 
+ ********************************************************************************************
+/*Figura 5.8: fig05_08.c
+  Tiro de un dado de seis lados 6000 veces*/
+  include <stdio.h>
+  include <stdlib.h>
+  
+  /*La fu
+    int tiro; /*contador de tiros, valores de 1 a 6000*/
+    
+    int cara; /*representa un tiro del dado, valores de 1 a 6*/
+    /*repite 6000 vecces y resume los resultados*/
+    for (tiro = 1; tiro <= 6000; tiro++){
+      cara = 1 + rand() % 6; /*numero aleatorio de 1 a 6*/
+      
+      /*determina el valor de caro e incrementa el contador apropiado*/
+      switch ( cara ){
+      
+        case 1: /*tiro 1*/
+          ++frecuencia1;
+          break;
+          
+        case 2: /*tiro 2*/
+          ++frecuencia2;
+          break;
+          
+        case 3: /*tiro 3*/
+          ++frecuencia3;
+          break;
+          
+        case 4: /*tiro 4*/
+          ++frecuencia4;
+          break;
+          
+        case 5: /*tiro 5*/ncion main comienza la ejecucion del programa*/
+  main()
+  {
+    int frecuencia1 = 0; /*contador del tiro 1*/
+    int frecuencia2 = 0; /*contador del tiro 2*/
+    int frecuencia3 = 0; /*contador del tiro 3*/
+    int frecuencia4 = 0; /*contador del tiro 4*/
+    int frecuencia5 = 0; /*contador del tiro 5*/
+    int frecuencia6 = 0; /*contador del tiro 6*/
+    
+          ++frecuencia5;
+          break;
+          
+        case 6: /*tiro 6*/
+          ++frecuencia6;
+          break; /*opcional*/
+       }/*fin de switch*/
+    
+    }/*fin de for*/
+    
+    /*despliega los resultados en forma tabular*/
+    printf(" %s%13s\n ", "Cara" , "Frecuencia");
+    printf(" 1%13d\n ", frecuencia1);
+    printf(" 2%13d\n ", frecuencia2);
+    printf(" 3%13d\n ", frecuencia3);
+    printf(" 4%13d\n ", frecuencia4);
+    printf(" 5%13d\n ", frecuencia5);
+    printf(" 6%13d\n ", frecuencia6);
+    
+    return 0; /*indica terminacion exitosa*/
+    
+} /*fin de main*/
+
+ ******************************************************************************
+ /*Figura 5.9: fig05_09.c
+  Randomizacion del programa de dados*/
+  
+  #include <stdlib.h>
+  #include <stdio.h>
+  
+  /*La funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+    int i; /*contador*/
+    unsigned semilla; /*numero que se utiliza para establecer la semilla del generador de numeros aletorios*/
+    
+    printf("Introduzca la semilla: ");
+    scanf("%u", &semilla); /*observe el %u para un unsigned*/
+    
+    srand(semilla); /*establece la semilla del generador de numeros aleatorios*/
+  
+    /*repite 10 veces*/
+    for ( i=1; 1<=10; i++){
+    /*obtiene y despliega un numero aleatorio entre 1 y 6*/
+    printf("%10d", 1 + ( rand() % 6 ));
+    
+    /*Si contador es divisible entre 5, comienza una nueva linea de salida*/
+    
+    if( i%5 == 0){
+      printf("\n");
+    }/*fin de if*/
+   } /*fin de for*/
+   
+   return 0; /*indica terminacion exitosa*/
+  }/*fin de main*/
+  
+  ******************************************************************************
+  /*Figura 5.10: fig05_0.c
+    Craps*/
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <time.h> /*contiene el prototipo de la funcion time*/
+    
+    /*constantes de enumeracion aue representan el estado del juego*/
+    enum Estatus {CONTINUA, GANA, PIERDE};
+    
+    int tiraDados(void); /*prototipo de la funcion*/
+    
+    /*la funcion main comienza la ejecucion del programa*/
+    int main()
+    {
+      int suma; /*suma del tiro de datos*/
+      int miPunto; /*punto ganado*/
+      
+      enum Estatus estatusJuego /*puede cotener CONTINUA, GANA o PIERDE*/
+      
+      /*randomiza el generador de numeros aleatorios mediante la funcion time*/
+      srand( time (NULL));
+      
+      suma=tiraDados(); /*primer tiro de los dados*/
+      
+      /*determina el estado del juego basado en la suma de los dados*/
+      switch(suma){
+      
+        /*gana en el primer tiro*/
+        case 7:
+        case 11:
+          estatusJuego = GANA;
+          break;
+          
+          /*pierde en el primer tiro*/
+          case 2:
+          case 3:
+          case 12:
+            estatusJuego = PIERDE;
+            break;
+            
+          /* Recuerda el punto */
+          default:
+            estatusJuego = CONTINUA;
+            miPunto = suma;
+            printf("Su punto es %d\n", miPunto );
+            break; /*opcional*/
+          } /*fin de switch*/
+          
+          /*mientras el juego no se complete */
+          while (estatusJuego == CONTINUA ){
+            suma=tiraDados(); /*tira de nuevo los dados*/
+            
+            /*determina el estatus del juego*/
+            if (suma == miPunto){/*gana por punto*/
+              estatusJuego = GANA; /*fin del juego, el jugador gana */
+            }/*fin de if*/
+            else{
+            
+            if()
+            
+            }
+          
+          }
+
