@@ -252,10 +252,87 @@ int main()
               estatusJuego = GANA; /*fin del juego, el jugador gana */
             }/*fin de if*/
             else{
+                if( suma == 7){/* pierde al tirar 7 */
+                  estatusJuego = PIERDE; /*termina el juego, el jugador pierde*/
+                } /*fin de if*/
             
-            if()
-            
-            }
+            }/*fin de else*/
           
-          }
+          } /*fin de while*/
+          
+          /*despliega mensaje de triunfo o derrota*/
+          if ( estatusJuego == GANA ){ /* Gano el jugador? */
+            printf("El jugador gana \n");
+          }/* fin de if */
+          else { /*el jugador pierde*/
+            printf("El jugador pierde\n");
+          } /*fin de else*/
+          
+          return 0; /*indica terminacion exitosa*/
+  } /*fin de main*/
+  
+  /*tiro de dados, calcula la suma y despliega los resultados*/
+  int tiraDados (void)
+  {
+    int dado1;    /*primer dado*/
+    int dado2;    /*segundo dado*/
+    int sumaTemp; /*suma de los dados*/
+    dado1 = 1 + ( rand() % 6); /*toma el aleatorio para el dado1*/
+    dado2 = 1 + ( rand() % 6); /*toma el aleatorio para el dado2*/
+    sumaTemp = dado1 + dado2; /*suma el dado1 y el dado2*/
+    
+    /*despliega los resultados de este tiro*/
+    printf ("El jugador tiro %d + %d = %d\n", dado1, dado2, sumaTemp );
+    
+    return sumaTemp; /*devuelve la suma de los dados*/
+  
+  } /*fin de la funcion tiraDados*/
+         
+  ******************************************************************************
+  /*Figura 5.12: fig05_12.c
+    Ejmplo de alcance */
+#include <stdio.h>  
 
+void usoLocal (void); /*prototipo de funcion*/
+void usoStaticLocal (void); /*prototipo de funcion*/
+void usoGlobal (void); /*prototipo de funcion*/
+
+int x=1; /*variable global*/
+
+/*La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int x=5; /*variable local en main*/
+  printf("la x local fuera del alcance de main es %d\n", x);
+  
+  { /*comienza el nuevo alcance*/
+    int x = 7; /*variable local con nuevo alcance*/
+    
+    printf ( "la x local en el alcance interno de main es %d\n", x);
+  } /*fin de nuevo alcance*/
+  
+  printf("la x local en el alcance externo de main es %d\n", x);
+  
+  usoLocal(); /*usoLocal contiene una x local*/
+  usoStaticLocal(); /*usoStaticLocal contiene una x local estatica*/
+  usoGlobal(); /*usoGlobal utiliza una x global*/
+  usoLocal(); /*usoLocal reinicializa la x local automatica*/
+  usoStaticLocal(); /*static local x retiene su valor previo*/
+  usoGlobal(); /*x global tambien retiene su valor*/
+  
+  printf("\n x local en main es %d\n", x);
+  
+  return 0; /* indica terminacion exitosa*/
+}
+
+/*usoLocal reinicializa a la variable local x durante cada llamada*/
+void usoLocal (void)
+{
+  int x = 25; /*se inicializa cada vez que se llama usoLocal*/
+  
+  printf("\nlaxlocal en usoLocal es %d despues de entrar a usoLocal \n", x );
+  x++;
+  printf("la x local en usoLocal es %d antes de salir de usoLocal\n", x);
+}/*fin de la funcion usoLocal*/
+
+/*usoStaticLocal inicializa la variable static local x solo la primera */
