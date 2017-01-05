@@ -1,0 +1,363 @@
+/*Figura 6.3: fig06_03.c
+  Inicializar un arreglo */
+ 
+ #include <stdio.h>
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+  int n [10]; /*n es un arreglo de 10 enteros*/
+  int i; /*contador*/
+  
+  /*inicializa los elementos del arreglo n a 0 del arreglo */
+  for ( i = 0; i < 10 ; i++){
+    n[i]=0; /*establece el elemento 1 a 0*/
+  }/*fin del for*/
+  
+  printf("%s%13s\n", "Elemento", "Valor");
+  
+  /*muestra el contenido del arreglo n en forma tabular*/
+  
+  for(i=0; i < 10; i++){
+    printf ("%7d%13d\n", i , n[i] );
+  }/*fin de for*/
+  
+  return 0; /*indica terminacion exitosa*/
+ }/*fin de main*/
+ 
+ 
+ *********************************************************************************************************
+ 
+ /*Figura 6.4: fig06_04.c
+  Inicializa un arreglo con una lista de inicializacion*/
+  
+ #include<stdio.h>
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+  /*utiliza la lista de inicializacion para inicializar el arreglo n*/
+  int n[10] = { 32, 27, 64, 18, 95, 14, 90, 70, 60, 37};
+  int i; /*contador*/
+  
+  printf("%s%13s\n", "Elemento", "Valor" );
+  
+  /*muestra el contenido del arreglo en forma tabular*/
+  for (i=0; i < 10 ; i++){
+    printf("%7d%13d\n", i , n[i]);
+  }/*fin de for*/
+  
+  return 0; /*indica terminacion exitosa*/
+  
+ }/*fin de main*/
+ 
+  *********************************************************************************************************
+  /*Figura 6.5: fig06_05.c
+    Inicializa los elementos del arreglo s a los enteros pares de 2 a 20 */
+  #include <stdio.h>
+  #define TAMANIO 10
+  
+  /*La funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+  /*se puede utilizar la constante simbolica TAMANIO para especificar el tamanio del arreglo*/
+  int s[ TAMANIO ]; /*el arreglo s contiene 10 elementos*/
+  int j; /*contador*/
+  
+  for ( j = 0; j < TAMANIO; j++) { /*establece los valores*/
+    s[j] = 2 + 2 * j;
+  } /*fin de for*/
+  
+  printf("%s%13s\n", "Elemento", "Valor");
+  
+  /*muestra el contenido del arreglo s en forma tabular*/
+  for (j=0; j < TAMANIO; j++){
+    printf("%7d%13d\n", j , s[j]);
+  }/*fin de for*/
+  
+  return 0; /*indica terminacion exitosa*/
+  } /*fin de main*/
+  
+   *********************************************************************************************************
+   
+   /*Figura 6.6: fig06_06.c
+    Calcula la suma de los elementos del arreglo*/
+ #include <stdio.h>
+  #define TAMANIO 12
+  
+/*La funcion main comienza la ejecucion del programa*/
+int main()
+  {
+  /*Utiliza una lista de inicializacion para inicializar el arreglo*/
+  int a[ TAMANIO ] = { 1, 3, 5, 4, 7, 2, 99, 16, 45, 67, 89, 45 };
+  int i; /*contador*/
+  int total = 0; /*suma del arreglo*/
+  
+  /*suma el contenido del arreglo a */
+  for(i=0; i < TAMANIO; i++){
+    total += a[i];
+  }/*fin de for*/
+  printf("El total de los elementos del arreglo es %d\n", total);
+  return 0; /*indica terminacion exitosa*/
+}/*fin de main*/
+
+   *********************************************************************************************************
+   /*Figura 6.7: fig06_07.c
+    Programa de respuestas de examen*/
+  #include <stdio.h>
+  #define TAMANIO_RESPUESTA 40 /*define los tamanios de los arreglos*/
+  #define TAMANIO_FRECUENCIA 11
+  
+  /*la funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+    int respuesta; /*contador a traves de las 40 respuestas */
+    int rango; /*contador de rangos de 1 a 10 */
+    
+    /*inicializa los contadores de frecuencia a 0 */
+    int frecuencia [ TAMANIO_FRECUENCIA ] = {0};
+    
+    /*coloca las respuestas del examen dentro del arreglo respuestas*/
+    int respuestas [TAMANIO_RESPUESTA] = { 1, 2, 6, 4, 8, 5, 9, 7, 8, 10,
+              1, 6, 3, 8, 6, 10, 3, 8, 2, 7, 6, 5, 7, 6, 8, 6, 7, 5, 6, 6,
+              5, 6, 7, 5, 6, 4, 8, 6, 8, 10};
+              
+     /*Por cada respuesta, seleciona el valor de un elemento del arreglo respuestas 
+     y utiliza dicho valor como subindice en el arreglo frecuencia para determinar 
+     el elemento a incrementar*/
+     
+     for (respuesta = 0; respuesta < TAMANIO_RESPUESTA; respuesta++) {
+      ++frecuencia [respuestas [respuesta]];
+     }/*fin de for*/
+     
+     /*despliega los resultados*/
+     printf("%s%17s\n","Rango", "Frecuencia");
+     
+     /*muestra las frecuencia en forma tabular*/
+     for (rango = 1; rango < TAMANIO_FRECUENCIA; rango++) {
+      printf("%6d%17d\n", rango, frecuencia[ rango]);
+      } /*fin de for*/
+      
+      return 0; /*indica terminacion exitosa*/
+    
+  } /*fin de main*/
+  
+     *********************************************************************************************************
+     /*Figura 6.8: fig06_08.c
+      Programa de impresion de un Histograma */
+    #include <stdio.h>
+    #define TAMANIO 10
+    
+    /*La funcion main comienza la ejecucion del programa*/
+    int main()
+    {
+      /*usar una lista de inicializacion para inicializar el arreglo n */
+      int n[ TAMANIO ] = { 19, 3, 15, 7, 11, 9, 13, 5, 17, 1};
+      int i; /*contador for externo para los elementos del arreglo*/
+      int j; /*contador for interno cuenta *s en cada barra del histograma*/
+      
+      printf("%s%13s%17s\n", "Elemento", "Valor", "Histograma");
+      
+      /*Para cada elemento del arreglo n, muestra una barra en el histograma*/
+      for( i=0; i < TAMANIO; i++){
+        printf("%7d13d", i , n[i]);
+        
+        for(j=1; j <= n [i]; j++) { /*imprime una barra*/
+          printf("%c", '*');
+        } /*Fin del for interno*/
+        
+        printf("\n"); /*Fin de una barra del histograma*/
+      } /*fin del for externo*/
+      
+      retunr 0; /*indica terminacion exitosa*/
+    }/*fin de main*/
+    
+    
+     *********************************************************************************************************
+     /*Figura 6.9: fig06_09.c
+      Lanza un dado de seis lados 6000 veces */
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <time.h>
+  #define TAMANIO 7
+
+/* La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int cara; /*valor aleatorio del dado entre 1 a 6*/
+  int tiro; /*contador de tiros 1 a 6000*/
+  int frecuencia[ TAMANIO ] = {0}; /*inicializa a cero la cuenta*/
+  
+  srand(time(NULL)); /*generador de la semilla de numeros aleatorios*/
+  
+  /*tira el dado 6000 veces*/
+  for(tiro = 1; tiro <= 6000; tiro++){
+    cara = 1 + rand() % 6;
+    ++frecuencia[ cara ]; /*remplaza la intruccion switch de la linea 26 de la figura 5.8*/
+    } /*fin de for*/
+    
+    printf("%s%17s\n","Cara", "Frecuencia");
+    
+    /*muestra los elementos 1-6 de frecuencia en forma tabular*/
+    for (cara = 1; cara< TAMANIO; cara++){
+      printf("%s%17s\n", cara, frecuencia[cara]);
+      }/*fin de for*/
+      
+      return 0; /*indica terminacion exitosa*/
+}/*fin de main */
+
+     *********************************************************************************************************
+     /*Figura 6.10: fig06_10.c
+      Manipulacion de arreglos de caracteres como cadenas*/
+  #include <stdio.h>
+  
+  /*La funcion main comienza la ejecucion del programa*/
+  
+  int main()
+  {
+    char cadena1[20] ; /*reserva 20 caracteres*/
+    char cadena2[] = "literal de cadena"; /*reserva 18 caracteres*/
+    int i; /*contador*/
+    
+    /*lee la cadena del usuario y la introduce en el arreglo cadena1*/
+    printf("Introduce una cadena: ");
+    scanf("%s", cadena1); /*entrada que finaliza con un espacio en blanco*/
+    
+    /*muestra las cadenas*/
+    printf( i=0; cadena1[i] != '\0'; i++){
+      printf("%c", cadena1[i]);
+    }/*fin de for*/
+    
+    printf("\n");
+    
+    return 0; /*indica terminacion exitosa*/
+  } /*fin de main*/
+  
+  
+     *********************************************************************************************************
+     
+    /*Figura 6.11: fig06_11.c
+      Arreglos estaticos que se inicializan a cero*/
+  #include <stdio.h>
+  
+  void iniciaArregloEstatico(void); /*prototipo de la funcion*/
+  void iniciaArregloAutomatico(void); /*prototipo de la funcion*/
+  
+  /*La funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+    printf("Primera llamada a cada funcion:\n");
+    iniciaArregloEstatico();
+    iniciaArregloAutomatico();
+    
+    printf("\n\nSegunda llamada a cada funcion:\n");
+    iniciaArregloEstatico();
+    iniciaArregloAutomatico();
+    
+    return 0; /*indica terminacion exitosa*/
+  }/*fin de main*/
+  
+  /*funcion para demostrar un arreglo estatico local*/
+  void iniciaArregloEstatico(void)
+  {
+    /*inicializa los elementos a 0 la primera vez que se llama a la funcion*/
+    static int arreglo1[3];
+    int i; /*contador*/
+    
+    printf("\nValores al entrar a iniciaArregloEstatico:\n");
+    
+    /*muestra el contenido del arreglo1*/
+    for (i=0; 1<=2; i++) {
+      printf("arreglo1[%d] = %d ", i , arreglo1[i]);
+    }/*fin de for*/
+    
+    printf("\nValores al salir de iniciaArregloEstatico: \n");
+    
+    /*modifica y muestra el contenido de arreglo1*/
+    for(i=0; i <= 2; i++){
+      printf("arreglo1[%d] = %d", i , arreglo1[i]+= 5);
+    }/*fin de for*/
+  
+  } /*fin de la funcion iniciaArregloEstatico*/
+  
+  /*Funcion para demostrar u arreglo local automatico*/
+  void iniciaArregloAutomatico(void)
+  {
+    /*inicializa los elementos cada vez que se llama a la funcion*/
+    int arreglo2[3]={1,2,3};
+    int i; /*contador*/
+    
+    printf("\n\nValores al entrar a iniciaArregloAutomatico: \n");
+    
+    /*muestra el contenido de arreglo2*/
+    for(i=0; i <=2 ; i++){
+      printf("arreglo2[%d] = %d", i , arreglo2[i] += 5);
+    }/*fin de for*/
+  }/*fin de la funcion iniciaArregloAutomatico*/
+  
+       *********************************************************************************************************
+/*Figura 6.12: fig06_12.c
+  El nombre de un arreglo es lo mismo que &arreglo[0]*/
+#include<stdio.h>
+
+  /*La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  char arreglo[5]; /*define un arreglo de 5 elementos*/
+  
+  printf(" arreglo = %p\n&arreglo[0] = %p\n"
+    " &arreglo = %p\n",
+      arreglo, &arreglo[0], &arreglo );
+      
+  return 0; /*indica terminacion exitosa*/
+} /*fin de main*/
+
+       *********************************************************************************************************
+       
+/*Figura 6.13: fig06_13.c
+  Paso de arreglos y de elementos de un arreglo a funciones */
+#include <stdio.h>
+#define TAMANIO 5
+
+/*Prototipos de las funciones*/
+void modificaArreglo(int b[], int tamanio);
+void modificaElemento(int e);
+
+/*La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int a[ TAMANIO ] = {0, 1, 2, 3, 4}; /*inicializa*/
+  int i; /*contador*/
+  
+  printf("Efectos de pasar arreglos completos por referencia: \n\nlos"
+          "valores del arreglo original son: \n" );
+          
+ /*Muestra el arreglo original*/
+ for (i=0; i < TAMANIO; i++) {
+  printf("%3d", a[i]);
+  }/*fin de for*/
+  
+  printf("\n");
+  
+  /*pasa el arreglo a modificArreglo por referencia*/
+  modificaArreglo(a, TAMANIO);
+  
+  printf ("Los valores del arreglo modificado son: \n");
+  
+  /*Muestra el arreglo modificado*/
+  for (i=0; i < TAMANIO; i++) {
+    printf("%3d", a[i]);
+  }/*fin de for*/
+  
+  /*Muestra el valor de a[3]*/
+  printf("\n\n\nEfectps de pasar un elemento del arreglo"
+          " por valor: \n\nEl valor de a[3] es %d\n", a[3]);
+  modificaElemento( a[3] ); /*pasa el elemento a[3] del arreglo por valor*/
+  
+  /*Muestra el valor a[3]*/
+}
+     
+     
+  
+  
+  
