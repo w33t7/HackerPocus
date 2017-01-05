@@ -355,9 +355,30 @@ int main()
   modificaElemento( a[3] ); /*pasa el elemento a[3] del arreglo por valor*/
   
   /*Muestra el valor a[3]*/
-}
-     
-     
+  printf ("El valor de a [3] es %d\n", a[3]);
   
+  return 0; /*indica terminacion exitosa*/
+} /*fin de main*/
+
+/*En la funcion modificaArreglo, "b" apunta al arreglo original "a"
+  en memoria*/
+void modificaArreglo(int b[], int tamanio)
+{
+  int j; /*contador*/
   
+  /*multiplica cada elemento del arreglo por 2*/
+  for (j=0; j < tamanio; j++) {
+    b[j] *= 2;
+  } /*fin de for*/
+}     /*fin de la funcion modificaArreglo*/
+     
+/*En la funcionmodificaElemento, "e" es una copia local del elemento a[3]
+  del arreglo se paso desde main*/
+void modificaElemento(int e)
+{
+  /*multiplica el parametro por 2 */
+  printf("El valor en modificaElemento es $d\n", e *= 2);
+}/*Fin de la funcion modificaElemento*/
+  
+       *********************************************************************************************************
   
