@@ -336,3 +336,76 @@ void usoLocal (void)
 }/*fin de la funcion usoLocal*/
 
 /*usoStaticLocal inicializa la variable static local x solo la primera */
+
+ ********************************************************************************************
+ /* Figura 5.14: fig05_14.c
+  Funcion factorial recursiva */
+#include <stdio.h>
+
+long factorial ( long numero ); 
+
+/*la funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int i; /*contador*/
+  
+  /*repite 11 veces: durante cada iteracion, calcula 
+    el factorial (i) y despliega el resultado*/
+    for (i=0; i <= 10; i++){
+      printf("%2d! = %1d\n", i , factorial (i) );
+    }/*fin de for*/
+    
+    return 0; /*indica terminacion exitosa*/
+} /*fin de main*/
+
+/*definicion recursiva de la funcion factorial*/
+long factorial(long numero)
+{
+  /*caso base*/
+  if ( numero <= 1){
+    return 1;
+ }/*fin de if*/
+ else {/*paso recursivo*/
+  return (numero * factorial ( numero - 1));
+ }/*fin del else*/
+}/*fin de la funcion factorial*/
+
+
+ ********************************************************************************************
+ /*Figura 5.15: fig05_15.c
+  Funcion recursiva de fibonacci*/
+#include <stdio.h>
+
+long fibonacci (long n); /*prototipo de la funcion*/
+
+/*la funcion main comienza la ejecucion del programa*/
+int main()
+{
+  long resultado; /*valor de fibonacci*/
+  long numero;    /* numero a introducir por el usuario*/
+/*obtiene un entero del usuario*/
+printf("Introduzca un entero: ");
+scanf("%1d", &numero);
+
+/*calcula el valor fibonacci del numero introducido por el usuario*/
+resultado = fibonacci (numero);
+
+/*despliega el resultado*/
+printf ("Fibonacci (%1d) = %1d\n", numero, resultado);
+
+return 0; /*indica terminacion exitosa*/
+}/*fin del main*/
+
+/*definicion de la funcion recursiva fibonacci*/
+long fibonacci (long n)
+{
+  /*caso base*/
+  if ( n == 0 || n == 1) {
+    return n;
+  }/*fin del if*/
+  else {/*paso recursivo*/
+    return fibonacci ( n - 1 ) + fibonacci (n - 2);
+  } /*fin de else*/
+}/*fin de la funcion fibonacci
+ 
+ 
