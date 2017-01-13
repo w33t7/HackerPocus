@@ -702,4 +702,269 @@ int busquedaLineal ( const int arreglo[], int llave, int tamanio)
 #define TAMANIO 15
 
 /*prototipos de las funciones*/
+int busquedaBinaria ( const int b[], int claveDeBusqueda, int bajo, int alto);
+void despliegaEncabezado(void);
+void despliegaLinea(const int b[], int bajo, int medio, int alto);
+
+/*La funcion main comienza la ejecucion del programa*/
+int main()
+{
+  int a[TMANIO]; /*crea el arreglo a*/
+  int i; /*contador para inicializar los elementos de 0 a 14 del arreglo a*/
+  int llave; /*valor a localizar en el arreglo a*/
+  int resultado; /*variable para almacenar la ubicacion de la llave o -1*/
+  
+  /*crea los datos*/
+  for(i=0; i<TAMANIO; i++){
+    a[i] = 2 * 1;
+  } /*fin de for*/
+  
+  printf("Introduzca un numero entre 0 y 28:");
+  scanf("%d", &llave);
+  
+  despliegaEncabezado();
+  
+  /*busca la llave en el arreglo a*/
+  resultado = busquedaBinaria(a, llave, 0, TAMANIO - 1);
+  
+  /*despliega los resultados*/
+  if(resultados != -1){
+    printf("\n%d se encuentra en el elemento %d del arreglo\n", llave, resultado );
+  } /*fin de if*/
+  else{
+    printf("\n%d no se encuentra\n", llave);
+  }/*fin de else*/
+  
+  return 0; /*indica terminacion exitosa*/
+}/*fin de main*/
  
+/*funcion para realizar la busqueda binaria en un arreglo*/
+int busquedaBinaria( const int b[], int claveDeBusqueda, int bajo, int alto)
+{
+  int central; /*variable para mantener el elemento central del arreglo*/
+  
+  /*Realiza el ciclo hasta que el subindice bajo es mayor que el subindice alto*/
+  while (bajo <= alto){
+      /*determina el elemento central del subarreglo en el que se busca*/
+      central = (bajo + alto) / 2;
+      
+      /*despliega el subarreglo utilizado en este ciclo*/
+      despliegaLinea(b, bajo, central, alto);
+      
+      /*Si claveBusqueda coincide con el elemento central, devuelve central*/
+      if( claveDeBusqueda == b [central]) {
+          return central;
+      }/*fin de if*/
+      
+      /*Si claveDeBusqueda es menor que el eemento central, establece el nuevo valor de alto*/
+      else if (claveDeBusqueda < b[central]){
+          alto = central - 1; /*busca en la mitad inferior del arreglo*/
+      } /*fin de else if*/
+      
+      /*Si claveDeBusqueda es mayor que el elemento central, establece el nuevo valor para bajo*/
+      else {
+          bajo = central + 1; /*busca en la mitad superior del arreglo*/
+      } /*fin de while*/
+      
+      return - 1; /*No se encontro claveDeBusqueda*/
+      } /*fin de la funcion busquedaBinaria*/
+      
+      /*Imprime un encabezado para la salida*/
+      void despliegaEncabezado(void)
+      {
+          int i; /*contador*/
+          printf("\nSubindices:\n");
+          
+       /*Muestra el encabezado de la columna*/
+       for( i=0; i<TAMANIO; i++){
+          printf("%3d",1);
+       } /*fin de for*/
+       
+       printf("\n"); /*comienza la nueva linea de salida*/
+       
+       /*muestra una linea ed caracteres - */
+       for(i=1; i<= 4 * TAMANIO; i++){
+          printf("-");
+       } /*fin de for*/
+       
+       printf("\n"); /*inicia una nueva linea de salida*/
+       }/*fin de la funcion despliegaEncabezado*/
+/*Imprime una linea de salida que muestra la parte actual del arreglo que se esta procesando*/
+
+void despliegaLinea (conts int b[], int baj, int cen, int alt )
+{
+    int i; /*contador para la iteracion a traves del arreglo b*/
+    
+    /*ciclo a traves del arreglo completo*/
+    for(i=0; i < TAMANIO; i++){
+    
+      /*despliega espacios si se encuentra fuera del rango actual del subarreglo*/
+      if (i<baj || i > alt) {
+          printf ("   ");
+      } /*fin de if*/
+      else if ( i == cen ) { /*despliega el elemento central*/
+        printf("%3d*", b[1]); /*Marca el valor central*/
+      } /*fin de else if*/
+      else{ /*despliega otros elelemntos en el subarreglo*/
+          printf("%3d", b[1]);
+      }/*fin de else*/
+    }/*fin de for*/
+  }
+  printf("\n"); /*inicia la nueva linea de salida*/
+} /*fin de la funcion despliegaLinea*/
+
+  *********************************************************************************************************
+  /*Figura 6.21: fig06_21.c
+    Inicializacion de arreglos multidimensionales */
+ #include <stdio.h>
+ 
+ void despliegaArreglo (const int a[][3]); /*prototipo de la funcion*/
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+    /*Inicializa arreglo1, arreglo2, arreglo3*/
+    int arreglo1[ 2 ][ 3 ] = {{ 1, 2, 3 }, { 4, 5, 6 }};
+    int arreglo2[ 2 ][ 3 ] = { 1, 2, 3, 4, 5};
+    int arreglo3[ 2 ][ 3 ] = {{1, 2}, {4}};
+    
+    printf("Los valores en el arreglo1 por linea son:\n");
+    despliegaArreglo (arreglo1);
+    
+    printf("Los valores en el arreglo2 por linea son:\n");
+    despliegaArreglo (arreglo2);
+    
+    printf("Los valores en el arreglo3 por linea son: \n ");
+    despliegaArreglo (arreglo3);
+    
+    return 0; /*indica terminacion exitosa*/
+ } /*fin de main*/
+ 
+ /*Funcion para demostrar un arreglo con dos filas y tres columnas*/
+ void despliegaArreglo ( const int a[][ 3 ])
+ {
+    int i; /*contador de filas*/
+    int j; /*contador de columnas*/
+    
+    /*ciclo a traves de las filas*/
+    for(i=0; i <= 1; i++){
+      
+      /*muestra los valores de las columnas*/
+      for ( j = 0; j<=2; j++) {
+        printf("%d", a[i][j]);
+      } /*fin del for niterno*/
+      
+      printf("\n"); /*comienza la nueva linea de salida*/
+    } /*fin del for externo*/
+ 
+ } /*fin de la funcion imprimeArreglo*/
+ 
+   *********************************************************************************************************
+ /*Figura 6.22: fig06_22.c
+    Ejemplo de un arreglo de doble subindice */ 
+ #include <stdio.h>
+ #define ESTUDIANTES 3
+ #define EXAMENES 4
+ 
+ /*prototipos de las funciones*/
+ int minimo(const int calificaciones[][EXAMENES], int alumnos, int examenes);
+ int maximo(const int calificaciones[][EXAMENES], int alumnos, int examenes);
+ double promedio(const int estableceCalif[], int examenes);
+ void despliegaArreglo(const int calificaciones[][EXAMENES], int alumnos, int examenes);
+ 
+ /*La funcion main comienza la ejecucion del programa*/
+ int main()
+ {
+    int estudiante; /*contador de estudiantes*/
+    
+    /*inicializa las calificaciones para tres estudiantes (filas)*/
+    const int calificacionesEstudiantes[ ESTUDIANTES ][ EXAMENES ] = 
+      { {77, 68, 86, 73},
+        {96, 87, 89, 78},
+        {70, 90, 86, 81}};
+        
+   /*Muestra el arreglo calificacionesEstudiantes*/
+   printf("El arreglo es:\n");
+   despliegaArreglo(calificacionesEstudiantes, ESTUDIANTES, EXAMENES);
+   
+   /*Determina el valor mas peque;o y el valor mas grande de las calificaciones*/
+   printf ( "\n\nCalificacion mas baja: %d\nCalificacion mas alta: %d\n",
+      minimo(calificacionesEstudiantes, ESTUDIANTES, EXAMENES),
+      maximo(calificacionesEStudiantes, ESTUDIANTES, EXAMENES));
+      
+   /*Calcula el promedio de calificaciones de cada estudiante*/
+   for (estudiante = 0; estudiante < ESTUDIANTES; estudiantes++){
+      printf("El promedio de calificacion del estudiante %d es %.2f\n",
+          estudiante, promedio (calificacionesEstudiantes[estudiante],
+          EXAMENES));
+          } /*fin de for*/
+          
+    return 0; /*indica terminacion exitosa*/
+ 
+ } /*fin de main*/
+ 
+ /*Encuentra la calificacion minima*/
+ int minimo(const int calificaciones[][EXAMENES], int alumnos, int exaemnes)
+ {
+    int i; /*contador de estudiantes*/
+    int j; /*contador de examenes*/
+    int califBaja = 100; /*inicializa a la calificacion mas alta posible*/
+    
+    /*ciclo a traves de las filas de calificaciones*/
+    for (i=0; i < alumnos; i++) {
+        /*ciclo a traves de las columnas de calificaciones*/
+        for(j=0; j < examenes; j++) {
+          if(calificaciones[i][j] < califBaja){
+              califBaja = calificacioens[i][j]
+          } /*fin de if*/
+        } /*fin del for interno*/
+      } /*fin del for externo*/
+      
+      return califBaja; /*devuelve la calificacion minima*/
+ } /*fin de la funcion main*/
+ 
+ /*Encuentra la calificaion mas alta*/
+ int maximo(const int calificaciones[][EXAMENES], int alumnos, int examenes)
+ {
+    int i; /*contador de estudiantes*/
+    int j; /*contador de examenes*/
+    int califAlta = 0; /*inicializa a la calificacion mas baja posisble*/
+    
+    /*ciclo a traves de las filas de calificaciones*/
+    for(i=0; i < alumnos; i++){
+    
+      /*ciclo a traves de las columnas de calificaciones*/
+      for(j=0; j < alumnos; i++){
+          /*ciclo a traves de las columnas de calificaciones*/
+          for(j=0; j < examenes; j++){
+              /*ciclo a traves de las columnas de calificaciones*/
+              for(j=0; j < examenes; j++) {
+              
+                if(calificaciones[i][j] > califAlta){
+                  califAlta = calificaciones[i][j];
+                } /*fin de if*/
+              } /*fin del for interno*/ 
+          } /*fin del for externo*/
+          
+          return califBaja; /*devuelve la calificacion minima*/
+      
+      } /*fin de la funcion main*/
+      
+/*Encuentra la calificacion mas alta*/
+int maximo(const int calificaciones[][EXAMENES], int alumnos, int examenes)
+{
+    int i; /*contador de estudiantes*/
+    int j; /*contador de examenes*/
+    int califAlta = 0; /*inicializa a la calificacion mas baja posible*/
+    
+    /*ciclo a traves de las columnas de calificaciones*/
+    for(i=0; i < alumnos; i++){
+    
+      /*ciclo a traves de las columnas de calificaciones*/
+      for()
+    
+    }
+}
+    
+    }
+ }
