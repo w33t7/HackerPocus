@@ -32,7 +32,7 @@ int main()
   /*La inicializacion, condicion de repeticion e incremento
     se incluyen en el encabezado de la instruccion for */
     
-    for (contador =1 1; contador <= 10; contador++) {
+    for (contador = 1; contador <= 10; contador++) {
       printf("%d\n", contador);
     }
     
@@ -137,7 +137,7 @@ int main()
     case 'B': /*La calificacion es B*/
     case 'b': /* o b*/
     
-      ++cuentaB; /*incrementa ceuntaB*/
+      ++cuentaB; /*incrementa cuentaB*/
       break; /*sale de switch*/
       
     case 'C': /*La calificacion es C*/
@@ -149,7 +149,7 @@ int main()
     case 'D': /*La calificacion es D*/
     case 'd': /* o d*/
     
-      ++cuentaD: /*La calificacion es D*/
+      ++cuentaD; /*La calificacion es D*/
       break; /*sale del switch*/
       
     case 'F': /*La calificacion es F*/
@@ -158,9 +158,9 @@ int main()
       ++cuentaF; /*incrementa cuentaF*/
       break; /*sale de switch*/
       
-      case '\n'; /*ignorar nuevas lineas*/
-      case '\r'; /*tabuladores*/
-      case ' '; /*y espacios en la entrada*/
+      case '\n': /*ignorar nuevas lineas*/
+      case '\r': /*tabuladores*/
+      case ' ': /*y espacios en la entrada*/
       break; /*fin de switch*/
       
       default: /*atrapa todos los demas caracteres*/
@@ -196,7 +196,7 @@ int main()
  int contador = 1; /*inicializa el contador*/
  
  do{
-  printf("%d", contador); /*despliega el contador*/
+  printf("%d\n", contador); /*despliega el contador*/
  } while( ++contador <= 10); /*fin del do...while*/
  
  return 0; /*indica la terminacion exitosa del programa*/
@@ -222,11 +222,13 @@ int main()
   break; /*rompe el ciclo solo si x es 5*/
  }/*fin de if*/
  
+ printf("%d\n",x);
+ }
  printf("\nRompe el ciclo en x==%d\n",x);
  
- return 0;/*indica la terminacion exitosa del programa*/
- }/*fin de la funcion main*/
- 
+ return 0; /*indica terminacion exitosa del programa*/
+    
+  } /*fin de la funcion main*/
  
  
  ********************************************************************************************
@@ -254,7 +256,6 @@ int main()
   
   return 0; /*indica la terminacion exitosa del programa*/
 }
- }
  
 
  ********************************************************************************************
@@ -285,5 +286,5 @@ int main()
 
 
  ********************************************************************************************
- 
+** THE END **
  
