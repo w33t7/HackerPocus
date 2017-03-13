@@ -12,7 +12,7 @@
     
     /*repite 10 veces el ciclo y calcula e imprime el cuadrado de x*/
     for(x=1; x<=10; x++){
-      printf("%d", cuadrado (x) ); /*llamada a la funcion*/
+      printf("%4d", cuadrado (x) ); /*llamada a la funcion*/
     }/*fin de for*/
     
     printf("\n");
@@ -20,7 +20,7 @@
     return 0; /*indicaa terminacion exitosa*/
   } /*fin del main*/
   
-  /*defrinicion de la funcion cuadrado, devuelve el cuadrado del parametro*/
+  /*definicion de la funcion cuadrado, devuelve el cuadrado del parametro*/
   int cuadrado(int y)/*y es una copia del argumento para la funcion*/
   {
     return y*y; /*devuelve el cuadrado de y como un int*/
@@ -85,31 +85,41 @@ int main()
   /*repite 20 veces*/
   for (i=1; i<=20; i++){
   /*Obtiene y despliega um numero aleatorio entre 1 y 6 */
-  printf("%d10d", 1 + (rand() % 6));
+  printf("%10d\n", 1 + (rand() % 6));
   
-  /*Si el contador es divisible etr 5, cmienza una nueva linea de salida*/
+  /*Si el contador es divisible entre 5, comienza una nueva linea de salida*/
     if (i%5 == 0) {
       printf("\n");
     }/*fin del if*/
   } /*fin de for*/
-  return 0; /*indica terminacion extosa*/
+  system("pause"); /*indica terminacion extosa*/
 }/*fin de main*/
 
  ********************************************************************************************
 /*Figura 5.8: fig05_08.c
   Tiro de un dado de seis lados 6000 veces*/
-  include <stdio.h>
-  include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
   
-  /*La fu
+/*Funcion main comienza la ejecucion del programa*/
+  int main()
+  {
+	int frecuencia1 = 0; /*contador del tiro 1*/
+    int frecuencia2 = 0; /*contador del tiro 2*/
+    int frecuencia3 = 0; /*contador del tiro 3*/
+    int frecuencia4 = 0; /*contador del tiro 4*/
+    int frecuencia5 = 0; /*contador del tiro 5*/
+    int frecuencia6 = 0; /*contador del tiro 6*/
+    
     int tiro; /*contador de tiros, valores de 1 a 6000*/
     
     int cara; /*representa un tiro del dado, valores de 1 a 6*/
-    /*repite 6000 vecces y resume los resultados*/
+    
+	/*repite 6000 vecces y resume los resultados*/
     for (tiro = 1; tiro <= 6000; tiro++){
       cara = 1 + rand() % 6; /*numero aleatorio de 1 a 6*/
       
-      /*determina el valor de caro e incrementa el contador apropiado*/
+      /*determina el valor de cara e incrementa el contador apropiado*/
       switch ( cara ){
       
         case 1: /*tiro 1*/
@@ -128,22 +138,13 @@ int main()
           ++frecuencia4;
           break;
           
-        case 5: /*tiro 5*/ncion main comienza la ejecucion del programa*/
-  main()
-  {
-    int frecuencia1 = 0; /*contador del tiro 1*/
-    int frecuencia2 = 0; /*contador del tiro 2*/
-    int frecuencia3 = 0; /*contador del tiro 3*/
-    int frecuencia4 = 0; /*contador del tiro 4*/
-    int frecuencia5 = 0; /*contador del tiro 5*/
-    int frecuencia6 = 0; /*contador del tiro 6*/
-    
-          ++frecuencia5;
+        case 5: /*tiro 58*/
+		  ++frecuencia5;
+          break;	
+			
+		case 6: /*tiro 58*/
+		  ++frecuencia6;
           break;
-          
-        case 6: /*tiro 6*/
-          ++frecuencia6;
-          break; /*opcional*/
        }/*fin de switch*/
     
     }/*fin de for*/
@@ -157,7 +158,7 @@ int main()
     printf(" 5%13d\n ", frecuencia5);
     printf(" 6%13d\n ", frecuencia6);
     
-    return 0; /*indica terminacion exitosa*/
+    system("pause"); /*indica terminacion exitosa*/
     
 } /*fin de main*/
 
@@ -180,7 +181,7 @@ int main()
     srand(semilla); /*establece la semilla del generador de numeros aleatorios*/
   
     /*repite 10 veces*/
-    for ( i=1; 1<=10; i++){
+    for ( i=1; i<=10; i++){
     /*obtiene y despliega un numero aleatorio entre 1 y 6*/
     printf("%10d", 1 + ( rand() % 6 ));
     
